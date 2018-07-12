@@ -1,3 +1,6 @@
 user_verify
 
-{{ form.as_table }}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_table }}
+</form>

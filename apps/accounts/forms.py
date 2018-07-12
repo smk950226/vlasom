@@ -9,7 +9,7 @@ User = get_user_model()
 
 
 class UserCreateForm(forms.ModelForm):
-    password1 = forms.CharField(label='비밀번호', widget=forms.PasswordInput(attrs={'placeholder': '6~32자리의 영문, 숫자 혹은 [!@#$%^&*]를 혼합하여 사용하세요.'}), validators=[validate_password])
+    password1 = forms.CharField(label='비밀번호', widget=forms.PasswordInput(attrs={'placeholder': '6~32자리의 영문, 숫자, 특수기호(!@#$%^&*)를 혼합하여 사용하세요.'}), validators=[validate_password])
     password2 = forms.CharField(label='비밀번호 확인', widget=forms.PasswordInput(attrs={'placeholder': ''}))
     is_agreed_1 = forms.BooleanField(label='약관동의')
     is_agreed_2 = forms.BooleanField(label='개인정보수집동의')
@@ -112,7 +112,7 @@ class UserVerifyForm(forms.Form):
 class SetPasswordForm(BaseSetPasswordForm):
     new_password1 = forms.CharField(
         label='새 비밀번호',
-        widget=forms.PasswordInput(attrs={'placeholder': '6~32자리의 영문, 숫자 혹은 [!@#$%^&*]를 혼합하여 사용하세요.'}),
+        widget=forms.PasswordInput(attrs={'placeholder': '6~32자리의 영문, 숫자, 특수기호(!@#$%^&*)를 혼합하여 사용하세요.'}),
         validators=[validate_password],
         strip=False,
     )
@@ -131,7 +131,7 @@ class PasswordChangeForm(BasePasswordChangeForm):
     )
     new_password1 = forms.CharField(
         label='새 비밀번호',
-        widget=forms.PasswordInput(attrs={'placeholder': '6~32자리의 영문, 숫자 혹은 [!@#$%^&*]를 혼합하여 사용하세요.'}),
+        widget=forms.PasswordInput(attrs={'placeholder': '6~32자리의 영문, 숫자, 특수기호(!@#$%^&*)를 혼합하여 사용하세요.'}),
         strip=False,
         validators=[validate_password],
     )
