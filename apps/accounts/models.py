@@ -55,8 +55,8 @@ class User(AbstractUser):
     nickname = models.CharField('닉네임', max_length=50)
     email = models.EmailField('이메일', unique=True)
     birth_year = models.PositiveIntegerField('생년', choices = birth_year, default = int(timezone.now().strftime("%Y")))
-    birth_month = models.PositiveIntegerField('생월', choices = birth_month, default = int(timezone.now().strftime("%d")))
-    birth_day = models.PositiveIntegerField('생일', choices = birth_day, default = int(timezone.now().strftime("%m")))
+    birth_month = models.PositiveIntegerField('생월', choices = birth_month, default = int(timezone.now().strftime("%m")))
+    birth_day = models.PositiveIntegerField('생일', choices = birth_day, default = int(timezone.now().strftime("%d")))
     is_verified = models.BooleanField('인증여부', default=False, help_text='사용자의 이메일 인증 여부를 나타냅니다.')
 
     objects = UserManager()
