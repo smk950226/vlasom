@@ -1,1 +1,1 @@
-default_app_config = 'apps.website.apps.WebsitesConfig'
+default_app_config = 'apps.website.apps.WebsiteConfig'
