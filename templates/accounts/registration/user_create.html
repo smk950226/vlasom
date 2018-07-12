@@ -1,2 +1,8 @@
 user_create
-{{ form.as_table }}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_table }}
+
+    <input type="submit">
+</form>

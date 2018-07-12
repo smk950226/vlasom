@@ -1,12 +1,12 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model, login as auth_login
+from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordResetConfirmView as BasePasswordResetConfirmView, \
-    PasswordChangeView as BasePasswordChangeView, PasswordResetView as BasePasswordResetView
+    PasswordChangeView as BasePasswordChangeView, PasswordResetView as BasePasswordResetView, login as auth_login
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.sites.shortcuts import get_current_site
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy, reverse
 from django.utils.http import urlsafe_base64_decode
 from django.views.generic import CreateView, RedirectView, UpdateView, FormView
