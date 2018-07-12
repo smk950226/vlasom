@@ -17,7 +17,7 @@ class UserAdmin(BaseUserAdmin):
     list_display = ['id', 'login_id', 'email', 'nickname', 'is_verified', 'is_staff']
     list_display_links = ['id', 'login_id']
     list_filter = ['is_verified', 'is_active']
-    ordering = ['id']
+    ordering = ['-id']
     search_fields = ['login_id', 'email', 'nickname']
     add_form = UserCreateAdminForm
     add_form_template = 'admin/change_form.html'

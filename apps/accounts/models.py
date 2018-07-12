@@ -48,11 +48,11 @@ class User(AbstractUser):
         help_text=_('Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
         validators=[username_validator],
         error_messages={
-            'unique': _("A user with that ID already exists."),
+            'unique': _("ID가 중복됩니다."),
         },
     )
     name = models.CharField('이름', max_length=20)
-    nickname = models.CharField('닉네임', max_length=50)
+    nickname = models.CharField('닉네임', max_length=50, unique = True)
     email = models.EmailField('이메일', unique=True)
     birth_year = models.PositiveIntegerField('생년', choices = birth_year, default = int(timezone.now().strftime("%Y")))
     birth_month = models.PositiveIntegerField('생월', choices = birth_month, default = int(timezone.now().strftime("%m")))
