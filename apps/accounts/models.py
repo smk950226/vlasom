@@ -84,7 +84,7 @@ class User(AbstractUser):
 
         url = 'http://{}/accounts/signup/confirm/{}/{}/'.format(current_site.domain, uid, token)
 
-        email_subject = render_to_string('registration/user_verify_subject.txt')
-        email_content = render_to_string('registration/user_verify_email.html', context={'url': url, 'site_name': current_site.name})
+        email_subject = render_to_string('accounts/registration/verity/user_verify_subject.txt')
+        email_content = render_to_string('accounts/registration/verity/user_verify_email.html', context={'url': url, 'site_name': current_site.name})
 
         self.email_user(email_subject, '', html_message=email_content)
