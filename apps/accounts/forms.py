@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import SetPasswordForm as BaseSetPasswordForm, PasswordChangeForm as BasePasswordChangeForm
 from django.utils.safestring import mark_safe
 
-from apps.account.validators import validate_password
+from .validators import validate_password
 
 User = get_user_model()
 
@@ -11,15 +11,15 @@ User = get_user_model()
 class UserCreateForm(forms.ModelForm):
     password1 = forms.CharField(label='비밀번호', widget=forms.PasswordInput(attrs={'placeholder': '6~32자리의 영문, 숫자 혹은 [!@#$%^&*]를 혼합하여 사용하세요.'}), validators=[validate_password])
     password2 = forms.CharField(label='비밀번호 확인', widget=forms.PasswordInput(attrs={'placeholder': ''}))
-    is_agreed_1 = forms.BooleanField(label='약관동의'))
-    is_agreed_2 = forms.BooleanField(label='개인정보수집동의'))
+    is_agreed_1 = forms.BooleanField(label='약관동의')
+    is_agreed_2 = forms.BooleanField(label='개인정보수집동의')
 
     current_site = None
 
     class Meta:
         model = User
         fields = [
-            'login_id'
+            'login_id',
             'email',
             'name',
             'nickname',
@@ -36,7 +36,7 @@ class UserCreateForm(forms.ModelForm):
             'nickname': '닉네임은 언제든지 변경할 수 있습니다.'
         }
         widgets = {
-            'login_id': forms.TextInput(attrs=('placeholder': '로그인 ID')),
+            'login_id': forms.TextInput(attrs={'placeholder': '로그인 ID'}),
             'email': forms.EmailInput(attrs={'placeholder': 'example@email.com'}),
             'name': forms.TextInput(attrs={'placeholder': '홍길동'}),
             'nickname': forms.TextInput(attrs={'placeholder': 'Nickname'}),
