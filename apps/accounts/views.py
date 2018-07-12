@@ -1,6 +1,7 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model, login
+from django.contrib.auth import get_user_model, login as auth_login
 from django.contrib.auth.tokens import default_token_generator
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordResetConfirmView as BasePasswordResetConfirmView, \
     PasswordChangeView as BasePasswordChangeView, PasswordResetView as BasePasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
@@ -9,12 +10,33 @@ from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.utils.http import urlsafe_base64_decode
 from django.views.generic import CreateView, RedirectView, UpdateView, FormView
+from django.conf import settings
+
+from allauth.socialaccount.models import SocialApp
+from allauth.socialaccount.templatetags.socialaccount import get_providers
+from allauth.socialaccount.views import SignupView
 
 from .forms import UserCreateForm, UserUpdateForm, UserVerifyForm, SetPasswordForm, PasswordChangeForm
 from .mixins import LoginRequiredMixin
 
 User = get_user_model()
 
+def login(request):
+    providers = []
+    for provider in get_providers():
+        try:
+            provider.social_app = SocialApp.objects.get(provider = provider.id, sites = settings.SITE_ID)
+        except SocialApp.DoesNotExist:
+            provider.social_app = None
+        providers.append(provider)
+
+    return auth_login(request,
+        template_name = 'accounts/login.html',
+        extra_context = {'providers' : providers})
+
+@login_required
+def profile(request):
+    return render(request, 'accounts/profile.html')
 
 class UserCreate(CreateView):
     template_name = 'accounts/registration/user_create.html'
@@ -30,7 +52,7 @@ class UserCreate(CreateView):
         response = super().form_valid(form)
         user = self.object
 
-        login(self.request, user)
+        auth_login(self.request, user)
         user.send_verification_email(get_current_site(self.request))
 
         return response

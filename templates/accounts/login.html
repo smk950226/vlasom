@@ -1,0 +1,12 @@
+로그인
+{% for provider in providers %}
+    {% if provider.social_app %}
+        <a class="card mrg-btm-10 padding-15 display-block text-center text-{{provider.name}} hover-{{provider.name}} text-uppercase" href="{% provider_login_url provider.id %}">	
+            <i class="ei ei-{{provider.name}}"></i> <b class="font-secondary ls-1">{{ provider.name }}</b>
+        </a>
+    {% else %}
+        <a> Provider {{ provider.name }}설정이 필용합니다.</a>
+    {% endif %}
+{% endfor %}
+
+{{ form.as_table }}
