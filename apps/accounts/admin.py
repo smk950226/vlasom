@@ -14,7 +14,8 @@ class UserCreateAdminForm(UserCreationForm):
 
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
-    list_display = ['login_id', 'email', 'nickname', 'is_verified', 'is_staff']
+    list_display = ['id', 'login_id', 'email', 'nickname', 'is_verified', 'is_staff']
+    list_display_links = ['id', 'login_id']
     list_filter = ['is_verified', 'is_active']
     ordering = ['id']
     search_fields = ['login_id', 'email', 'nickname']
