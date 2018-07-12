@@ -3,7 +3,7 @@ from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.tokens import default_token_generator
 from django.template.loader import render_to_string
-from django.utils import six
+from django.utils import six, timezone
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from django.utils.translation import ugettext_lazy as _
@@ -12,18 +12,19 @@ from .utils import birth_year, birth_month, birth_day
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password=None):
+    def create_user(self, login_id, email, password=None):
         if not email:
             raise ValueError('Users must have an email address')
 
-        user = self.model(email=self.normalize_email(email))
+        user = self.model(login_id=login_id, email=self.normalize_email(email))
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password):
+    def create_superuser(self, login_id, email, password):
         user = self.create_user(
+            login_id,
             email,
             password=password
         )
@@ -41,7 +42,7 @@ class User(AbstractUser):
     username_validator = UnicodeUsernameValidator() if six.PY3 else ASCIIUsernameValidator()
 
     login_id = models.CharField(
-        '로그인 ID',
+        _('로그인 ID'),
         max_length=150,
         unique=True,
         help_text=_('Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
@@ -53,9 +54,9 @@ class User(AbstractUser):
     name = models.CharField('이름', max_length=20)
     nickname = models.CharField('닉네임', max_length=50)
     email = models.EmailField('이메일', unique=True)
-    birth_year = models.PositiveIntegerField('생년', choices = birth_year)
-    birth_month = models.PositiveIntegerField('생월', choices = birth_month)
-    birth_day = models.PositiveIntegerField('생일', choices = birth_day)
+    birth_year = models.PositiveIntegerField('생년', choices = birth_year, default = int(timezone.now().strftime("%Y")))
+    birth_month = models.PositiveIntegerField('생월', choices = birth_month, default = int(timezone.now().strftime("%d")))
+    birth_day = models.PositiveIntegerField('생일', choices = birth_day, default = int(timezone.now().strftime("%m")))
     is_verified = models.BooleanField('인증여부', default=False, help_text='사용자의 이메일 인증 여부를 나타냅니다.')
 
     objects = UserManager()
