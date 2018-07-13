@@ -11,8 +11,8 @@ urlpatterns = [
     path('signup/', views.UserCreate.as_view(), name='user_create'),
     path('signup/confirm/<uidb64>/<token>/', views.UserConfirm.as_view(), name='user_confirm'),
 
-    path('password_reset/', views.PasswordResetView.as_view(), name='password_reset'),
+    path('password/reset/', views.PasswordResetView.as_view(), name='password_reset'),
     path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 
-    path('password_change/', views.PasswordChangeView.as_view(), name='password_change'),
+    path('password/change/', views.PasswordChangeView.as_view(), name='password_change'),
 ]

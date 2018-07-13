@@ -1,3 +1,10 @@
-프로필
+프로필<br/>
+{{ request.user.name }}
+{{ request.user.nickname }}
+{{ request.user.birth_year }}
+{{ request.user.birth_month }}
+{{ request.user.birth_day }}
 
 <a href="{% url "user_update" %}">프로필수정</a>
+<a href="{% url "password_change" %}">비밀번호 변경</a>
+<a href="{% url "website:home" %}">홈으로</a>

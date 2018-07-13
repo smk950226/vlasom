@@ -1,0 +1,7 @@
+user_update
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit">
+</form>
