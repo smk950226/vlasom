@@ -9,7 +9,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy, reverse
 from django.utils.http import urlsafe_base64_decode
-from django.views.generic import CreateView, RedirectView, UpdateView, FormView, TemlateView
+from django.views.generic import CreateView, RedirectView, UpdateView, FormView, TemplateView
 from django.conf import settings
 
 from allauth.socialaccount.models import SocialApp
@@ -34,7 +34,7 @@ def login(request):
         template_name = 'accounts/login.html',
         extra_context = {'providers' : providers})
 
-class ProfileView(LoginRequiredMixin,TemlateView):
+class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = 'accounts/profile.html'
 
     def dispatch(self, request, *args, **kwargs):

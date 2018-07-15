@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.kakao',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
     'apps.accounts',
     'apps.website',
     'apps.common',
@@ -147,6 +149,20 @@ USE_TZ = True
 
 AUTH_USER_MODEL = 'accounts.User'
 LOGIN_REDIRECT_URL = 'website:home'
+
+SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'login_id'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile', 'user_friends'],
+    }
+}
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'resources/static')
