@@ -25,14 +25,14 @@ class Contents(models.Model):
     regist_dt = models.DateTimeField('작성 시각', auto_now_add = True)
     update_dt = models.DateTimeField('수정 시각', auto_now = True)
     views = models.PositiveIntegerField('조회수', default = 0)
+    like_count = models.PositiveIntegerField('좋아요', default = 0)
 
     class Meta:
         verbose_name = '콘텐츠'
         verbose_name_plural = '콘텐츠'
 
-        def __str__(self):
-
-            return self.user + self.category_1 + self.category_2
+    def __str__(self):
+        return str(self.user) + '/' + str(self.category_1) + '/' + str(self.category_2)
 
 
 class ContentsImages(models.Model):
@@ -45,3 +45,7 @@ class Like(models.Model):
     user = models.ForeignKey(User, verbose_name = '회원', on_delete = models.CASCADE)
     contents = models.ForeignKey(Contents, verbose_name = '콘텐츠', default=None, on_delete = models.CASCADE)
     regist_dt = models.DateTimeField('작성 시각', auto_now_add = True)
+
+    class Meta:
+        verbose_name = '좋아요'
+        verbose_name_plural = '좋아요'
