@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.kakao',
     'apps.accounts',
     'apps.website',
+    'apps.common',
 ]
 
 MIDDLEWARE = [

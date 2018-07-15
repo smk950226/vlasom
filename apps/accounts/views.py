@@ -17,7 +17,7 @@ from allauth.socialaccount.templatetags.socialaccount import get_providers
 from allauth.socialaccount.views import SignupView
 
 from .forms import UserCreateForm, UserUpdateForm, UserVerifyForm, SetPasswordForm, PasswordChangeForm
-from .mixins import LoginRequiredMixin
+from apps.common.mixins import LoginRequiredMixin
 
 User = get_user_model()
 
