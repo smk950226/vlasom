@@ -1,8 +1,10 @@
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
+from apps.common.mixins import LoginRequiredMixin
 
-class HomeView(TemplateView):
+
+class HomeView(LoginRequiredMixin, TemplateView):
     template_name = 'website/home.html'
 
     def dispatch(self, request, *args, **kwargs):

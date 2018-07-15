@@ -1,15 +1,15 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, login as auth_login
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordResetConfirmView as BasePasswordResetConfirmView, \
-    PasswordChangeView as BasePasswordChangeView, PasswordResetView as BasePasswordResetView, login as auth_login
+    PasswordChangeView as BasePasswordChangeView, PasswordResetView as BasePasswordResetView, login as auth_login2
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy, reverse
 from django.utils.http import urlsafe_base64_decode
-from django.views.generic import CreateView, RedirectView, UpdateView, FormView
+from django.views.generic import CreateView, RedirectView, UpdateView, FormView, TemlateView
 from django.conf import settings
 
 from allauth.socialaccount.models import SocialApp
@@ -30,13 +30,15 @@ def login(request):
             provider.social_app = None
         providers.append(provider)
 
-    return auth_login(request,
+    return auth_login2(request,
         template_name = 'accounts/login.html',
         extra_context = {'providers' : providers})
 
-@login_required
-def profile(request):
-    return render(request, 'accounts/profile.html')
+class ProfileView(LoginRequiredMixin,TemlateView):
+    template_name = 'accounts/profile.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
 class UserCreate(CreateView):
     template_name = 'registration/user_create.html'
