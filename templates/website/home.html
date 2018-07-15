@@ -8,4 +8,19 @@ home
     <a href="{% url "user_create" %}">회원가입</a>
 {% endif %}
 <hr/>
+<form role="search" action="" method="get">
+    <input type="text" placeholder="Search" name="q" value="{{ q }}"/>
+    <button type="submit">Go Browse</button>
+ </form>
+<hr/>
+<br/>
+<br/>
+<hr/>
+<br/>
+<br/>
+{% for contents in contents_list %}
+{{ contents.user}} / {{ contents.category_1 }} / {{ contents.category_2 }} / {{ contents.tags }}
+<br/>
+<hr/>
+{% endfor %}
 <a href="{% url "contents:contents_list" %}">콘텐츠 목록</a>

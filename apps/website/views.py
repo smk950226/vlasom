@@ -2,11 +2,14 @@ from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
 from apps.common.mixins import LoginRequiredMixin
+from apps.common.views import SearchView
 from apps.contents.models import Contents
 
 
-class HomeView(LoginRequiredMixin, TemplateView):
+class HomeView(LoginRequiredMixin, SearchView):
     template_name = 'website/home.html'
+
+    model = Contents
 
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
