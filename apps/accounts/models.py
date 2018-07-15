@@ -9,7 +9,7 @@ from django.utils.http import urlsafe_base64_encode
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.validators import ASCIIUsernameValidator, UnicodeUsernameValidator
 
-from apps.common.utils import birth_year, birth_month, birth_day
+from apps.common.utils import birth_year, birth_month, birth_day, gender_choice
 
 
 class UserManager(BaseUserManager):
@@ -55,6 +55,7 @@ class User(AbstractUser):
     name = models.CharField('이름', max_length=20)
     nickname = models.CharField('닉네임', max_length=50, unique = True)
     email = models.EmailField('이메일', unique=True)
+    gender = models.CharField('성별', max_length=2, choices = gender_choice)
     birth_year = models.PositiveIntegerField('생년', choices = birth_year, default = int(timezone.now().strftime("%Y")))
     birth_month = models.PositiveIntegerField('생월', choices = birth_month, default = int(timezone.now().strftime("%m")))
     birth_day = models.PositiveIntegerField('생일', choices = birth_day, default = int(timezone.now().strftime("%d")))
