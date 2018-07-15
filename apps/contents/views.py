@@ -1,14 +1,13 @@
 import json
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import CreateView, ListView, DetailView, UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.decorators import login_required
 
 from apps.common.mixins import LoginRequiredMixin
 from .forms import ContentsCreateForm
-from .models import Contents, Like
+from .models import Contents
 
 class ContentsCreate(LoginRequiredMixin, CreateView):
     template_name = 'contents/contents_create.html'
@@ -57,23 +56,3 @@ class ContentsUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('contents:contents_detail', kwargs={'pk': self.object.id})
-    
-
-@login_required
-def like_create(request, pk):
-    contents = get_object_or_404(Contents, id=pk)
-
-    if Like.objects.filter(user = request.user).filter(contents = contents).exists():
-        Like.objects.filter(user = request.user).filter(contents = contents).delete()
-        contents.like_count = Like.objects.filter(user = request.user).filter(contents = contents).count()
-        contents.save()
-        message = '좋아요 취소.'
-    else:
-        Like.objects.create(user = request.user, contents = contents)
-        contents.like_count = Like.objects.filter(user = request.user).filter(contents = contents).count()
-        contents.save()
-        message = '좋아요.'
-    
-    context = {'message': message,}
-
-    return HttpResponse(json.dumps(context), content_type="application/json")

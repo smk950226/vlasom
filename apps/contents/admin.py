@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Contents, ContentsImages, Like
+from .models import Category, Contents, ContentsImages
 
 
 @admin.register(Category)
@@ -15,11 +15,3 @@ class ContentsAdmin(admin.ModelAdmin):
     search_field = ['user__username', 'category_1']
     list_filter = ['user', 'category_1']
     ordering = ['-id', '-views', '-like_count']
-
-@admin.register(Like)
-class LikeAdmin(admin.ModelAdmin):
-    list_display = ['user', 'contents']
-    list_display_links = ['user', 'contents']
-    search_field = ['user', 'contents']
-    list_filter = ['contents']
-

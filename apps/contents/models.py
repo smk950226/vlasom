@@ -39,13 +39,3 @@ class ContentsImages(models.Model):
     user = models.ForeignKey(User, verbose_name = '회원', on_delete = models.CASCADE)
     contents = models.ForeignKey(Contents, verbose_name = '콘텐츠', default=None, on_delete = models.CASCADE)
     image = models.ImageField(upload_to=get_image_filename, verbose_name='이미지')
-
-
-class Like(models.Model):
-    user = models.ForeignKey(User, verbose_name = '회원', on_delete = models.CASCADE)
-    contents = models.ForeignKey(Contents, verbose_name = '콘텐츠', default=None, on_delete = models.CASCADE)
-    regist_dt = models.DateTimeField('작성 시각', auto_now_add = True)
-
-    class Meta:
-        verbose_name = '좋아요'
-        verbose_name_plural = '좋아요'

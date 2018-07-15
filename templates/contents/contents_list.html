@@ -3,7 +3,7 @@
 <hr/>
 {% for contents in contents_list %}
 <a href="{% url "contents:contents_detail" contents.id %}">{{ contents.user}} / {{contents.category_1}} / {{ contents.views }}</a>
-<a class="like" href="{% url "contents:like_create" contents.id %}">좋아요</a>
+<a class="like" href="{% url "preference:like_create" contents.id %}">좋아요</a>
 <hr/>
 {% endfor %}
 <br/>
