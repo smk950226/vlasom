@@ -1,0 +1,9 @@
+콘텐츠 리스트
+<hr/>
+{% for contents in contents_list %}
+<a href="{% url "contents:contents_detail" contents.id %}">{{ contents.user}} / {{contents.category_1}} / {{ contents.views }}</a>
+<hr/>
+{% endfor %}
+<br/>
+<hr/>
+<a href="{% url "contents:contents_create" %}">콘텐츠 등록하기</a>

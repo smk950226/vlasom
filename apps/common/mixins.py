@@ -11,7 +11,7 @@ class LoginRequiredMixin(AccessMixin):
         user = self.request.user
         if not user.is_authenticated:
             login_url = super().get_login_url()
-            message = render_to_string('account/messages/login_required.html', context={
+            message = render_to_string('accounts/messages/login_required.html', context={
                 'login_url': login_url,
                 'message_login_required': self.message_login_required
             })

@@ -1,0 +1,18 @@
+콘텐츠 상세
+<hr/>
+{{ contents.user }}
+<hr/>
+{{ contents.category_1 }} / {{ contents.category_2 }}
+<hr/>
+{{ contents.tags }}
+<hr/>
+{{ contents.description }}
+<hr/>
+{{ contents.views }}
+<br/>
+<br/>
+<br/>
+<hr/>
+<a href="{% url "contents:contents_update" contents.id %}">콘텐츠 수정</a>
+<a href="{% url "contents:contents_list" %}">콘텐츠 목록</a>
+<a href="{% url "website:home" %}">홈으로</a>
