@@ -1,0 +1,11 @@
+아이디 찾기 결과
+<br/>
+<hr/>
+{% if result %}
+아이디 : {{ result }}
+{% else %}
+입력하신 정보가 잘못되었습니다.
+{% endif %}
+<br/>
+<hr/>
+<a href="{% url "login" %}">로그인 하기</a>

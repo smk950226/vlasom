@@ -7,3 +7,14 @@ landing
     <a href="{% url "login" %}">로그인</a>
     <a href="{% url "user_create" %}">회원가입</a>
 {% endif %}
+
+<br/>
+<br/>
+<hr/>
+<br/>
+<br/>
+{% for contents in hot_contents %}
+{{ contents.user}} / {{ contents.category_1 }} / {{ contents.category_2 }}
+<br/>
+<hr/>
+{% endfor %}

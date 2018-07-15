@@ -4,6 +4,7 @@ from django.contrib.auth.forms import SetPasswordForm as BaseSetPasswordForm, Pa
 from django.utils.safestring import mark_safe
 
 from apps.common.validators import validate_password
+from apps.common.utils import birth_year, birth_month, birth_day
 
 User = get_user_model()
 

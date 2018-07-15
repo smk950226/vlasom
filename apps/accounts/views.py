@@ -127,3 +127,22 @@ class PasswordChangeView(BasePasswordChangeView):
     success_url = reverse_lazy('profile')
 
     name = 'password_change'
+
+
+class FindId(TemplateView):
+    template_name = 'accounts/find_id.html'
+
+
+class FindIdResult(TemplateView):
+    template_name = 'accounts/find_id_result.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        name = self.request.GET.get('name')
+        email = self.request.GET.get('email')
+        birth_year = int(self.request.GET.get('birth_year'))
+        birth_month = int(self.request.GET.get('birth_month'))
+        birth_day = int(self.request.GET.get('birth_day'))
+        if User.objects.all().filter(name = name, email = email, birth_year = birth_year, birth_month = birth_month, birth_day = birth_day):
+            context['result'] = User.objects.all().filter(name = name, email = email, birth_year = birth_year, birth_month = birth_month, birth_day = birth_day).first().login_id
+        return context

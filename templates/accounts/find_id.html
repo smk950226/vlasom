@@ -1,0 +1,11 @@
+아이디 찾기
+
+<form action="{% url "find_id_result" %}" method="get">
+    {% csrf_token %}
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <input type="integer" name="birth_year">
+    <input type="integer" name="birth_month">
+    <input type="integer" name="birth_day">
+    <input type="submit">
+</form>
