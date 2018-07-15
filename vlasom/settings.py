@@ -122,6 +122,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKEND = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth.backends.AuthenticationBackend',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -154,6 +158,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'resources/media')
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'sm95226@gmail.com'
-EMAIL_HOST_PASSWORD = 'TMDALS236'
+EMAIL_HOST_PASSWORD = get_secret("EMAIL_PW")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
