@@ -23,6 +23,7 @@ urlpatterns = [
     path('accounts/', include('apps.accounts.urls')),
     path('',include('apps.website.urls', namespace = 'website')),
     path('contents/', include('apps.contents.urls', namespace = 'contents')),
+    path('preference/', include('apps.preference.urls', namespace = 'preference')),
 
     path('accounts/', include('allauth.urls')),
 ]

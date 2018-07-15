@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'apps.website',
     'apps.common',
     'apps.contents',
+    'apps.preference',
 ]
 
 MIDDLEWARE = [
