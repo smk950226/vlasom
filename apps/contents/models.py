@@ -7,6 +7,7 @@ User = get_user_model()
 
 class Category(models.Model):
     name = models.CharField('카테고리', max_length = 50)
+    interest_count = models.PositiveIntegerField('찜한 횟수', default = 0)
 
     class Meta:
         verbose_name = '카테고리'
@@ -26,6 +27,7 @@ class Contents(models.Model):
     update_dt = models.DateTimeField('수정 시각', auto_now = True)
     views = models.PositiveIntegerField('조회수', default = 0)
     like_count = models.PositiveIntegerField('좋아요', default = 0)
+    interest_count = models.PositiveIntegerField('찜한 횟수', default = 0)
 
     class Meta:
         verbose_name = '콘텐츠'
