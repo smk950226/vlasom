@@ -16,3 +16,8 @@ birth_day_list = []
 for i in range(31):
     birth_day_list.append(tuple((i+1, str(i+1)+'일')))
 birth_day = tuple(birth_day_list)
+
+def get_image_filename(instance, filename):
+    contents = instance.contents.id
+    slug = slugify(contents)
+    return "contents_images/%s/%s" % (slug, filename)  
