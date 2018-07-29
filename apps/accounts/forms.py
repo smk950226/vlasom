@@ -24,6 +24,7 @@ class UserCreateForm(forms.ModelForm):
             'email',
             'name',
             'nickname',
+            'gender',
             'birth_year',
             'birth_month',
             'birth_day',
