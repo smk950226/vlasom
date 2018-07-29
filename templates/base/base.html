@@ -1,0 +1,778 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% block title %}
+    <title>VLASOM :: 사진을 꽃피우다</title>
+    {% endblock %}
+    <meta name="keywords" content="snap shot" />
+    <meta name="description" content="VLASOM - VaLuable And Special Own Moment">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static "images/logo/favicon.png" %}">
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static "plugins/bootstrap/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" href="{% static "plugins/bootstrap/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" href="{% static "plugins/magnific-popup/css/magnific-popup.css" %}" />
+    <link rel="stylesheet" href="{% static "plugins/swiper/css/swiper.css" %}" />
+    <link rel="stylesheet" href="{% static "plugins/youtube-player/css/YTPlayer.css" %}" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static "css/animate.min.css" %}" />
+    <link rel="stylesheet" href="{% static "css/ei-icon.css" %}" />
+    <link rel="stylesheet" href="{% static "css/main.css" %}" />
+    <link rel="stylesheet" href="{% static "css/custom.css" %}" />
+    
+    <!-- Theme Color CSS -->
+    <link rel="stylesheet" href="{% static "css/colors/red.css" %}" />
+    {% block extrahead %}
+    {% endblock %}
+</head>
+
+<body>
+	<div class="loader-wrapper">
+		<div class="loaders">
+			<div class="loader-logo-pulse">
+				<img src="{% static "images/logo/logo-2.png" %}" alt="Eastern"> 
+			</div>
+			<div class="loader-1">
+			</div>
+		</div>
+	</div>
+	
+    <div class="wrapper">
+        <!-- Header Start -->
+        <header id="menu" class="header header-transparent header-sticky">
+            {% block nav %}
+            <nav class="navbar">
+                <div class="container">
+					<div class="menu-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+						   <span class="top-bar"></span>
+						   <span class="middle-bar"></span>
+						   <span class="bottom-bar"></span>
+						   <span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<div class="nav-tools">
+							<ul class="nav navbar-nav">
+								<li class="nav-item dropdown">
+									<a class="dropdown-toggle" href="javascript:void(0);"><i class="ei ei-shopping-cart"></i> 2</a>
+									<ul class="cart-menu dropdown-menu">
+										<li class="cart-menu-item">
+											<a href="product-single.html" class="cart-menu-media">
+												<img class="img-responsive" src="{% static "images/product/cart-item-1.jpg" %}" alt="">
+											</a>
+											<div class="product-details">
+												<a href="product-single.html" class="product-name">Cotton T- Shirt</a>
+												<span class="price">$400.00</span>
+												<a class="remove" href="javascript:void(0);"><i class="ei ei-close"></i></a>
+											</div>
+										</li>
+										<li class="cart-menu-item">
+											<a href="product-single.html" class="cart-menu-media">
+												<img class="img-responsive" src="{% static "images/product/cart-item-2.jpg" %}" alt="">
+											</a>
+											<div class="product-details">
+												<a href="product-single.html" class="product-name">Party Dress</a>
+												<span class="price">$400.00</span>
+												<a class="remove" href="javascript:void(0);"><i class="ei ei-close"></i></a>
+											</div>
+										</li>
+										<li class="cart-menu-subtotal">
+											<span>Sub Total</span>
+											<span class="amount">$800</span>
+										</li>
+										<li class="cart-menu-bottom">
+											<a class="btn check-out" href="checkout.html"><i class="ei ei-shopping-cart-dash pdd-horizon-5"></i> View Cart</a>
+										</li>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<a id="menu-search" href="javascript:void(0);"><i class="ei ei-search-alt"></i></a>
+								</li>
+							</ul>
+							<form action='#' id='search' method='get'>
+								<div class="search-input">
+									<div class="container">
+										<input class="search" placeholder='Search...' type='text'>
+										<button class="submit ei ei-search" type="submit" value="close"></button>
+									</div>
+								</div>
+								<button class="ei ei-close" id="close" type="reset"></button>
+							</form>    
+						</div>
+						<div class="nav-logo">
+							<a class="logo" href="index.html"><img class="logo-light" src="{% static "images/logo/logo-1.png" %}" alt="Eastern"></a>
+							<a class="logo" href="index.html"><img class="logo-dark" src="{% static "images/logo/logo-2.png" %}" alt="Eastern"></a>
+						</div>                    
+                    </div>
+					<div class="collapse navbar-collapse nav-collapse">
+                        <ul class="nav navbar-nav" >
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle" href="javascript:void(0);">Home <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="index-default.html">Default</a></li>
+                                    <li><a href="index-business.html">Business</a></li>
+                                    <li><a href="index-architect.html">Architect</a></li>
+                                    <li><a href="index-agency.html">Agency</a></li>
+                                    <li><a href="index-apps.html">Apps</a></li>
+                                    <li><a href="index-travel.html">Travel</a></li>
+                                    <li><a href="index-wedding.html">Wedding</a></li>
+                                    <li><a href="index-finance.html">Finance</a></li>
+                                    <li><a href="index-cafe.html">Cafe</a></li>
+                                    <li><a href="index-magazine.html">Magazine</a></li>
+                                    <li><a href="index-personal.html">Personal</a></li>
+                                    <li><a href="index-wine.html">Wine</a></li>
+                                    <li><a href="index-event.html">Event</a></li>
+                                    <li><a href="index-education.html">Education</a></li>
+                                    <li><a href="index-shop.html">Shop</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle" href="javascript:void(0);">Features <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="sub-menu"><a href="javascript:void(0);">Header <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="header-default.html">Header Default</a></li>
+                                            <li><a href="header-fixed.html">Header Fixed</a></li>
+                                            <li><a href="header-transparent.html">Header Transparent</a></li>
+                                            <li><a href="header-transparent-fixed.html">Header Transparent Fixed</a></li>
+                                            <li><a href="header-fullwidth.html">Header Full Width</a></li>
+                                            <li><a href="header-logo-center.html">Header Logo Center</a></li>
+                                            <li><a href="header-logo-center-transparent.html">Header Logo Center Transparent</a></li>
+                                            <li><a href="header-side-left.html">Side Menu Left</a></li>
+                                            <li><a href="header-side-right.html">Side Menu Right</a></li>
+                                            <li><a href="header-fullscreen.html">Header Fullscreen</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu"><a href="javascript:void(0);">Slider <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="revolution-slider.html">Revolution slider</a></li>
+                                            <li><a href="swiper.html">Swiper</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu"><a href="javascript:void(0);">Footer <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="footer1.html">Footer 1</a></li>
+                                            <li><a href="footer2.html">Footer 2</a></li>
+                                            <li><a href="footer3.html">Footer 3</a></li>
+                                            <li><a href="footer4.html">Footer 4</a></li>
+                                            <li><a href="footer5.html">Footer 5</a></li>
+                                            <li><a href="footer6.html">Footer 6</a></li>
+                                            <li><a href="footer7.html">Footer 7</a></li>
+                                            <li><a href="footer-reveal.html">Footer Reveal</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu"><a href="javascript:void(0);">Page Tittle <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="sub-menu"><a href="javascript:void(0);">Size <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="page-tittle-sm.html">Page Tittle Small</a></li>
+                                                    <li><a href="page-tittle-md.html">Page Tittle Medium</a></li>
+                                                    <li><a href="page-tittle-lg.html">Page Tittle Large</a></li>
+                                                    <li><a href="page-tittle-xlg.html">Page Tittle Extra Large</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="sub-menu"><a href="javascript:void(0);">Alignment <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="page-tittle-left.html">Align Left</a></li>
+                                                    <li><a href="page-tittle-right.html">Align Right</a></li>
+                                                    <li><a href="page-tittle-center.html">Align Center</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="page-tittle-bg.html">Stactic Background</a></li>
+                                            <li><a href="page-tittle-parallax.html">Parallax</a></li>
+                                            <li><a href="page-tittle-kenburn.html">Kenburn</a></li>
+                                            <li><a href="page-tittle-video.html">Video</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu"><a href="javascript:void(0);">Page loader <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="loader1.html">Page Loader 1</a></li>
+                                            <li><a href="loader2.html">Page Loader 2</a></li>
+                                            <li><a href="loader3.html">Page Loader 3</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown mega-menu">
+                                <a class="dropdown-toggle" href="javascript:void(0);">Pages <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="mega-menu-content">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul>
+                                                    <li><a href="about-1.html">About us 1</a></li>
+                                                    <li><a href="about-2.html">About us 2</a></li>
+                                                    <li><a href="about-3.html">About us 3</a></li>
+                                                    <li><a href="about-me.html">About Me</a></li>
+                                                    <li><a href="404.html">404 Page</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul>
+                                                    <li><a href="services-1.html">Services 1</a></li>
+                                                    <li><a href="services-2.html">Services 2</a></li>
+                                                    <li><a href="services-3.html">Services 3</a></li>
+                                                    <li><a href="contact-1.html">Contact Us 1</a></li>
+                                                    <li><a href="contact-2.html">Contact Us 2</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul>
+                                                    <li><a href="faq.html">FAQ</a></li>
+                                                    <li><a href="login.html">Login</a></li>
+                                                    <li><a href="login-2.html">Login 2</a></li>
+                                                    <li><a href="register.html">Register</a></li>
+                                                    <li><a href="account.html">My Account</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul>
+                                                    <li><a href="cart.html">Cart</a></li>
+                                                    <li><a href="categories.html">Categories</a></li>
+                                                    <li><a href="checkout.html">Checkout</a></li>
+                                                    <li><a href="product-single.html">Prodct Single</a></li>
+                                                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown mega-menu">
+                                <a class="dropdown-toggle" href="javascript:void(0);">Elements <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="mega-menu-content">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul>
+                                                    <li><a href="accordion.html">Accordion</a></li>
+                                                    <li><a href="buttons.html">Buttons</a></li>
+                                                    <li><a href="cta.html">Call To Action</a></li>
+                                                    <li><a href="columns.html">Columns</a></li>
+                                                    <li><a href="content-blocks.html">Content Blocks</a></li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul>
+                                                    <li><a href="counters.html">Counters</a></li>
+                                                    <li><a href="features-box.html">Features Box</a></li>
+                                                    <li><a href="forms.html">Forms</a></li>
+                                                    <li><a href="icons.html">Icons</a></li>
+                                                    <li><a href="media.html">Media</a></li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul>
+                                                    <li><a href="message-box.html">Message Box</a></li>
+                                                    <li><a href="modal.html">Modal</a></li>
+                                                    <li><a href="pricing-table.html">Pricing Table</a></li>
+                                                    <li><a href="progress-bar.html">Prgress Bar</a></li>
+                                                    <li><a href="rollover.html">Rollover</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul>
+                                                    <li><a href="tabs.html">Tabs</a></li>
+                                                    <li><a href="tables.html">Tables</a></li>
+                                                    <li><a href="team.html">Team</a></li>
+                                                    <li><a href="testimonial.html">Testimonial</a></li>
+                                                    <li><a href="typography.html">Typography</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown mega-menu">
+                                <a class="dropdown-toggle" href="javascript:void(0);">Portfolio <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="mega-menu-content">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <ul>
+                                                    <li class="menu-tittle">Grid</li>
+                                                    <li><a href="portfolio-grid-2-col.html">2 Columns</a></li>
+                                                    <li><a href="portfolio-grid-3-col.html">3 Columns</a></li>
+                                                    <li><a href="portfolio-grid-4-col.html">4 Columns</a></li>
+                                                    <li><a href="portfolio-grid-5-col.html">5 Columns</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <ul>
+                                                    <li class="menu-tittle">Masonry</li>
+                                                    <li><a href="portfolio-masonry-2-col.html">2 Columns</a></li>
+                                                    <li><a href="portfolio-masonry-3-col.html">3 Columns</a></li>
+                                                    <li><a href="portfolio-masonry-4-col.html">4 Columns</a></li>
+                                                    <li><a href="portfolio-masonry-5-col.html">5 Columns</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <ul>
+                                                    <li class="menu-tittle">Single</li>
+                                                    <li><a href="portfolio-single-1.html">Layout 1</a></li>
+                                                    <li><a href="portfolio-single-2.html">Layout 2</a></li>
+                                                    <li><a href="portfolio-single-3.html">Layout 3</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle" href="javascript:void(0);">Blog <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="sub-menu left"><a href="javascript:void(0);">Blog Classic</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="blog-classic-left-sidebar.html">Left Sidebar</a></li>
+                                            <li><a href="blog-classic-right-sidebar.html">Right Sidebar</a></li>
+                                            <li><a href="blog-classic-full-width.html">Full Width</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu left"><a href="javascript:void(0);">Blog Grid <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="blog-grid-2-col.html">2 columns</a></li>
+                                            <li><a href="blog-grid-3-col.html">3 columns</a></li>
+                                            <li><a href="blog-grid-4-col.html">4 columns</a></li>
+											<li><a href="blog-grid-masonry.html">Masonry</a></li>
+                                            <li><a href="blog-grid-left-sidebar.html">Left Sidebar</a></li>
+                                            <li><a href="blog-grid-right-sidebar.html">Right Sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu left"><a href="javascript:void(0);">Blog Card <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="blog-card-2-col.html">2 columns</a></li>
+                                            <li><a href="blog-card-3-col.html">3 columns</a></li>
+                                            <li><a href="blog-card-4-col.html">4 columns</a></li>
+											<li><a href="blog-card-masonry.html">Masonry</a></li>
+                                            <li><a href="blog-card-left-sidebar.html">Left Sidebar</a></li>
+                                            <li><a href="blog-card-right-sidebar.html">Right Sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu left"><a href="javascript:void(0);">Blog List <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="blog-list-left-sidebar.html">Left Sidebar</a></li>
+                                            <li><a href="blog-list-right-sidebar.html">Right Sidebar</a></li>
+                                            <li><a href="blog-list-full-width.html">Full Width</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu left"><a href="javascript:void(0);">Blog Default<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="blog-default-left-sidebar.html">Left Sidebar</a></li>
+                                            <li><a href="blog-default-right-sidebar.html">Right Sidebar</a></li>
+                                            <li><a href="blog-default-full-width.html">Full Width</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu left"><a href="javascript:void(0);">Single Post <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="single-post-left-sidebar.html">Left Sidebar</a></li>
+                                            <li><a href="single-post-right-sidebar.html">Right Sidebar</a></li>
+                                            <li><a href="single-post-full-width.html">Full Width</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            {% endblock %}
+        </header>
+        <!-- Header End -->
+        
+        {% block content %}
+        <!-- Hero Start -->
+        <section id="hero">
+            <div class="fs-hero hero-img" style="background-image:url({% static 'images/bg-48.jpg' %})">
+                <div class="hero-caption center-left text-white">
+					<h2 class="font-weight-light mrg-btm-20">Startup With Eastern</h2>
+					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+					<div class="mrg-top-30">
+						<a class="btn btn-md btn-white"> Start Now</a>
+					</div>
+				</div>
+            </div><!-- /hero-img -->
+        </section>
+        <!-- Hero End -->
+        
+        
+        <!-- About Start -->
+        <section id="about" class="section-1">
+            <div class="container">
+                <div class="content-block-1 row">
+                    <div class="col-md-6">
+                        <div class="text-content">
+                            <h2 class="heading-1">Good to be <span class="theme-color">Creative</span></h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer                             took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                        </div><!-- /text-content -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="img-style-1">
+                            <img class="img-responsive no-mobile-parallax" src="{% static "images/about-bg1.jpg" %}" alt="" data-parallax='{"y": 30}'>
+                        </div><!-- img-style-1 -->
+                    </div>
+                </div>
+                
+                <div class="content-block-1 row">
+                    <div class="col-md-6">
+                        <div class="img-style-1 left">
+                            <img class="img-responsive no-mobile-parallax" src="{% static "images/about-bg2.jpg" %}" alt="" data-parallax='{"y": -30}'>
+                        </div><!-- img-style-1 -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-content-right">
+                            <h2 class="heading-1 right">We Deliver <span class="theme-color">Quality</span></h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer                             took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                        </div><!-- /padding -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About End -->
+        
+        
+        <!-- Features Start -->
+        <section class="section-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="heading-1">Advance Features</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        <p class="mrg-top-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has.</p>
+                        <div class="counter-style-1 mrg-vertical-30 row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <h2 class="counter theme-color">81,425</h2>
+                                <p>Likes</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <h2 class="counter theme-color">52,867</h2>
+                                <p>Shares</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-md-offset-1">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="features-block-1">
+                                    <i class="ei ei-antenna"></i>
+                                    <h4 class="features-tittle">Outstanding</h4>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+                                </div><!-- /features-block-1 -->
+                                <div class="features-block-1">
+                                    <i class="ei ei-heart"></i>
+                                    <h4 class="features-tittle">With Love</h4>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+                                </div><!-- /features-block-1 -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="features-block-1">
+                                    <i class="ei ei-smartphone"></i>
+                                    <h4 class="features-tittle">Responsive</h4>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+                                </div><!-- /features-block-1 -->
+                                <div class="features-block-1">
+                                    <i class="ei ei-hanger"></i>
+                                    <h4 class="features-tittle">Easy to use</h4>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+                                </div><!-- /features-block-1 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features End -->
+        
+        
+        <!-- Portfolio Start -->
+        <section class="section-1">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Recent <span class="theme-color">Works</span></h2>
+                    <p>Lorem Ipsum is simply dummy text</p>
+                </div><!-- / text-center -->
+                <div class="row mrg-top-50">
+                    <div class="col-md-4">
+                        <a href="#" class="folio-item mrg-btm-30">
+                            <div class="folio-style-1">
+                                <div class="folio-image">
+                                    <img class="img-responsive" src="{% static "images/portfolio/folio-1.jpg" %}" alt="">
+                                </div><!-- /folio-image -->
+                                <div class="overlay">
+                                    <div class="folio-caption">
+                                        <div class="folio-content">
+                                            <h3 class="folio-tittle">A Pool</h3>
+                                            <span>Web / Graphic</span>
+                                        </div><!-- /folio-content -->
+                                    </div><!-- /folio-caption -->
+                                </div><!-- /overlay -->
+                            </div><!-- folio-style -->
+                        </a><!-- /folio-item -->
+                    </div>
+                    <div class="col-md-8">
+                        <a href="#" class="folio-item mrg-btm-30">
+                            <div class="folio-style-1">
+                                <div class="folio-image">
+                                    <img class="img-responsive" src="{% static "images/portfolio/folio-2.jpg" %}" alt="">
+                                </div><!-- /folio-image -->
+                                <div class="overlay">
+                                    <div class="folio-caption">
+                                        <div class="folio-content">
+                                            <h3 class="folio-tittle">Collapse Book</h3>
+                                            <span>Print / Graphic</span>
+                                        </div><!-- /folio-content -->
+                                    </div><!-- /folio-caption -->
+                                </div><!-- /overlay -->
+                            </div><!-- folio-style -->
+                        </a><!-- /folio-item -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="#" class="folio-item mrg-btm-30">
+                                    <div class="folio-style-1">
+                                        <div class="folio-image">
+                                            <img class="img-responsive" src="{% static "images/portfolio/folio-3.jpg" %}" alt="">
+                                        </div><!-- /folio-image -->
+                                        <div class="overlay">
+                                            <div class="folio-caption">
+                                                <div class="folio-content">
+                                                    <h3 class="folio-tittle">Drunk Cinder</h3>
+                                                    <span>Print / Graphic</span>
+                                                </div><!-- /folio-content -->
+                                            </div><!-- /folio-caption -->
+                                        </div><!-- /overlay -->
+                                    </div><!-- folio-style -->
+                                </a><!-- /folio-item -->
+                            </div>
+                             <div class="col-md-6">
+                                <a href="#" class="folio-item mrg-btm-30">
+                                    <div class="folio-style-1">
+                                        <div class="folio-image">
+                                            <img class="img-responsive" src="{% static "images/portfolio/folio-4.jpg" %}" alt="">
+                                        </div><!-- /folio-image -->
+                                        <div class="overlay">
+                                            <div class="folio-caption">
+                                                <div class="folio-content">
+                                                    <h3 class="folio-tittle">Full Meal</h3>
+                                                    <span>Print / Graphic</span>
+                                                </div><!-- /folio-content -->
+                                            </div><!-- /folio-caption -->
+                                        </div><!-- /overlay -->
+                                    </div><!-- folio-style -->
+                                </a><!-- /folio-item -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /contaner -->
+        </section>
+        <!-- Portfolio End -->        
+        
+        
+        <!-- Testimonial Start -->
+        <section class="section-3">
+            <div class="content-block-2">
+                <div class="image-container col-md-offset-6 col-md-6">
+                    <div class="background-holder has-content" style="background-image: url({% static 'images/bg-2.jpg' %})">
+                        <div class="content">
+                            <img class="img-responsive mrg-horizon-auto" src="{% static "images/logo/logo-1.png" %}" alt="">
+                        </div><!-- content -->
+                    </div><!-- /background-holder -->
+                </div><!-- /image-container -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-content">
+                                <h2 class="mrg-btm-40">Clients Said</h2>
+                                <div class="testimonial-1">
+                                    <div class="swiper-single swiper-container">
+                                        <div class="swiper-wrapper mrg-btm-70">
+                                            <div class="swiper-slide">
+                                                <span class="client theme-color">CARTER DOE - COMPANY INC</span>
+                                                <p class="quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries,</p>
+                                            </div><!-- /swiper-slide -->
+                                            <div class="swiper-slide">
+                                                <span class="client theme-color">CARTER DOE - COMPANY INC</span>
+                                                <p class="quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries,</p>
+                                            </div><!-- /swiper-slide -->
+                                            <div class="swiper-slide">
+                                                <span class="client theme-color">CARTER DOE - COMPANY INC</span>
+                                                <p class="quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries,</p>
+                                            </div><!-- /swiper-slide -->
+                                        </div><!-- /swiper-wrapper -->
+                                        <div class="swiper-navigation">
+                                            <div class="swiper-button-next"><i class="ei ei-right-chevron-boxed"></i></div>
+                                            <div class="swiper-button-prev"><i class="ei ei-left-chevron-boxed"></i></div>
+                                        </div><!-- /swiper-navigation -->
+                                    </div><!-- /swiper-container -->
+                                </div><!-- /testimonial-1 -->
+                            </div><!-- /content -->
+                        </div>
+                    </div>
+                </div>            
+            </div><!-- /content-block-2 -->
+        </section>
+        <!-- Testimonial End -->
+        
+        
+        <!-- Blog Start -->
+        <section class="section-2">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Freash <span class="theme-color">News</span></h2>
+                    <p>Lorem Ipsum is simply dummy text </p>
+                </div><!-- /text-center -->
+                <div class="blog-default mrg-top-70">
+                    <div class="blog-item">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <img class="img-responsive" src="{% static "images/blog/blog-1.jpg" %}" alt="" data-parallax='{"y": 30}'>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="blog-content">
+                                    <h3 class="blog-tittle">Lorem Ipsum is simply dummy text </h3>
+                                    <div class="blog-meta">
+                                        <span class="author">By Henry Chew</span>,
+                                        <span class="date"> May 18th 2016</span>
+                                    </div><!-- /blog-meta -->
+                                    <p class="blog-article">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries,</p>
+                                    <div class="continue-reading">
+                                        <a href="#"><i class="ei ei-right-arrow"></i></a>
+                                    </div><!-- /continue-reading -->
+                                </div><!-- /blog-content -->
+                            </div>
+                        </div>
+                    </div><!-- /blog-item  -->
+                    <div class="blog-item">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="blog-content left">
+                                    <h3 class="blog-tittle">Lorem Ipsum is simply dummy text </h3>
+                                    <div class="blog-meta">
+                                        <span class="author">By Henry Chew</span>,
+                                        <span class="date"> May 18th 2016</span>
+                                    </div><!-- /blog-meta -->
+                                    <p class="blog-article">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries,</p>
+                                    <div class="continue-reading">
+                                        <a href="#"><i class="ei ei-right-arrow"></i></a>
+                                    </div><!-- /continue-reading -->
+                                </div><!-- /blog-content -->
+                            </div>
+                            <div class="col-md-7">
+                                <img class="img-responsive" src="{% static "images/blog/blog-2.jpg" %}" alt="" data-parallax='{"y": -30}'>
+                            </div>
+                        </div>
+                    </div><!-- /blog-item  -->
+                </div><!-- /blog-default -->
+            </div><!-- container -->
+        </section>
+        <!-- Blog End -->
+        {% endblock %}
+    </div><!-- wrapper -->
+    
+    {% block footer %}
+    <!-- Footer Start -->
+    <section class="footer-default">
+        <div class="container">
+            <div class="row mrg-btm-30">
+                <div class="col-md-3">
+                    <div class="widget widget-about">
+                        <img class="img-responsive" src="{% static "images/logo/logo-1.png" %}" alt="">
+                        <p class="mrg-top-30">Lorem Ipsum is simply dummy text of the printing and typesettingindustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    </div><!-- /widget-about -->
+                </div>
+                <div class="col-md-4 col-md-offset-1">
+                    <div class="widget widget-link">
+                        <h3 class="widget-tittle">Useful Link</h3>
+                        <div class="row mrg-btm-30">
+                            <div class="col-md-6">
+                                <ul class="link">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Career</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="link">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Career</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="widget widget-news">
+                        <h3 class="widget-tittle">News</h3>
+                        <div class="news-item">
+                            <div class="news-media">
+                                <img class="img-responsive" src="{% static "images/news-1.jpg" %}" alt="">
+                            </div>
+                            <div class="news-info">
+                                <a href="#" class="news-tittle">Feel the Inovation</a>
+                                <span class="news-meta">By <a href="#" class="author">Hendry Chew</a> 3 April</span>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <div class="news-media">
+                                <img class="img-responsive" src="{% static "images/news-2.jpg" %}" alt="">
+                            </div>
+                            <div class="news-info">
+                                <a href="#" class="news-tittle">Feel the Inovation</a>
+                                <span class="news-meta">By <a href="#" class="author">Hendry Chew</a> 3 April</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <span class="copyright"><img class="pdd-right-10" src="{% static "images/logo/logo-3.png" %}" alt="eastern"> Copyright © 2016 Eastern. <a href="https://wrapbootstrap.com/user/Nate93">Theme_Nate</a></span>    
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    {% endblock %}
+    
+    <!-- Jquery Plugins -->
+    <script type="text/javascript" src="{% static "js/jquery-2.1.4.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/bootstrap/js/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/smoothscroll/smoothscroll.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/easing/jquery.easing.1.3.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/wow/wow.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/counter-up/waypoints.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/counter-up/jquery.counterup.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/imagesloaded/imagesloaded.pkgd.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/isotope/isotope.pkgd.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/magnific-popup/js/jquery.magnific-popup.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/youtube-player/js/jquery.mb.YTPlayer.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/swiper/js/swiper.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/parallax-scroll-master/jquery.parallax-scroll.js" %}"></script>
+    <script type="text/javascript" src="{% static "plugins/validation/jquery.validate.min.js" %}"></script>
+
+    
+    <!--[if lt IE 9]>
+    <script src="{% static "plugins/ie/html5shiv.js" %}"></script>
+    <script src="{% static "plugins/ie/respond.min.js" %}"></script>
+    <![endif]-->
+    
+    <!-- Java Scripts -->
+    <!-- <script type="text/javascript" src="{% static "js/google-map.js" %}"></script>
+         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false" %}"></script>-->
+    <script type="text/javascript" src="{% static "js/email.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+    {% block extrajs %}
+    {% endblock %}
+</body>
+
+</html>

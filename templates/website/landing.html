@@ -1,20 +1,280 @@
-landing
+{% extends "base/base.html" %}
+{% load static %}
 
-{% if user.is_authenticated %}
-    <a href="{% url "profile" %}">프로필</a>
-    <a href="{% url "logout" %}">로그아웃</a>
-{% else %}
-    <a href="{% url "login" %}">로그인</a>
-    <a href="{% url "user_create" %}">회원가입</a>
-{% endif %}
+{% block nav %}
+<nav class="navbar">
+    <div class="container">
+        <div class="menu-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="top-bar"></span>
+                <span class="middle-bar"></span>
+                <span class="bottom-bar"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="nav-logo">
+                <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/logo/logo-1.png" %}" alt="Eastern"></a>
+                <a class="logo" href="{% url "website:home" %}"><img class="logo-dark" src="{% static "images/logo/logo-2.png" %}" alt="Eastern"></a>
+            </div>                    
+        </div>
+        <div class="collapse navbar-collapse nav-collapse">
+            <ul class="nav navbar-nav" >
+                <li class="nav-item">
+                    <a href="{% url "login" %}">login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url "user_create" %}">signup</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+{% block content %}
+<!-- Hero Start -->
+<section>
+    <div class="fs-hero hero-img fixed-bg" style="background-image:url({% static 'images/main.jpg' %})">
+        <div class="hero-caption text-white center">
+            <i class="ei ei-heart font-size-50 wow animated fadeInUp"></i>
+            <h1 class="no-mrg-top wow animated fadeInUp" data-wow-delay="500ms">VLASOM</h1>
+            <h4 class="font-weight-light wow animated fadeInUp" data-wow-delay="800ms">VaLuable And Special Own Moment</h4>
+            <div class="border-4 width-30 mrg-horizon-auto mrg-vertical-30 wow animated fadeInUp" data-wow-delay="1100ms"></div>
+            <div class="btn btn-lg btn-round btn-theme wow animated fadeInUp" data-wow-delay="1400ms">view more</div>
+        </div>
+    </div>
+</section>
+<!-- Hero End -->
 
-<br/>
-<br/>
-<hr/>
-<br/>
-<br/>
-{% for contents in hot_contents %}
-{{ contents.user}} / {{ contents.category_1 }} / {{ contents.category_2 }}
-<br/>
-<hr/>
-{% endfor %}
+<!-- About Start -->
+<section class="section-1">
+    <div class="container">
+        <div class="content-block-1 row">
+            <div class="col-md-6">
+                <div class="img-style-1 left">
+                    <img class="img-responsive no-mobile-parallax" src="{% static "images/about-bg2.jpg" %}" alt="" data-parallax='{"y": -30}'>
+                </div><!-- img-style-1 -->
+            </div>
+            <div class="col-md-6">
+                <div class="text-content-right text-right">
+                    <h2 class="right font-weight-bold">소중한 사람과 소중한 순간</h2>
+                    <div class="border-4"></div>
+                    <p class="not-width-contraint mrg-top-10 text-dark font-weight-bold">사랑하는 연인, 가족, 친구들과의 잊지못할 소중한 순간을<br/>
+                    누구보다 특별하게 간직하고 싶다면<br/>
+                    <br/>
+                    어떤 사진을 남겨야 할까요?</p>
+                </div><!-- /padding -->
+            </div>
+        </div>
+
+        <div class="content-block-1 row">
+            <div class="col-md-6">
+                <div class="text-content">
+                    <h2 class="font-weight-bold">스쳐지나가는 정보들</span></h2>
+                    <div class="border-4"></div>
+                    <p class="not-width-contraint mrg-top-10 text-dark font-weight-bold">SNS속 무수히 많은 사진찍는 방법들<br/>
+                    무심코 흘려 넘겼는데 막상 어디서 찾을지 모르겠다면<br/>
+                    <br/>
+                    어떻게 구할 수 있을까요?</p>
+                </div><!-- /text-content -->
+            </div>
+            <div class="col-md-6">
+                <div class="img-style-1">
+                    <img class="img-responsive no-mobile-parallax" src="{% static "images/about-bg1.jpg" %}" alt="" data-parallax='{"y": 30}'>
+                </div><!-- img-style-1 -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About End -->
+
+<!-- Description Start -->
+<section class="section-2 theme-color-bg opacity-50">
+    <div class="text-center text-white">
+        <h1>VLASOM</h1>
+        <h1>소중한 순간을 꽃피웁니다</h1>
+        <br/>
+        <h3>곳곳에 흩어져 있던 다양한 사진 촬영 방법들이 이곳으로 모입니다.<br/>
+        그리고 여러분들이 가진 꿀팁들도 서로 공유할 수 있습니다.</h3>
+    </div>
+</section>
+<!-- Description End -->
+
+<!-- Portfolio Start -->
+<section class="section-no-btm-sm">
+    <div class="container mrg-btm-30">				
+        <div class="portfolio isotope masonry row col-3 gutter mrg-top-50">
+            <div class="folio-item web-design">
+                <div class="folio-style-3">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="{% static "images/portfolio/folio-26.jpg" %}" alt="">
+                    </div><!-- /folio-image -->
+                    <div class="overlay">								
+                    </div><!-- /overlay -->
+                    <div class="folio-caption">
+                        <div class="pull-left">
+                            <h3 class="folio-tittle"><a href="">Variations</a></h3>
+                            <br>
+                            <span class="describe">Web Design</span>
+                        </div><!-- /pull-left -->
+                        <div class="folio-action pull-right">
+                            <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
+                            <a href="#"><i class="ei ei-heart"></i></a> 
+                        </div><!-- /folio-action -->
+                    </div><!-- /folio-caption -->
+                </div><!-- folio-style -->
+            </div><!-- /folio-item -->
+            <div class="folio-item branding">
+                <div class="folio-style-3">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="{% static "images/portfolio/folio-36.jpg" %}" alt="">
+                    </div><!-- /folio-image -->
+                    <div class="overlay">								
+                    </div><!-- /overlay -->
+                    <div class="folio-caption">
+                        <div class="pull-left">
+                            <h3 class="folio-tittle"><a href="">Variations</a></h3>
+                            <br>
+                            <span class="describe">Web Design</span>
+                        </div><!-- /pull-left -->
+                        <div class="folio-action pull-right">
+                            <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
+                            <a href="#"><i class="ei ei-heart"></i></a> 
+                        </div><!-- /folio-action -->
+                    </div><!-- /folio-caption -->
+                </div><!-- folio-style -->
+            </div><!-- /folio-item -->
+            <div class="folio-item apps">
+                <div class="folio-style-3">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="{% static "images/portfolio/folio-27.jpg" %}" alt="">
+                    </div><!-- /folio-image -->
+                    <div class="overlay">								
+                    </div><!-- /overlay -->
+                    <div class="folio-caption">
+                        <div class="pull-left">
+                            <h3 class="folio-tittle"><a href="">Variations</a></h3>
+                            <br>
+                            <span class="describe">Web Design</span>
+                        </div><!-- /pull-left -->
+                        <div class="folio-action pull-right">
+                            <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
+                            <a href="#"><i class="ei ei-heart"></i></a> 
+                        </div><!-- /folio-action -->
+                    </div><!-- /folio-caption -->
+                </div><!-- folio-style -->
+            </div><!-- /folio-item -->
+            <div class="folio-item photography">
+                <div class="folio-style-3">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="{% static "images/portfolio/folio-33.jpg" %}" alt="">
+                    </div><!-- /folio-image -->
+                    <div class="overlay">								
+                    </div><!-- /overlay -->
+                    <div class="folio-caption">
+                        <div class="pull-left">
+                            <h3 class="folio-tittle"><a href="">Variations</a></h3>
+                            <br>
+                            <span class="describe">Web Design</span>
+                        </div><!-- /pull-left -->
+                        <div class="folio-action pull-right">
+                            <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
+                            <a href="#"><i class="ei ei-heart"></i></a> 
+                        </div><!-- /folio-action -->
+                    </div><!-- /folio-caption -->
+                </div><!-- folio-style -->
+            </div><!-- /folio-item -->
+            <div class="folio-item web-design">
+                <div class="folio-style-3">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="{% static "images/portfolio/folio-37.jpg" %}" alt="">
+                    </div><!-- /folio-image -->
+                    <div class="overlay">								
+                    </div><!-- /overlay -->
+                    <div class="folio-caption">
+                        <div class="pull-left">
+                            <h3 class="folio-tittle"><a href="">Variations</a></h3>
+                            <br>
+                            <span class="describe">Web Design</span>
+                        </div><!-- /pull-left -->
+                        <div class="folio-action pull-right">
+                            <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
+                            <a href="#"><i class="ei ei-heart"></i></a> 
+                        </div><!-- /folio-action -->
+                    </div><!-- /folio-caption -->
+                </div><!-- folio-style -->
+            </div><!-- /folio-item -->
+            <div class="folio-item branding">
+                <div class="folio-style-3">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="{% static "images/portfolio/folio-29.jpg" %}" alt="">
+                    </div><!-- /folio-image -->
+                    <div class="overlay">								
+                    </div><!-- /overlay -->
+                    <div class="folio-caption">
+                        <div class="pull-left">
+                            <h3 class="folio-tittle"><a href="">Variations</a></h3>
+                            <br>
+                            <span class="describe">Web Design</span>
+                        </div><!-- /pull-left -->
+                        <div class="folio-action pull-right">
+                            <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
+                            <a href="#"><i class="ei ei-heart"></i></a> 
+                        </div><!-- /folio-action -->
+                    </div><!-- /folio-caption -->
+                </div><!-- folio-style -->
+            </div><!-- /folio-item -->
+            <div class="folio-item apps">
+                <div class="folio-style-3">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="{% static "images/portfolio/folio-38.jpg" %}" alt="">
+                    </div><!-- /folio-image -->
+                    <div class="overlay">								
+                    </div><!-- /overlay -->
+                    <div class="folio-caption">
+                        <div class="pull-left">
+                            <h3 class="folio-tittle"><a href="">Variations</a></h3>
+                            <br>
+                            <span class="describe">Web Design</span>
+                        </div><!-- /pull-left -->
+                        <div class="folio-action pull-right">
+                            <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
+                            <a href="#"><i class="ei ei-heart"></i></a> 
+                        </div><!-- /folio-action -->
+                    </div><!-- /folio-caption -->
+                </div><!-- folio-style -->
+            </div><!-- /folio-item -->
+            <div class="folio-item photography">
+                <div class="folio-style-3">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="{% static "images/portfolio/folio-28.jpg" %}" alt="">
+                    </div><!-- /folio-image -->
+                    <div class="overlay">								
+                    </div><!-- /overlay -->
+                    <div class="folio-caption">
+                        <div class="pull-left">
+                            <h3 class="folio-tittle"><a href="">Variations</a></h3>
+                            <br>
+                            <span class="describe">Web Design</span>
+                        </div><!-- /pull-left -->
+                        <div class="folio-action pull-right">
+                            <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
+                            <a href="#"><i class="ei ei-heart"></i></a> 
+                        </div><!-- /folio-action -->
+                    </div><!-- /folio-caption -->
+                </div><!-- folio-style -->
+            </div><!-- /folio-item -->					
+        </div><!-- /portfolio -->				
+    </div>
+</section>
+<!-- Portfolio End -->
+{% endblock %}
+
+{% block footer %}
+<footer class="theme-color-bg section-5">
+    <div class="text-center text-white">
+        <h1>VLASOM</h1>
+        <h1>사진을 꽃피우다</h1>
+        <a class="btn btn-lg btn-round btn-theme-inverse mrg-top-20 mrg-right-10" href="{% url "login" %}">로그인</a>
+        <a class="btn btn-lg btn-round btn-white-opacity mrg-top-20 mrg-left-10" href="{% url "user_create" %}">회원가입</a>
+    </div>
+</footer>
+{% endblock %}

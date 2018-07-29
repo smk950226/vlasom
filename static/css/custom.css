@@ -1,0 +1,39 @@
+/*---------------------------------------------------------------------------
+  Theme: Eastern
+  
+  Your CSS goes here
+----------------------------------------------------------------------------*/
+
+
+hr {
+  border-color: #c72949;
+}
+.border-4 {
+  height: 4px;
+  background-color: #c72949;
+}
+.btn-sm.btn-round {
+  border-radius: 12px;
+}
+.btn-md.btn-round {
+  border-radius: 15px;
+}
+.btn-lg.btn-round {
+  border-radius: 17px;
+}
+.opacity-50{
+  opacity: .5;
+}
+.btn-white-opacity {
+  background-color: #fff;
+  color: #c72949;
+  -webkit-box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.08);
+}
+
+.btn-white-opacity:hover,
+.btn-white-opacity:focus {
+  color: #fff;
+  background-color: #cd807e;
+}

@@ -1,0 +1,242 @@
+/*================================
+===========  General  ============
+================================*/
+a:hover, a:focus {
+  color: #c72949; }
+
+.theme-color {
+  color: #c72949; }
+
+.theme-color-bg {
+  background-color: #c72949; }
+
+/*================================
+===========  Section  ============
+================================*/
+.theme-overlay:before {
+  background-color: #c72949; }
+
+/*================================
+===========  Headers  ============
+================================*/
+.header .navbar-collapse ul.navbar-nav > li:hover > a, .header .navbar-collapse ul.navbar-nav > li:focus > a, .header .navbar-collapse ul.navbar-nav > li.active > a {
+  color: #c72949; }
+.header.header-sticky.sticky .navbar-collapse ul.navbar-nav > li:hover > a, .header.header-sticky.sticky .navbar-collapse ul.navbar-nav > li:focus > a, .header.header-sticky.sticky .navbar-collapse ul.navbar-nav > li.active > a {
+  color: #c72949; }
+.header.header-full-screen .fs-nav .fs-nav-item:hover a .fs-nav .fs-nav-item:hover a {
+  background-color: #c72949; }
+.header .cart-menu .check-out {
+  background-color: #c72949; }
+.header .cart-menu a.check-out:hover {
+  background-color: #c72949; }
+
+/*===================================
+===========  Page Title  ============
+===================================*/
+.breadcrumb li a:hover {
+  color: #c72949; }
+
+.dark-overlay .breadcrumb li a:hover {
+  color: #c72949; }
+
+/*================================
+===========  Loaders  ============
+================================*/
+.loader-wrapper .loader-1:before {
+  border-color: #c72949; }
+.loader-wrapper .loader-2 {
+  border-top-color: #c72949; }
+
+/*================================
+===========  Buttons  ============
+================================*/
+.btn-theme {
+  background-color: #c72949;
+  border-color: #c72949; }
+  .btn-theme:hover, .btn-theme:focus {
+    background-color: #cd807e;
+    border-color: #cd807e; }
+
+.btn-theme-inverse {
+  color: #fff;
+  border-color: #cd807e;
+  background-color: #cd807e; }
+  .btn-theme-inverse:hover, .btn-theme-inverse:focus {
+    background-color: #fff;
+    border-color: #fff; }
+
+.btn-white:hover, .btn-white:focus,
+.btn-gray:hover,
+.btn-gray:focus {
+  background-color: #c72949; }
+
+.btn-white-inverse:hover, .btn-white-inverse:focus {
+  background-color: #c72949;
+  border: 2px solid #c72949 !important; }
+
+/*================================
+===========  Heading  ============
+================================*/
+.heading-1:after {
+  border-color: #c72949; }
+
+/*===============================
+===========  Images  ============
+================================*/
+.img-style-1:before {
+  background-color: #ffffff; }
+
+/*========================================
+===========  Features Blocks  ============
+========================================*/
+.features-block-1:hover i {
+  color: #c72949; }
+
+.features-block-3:hover i {
+  color: #c72949; }
+
+.features-block-5:hover i {
+  color: #c72949; }
+
+/*============================
+===========  Tab  ============
+============================*/
+.tab-style-1 li.active .a {
+  color: #c72949; }
+.tab-style-1 li.active > a:after {
+  background-color: #c72949; }
+.tab-style-1 li a:hover, .tab-style-1 li a:focus {
+  color: #c72949; }
+  .tab-style-1 li a:hover:after, .tab-style-1 li a:focus:after {
+    background-color: #c72949; }
+
+.tab-style-3.theme-style li {
+  background-color: #c72949; }
+  .tab-style-3.theme-style li.active > a {
+    background-color: #da4967; }
+  .tab-style-3.theme-style li a:hover, .tab-style-3.theme-style li a:focus {
+    background-color: #d53455; }
+
+/*lighten 10% */
+.tab-style-3.theme-style li.active > a {
+  background-color: #5e91f3; }
+
+/* lighten 5% */
+.tab-style-3.theme-style li a:hover,
+.tab-style-3.theme-style li a:focus {
+  background-color: #4681f2; }
+
+.tab-style-4 li.active > a {
+  color: #c72949; }
+  .tab-style-4 li.active > a:hover, .tab-style-4 li.active > a:focus {
+    color: #c72949; }
+  .tab-style-4 li.active > a:after {
+    background-color: #c72949; }
+.tab-style-4 li a:hover, .tab-style-4 li a:focus {
+  color: #c72949; }
+  .tab-style-4 li a:hover:after, .tab-style-4 li a:focus:after {
+    background-color: #c72949; }
+
+/*==============================
+===========  Team   ============
+==============================*/
+.team-4 ul.team-tab li a:before {
+  background-color: #c72949; }
+
+/*=================================
+===========  Pricing   ============
+=================================*/
+.pricing-2 .pricing-table.recommended .pricing-footer .btn {
+  background-color: #c72949; }
+
+/*=====================================
+===========  Progess Bar   ============
+=====================================*/
+.progress-wrapper .progress.progress-theme .progress-bar {
+  background-color: #c72949; }
+
+/*==================================
+===========  Timeline   ============
+==================================*/
+.timeline ul li:hover
+.timeline ul li.active .timeline-content:before {
+  border-color: #c72949; }
+
+/*=============================
+===========  Form  ============
+=============================*/
+input.material-input.theme-color:focus,
+textarea.material-input.theme-color:focus {
+  border-color: #c72949; }
+
+.radio.theme-color input[type="radio"]:checked + label:before {
+  border-color: #c72949; }
+.radio.theme-color input[type="radio"] + label:after {
+  background-color: #c72949; }
+
+.checkbox.theme-color input[type="checkbox"]:checked + label:after {
+  background-color: #c72949; }
+
+/*=======================================
+===========  Swiper Slider   ============
+=======================================*/
+.swiper-bullet-1.theme-bullet .swiper-pagination-bullet-active:after {
+  border-color: #c72949; }
+
+.theme-bullet .swiper-pagination-bullet-active {
+  background-color: #c72949; }
+
+/*===============================
+===========  Widget  ============
+===============================*/
+.widget-news .news-item .news-info .author {
+  color: #bb2c47; }
+
+.widget-tags.theme-color ul li a:hover {
+  background-color: #c72949; }
+
+/*=====================================
+===========  Blog Default  ============
+=====================================*/
+.blog-default .blog-item .author {
+  color: #c72949; }
+.blog-default .blog-item .blog-meta:after {
+  background-color: #c72949; }
+
+/*==================================
+===========  Blog grid  ============
+==================================*/
+.blog-grid .blog-item .author {
+  color: #c72949; }
+
+/*=====================================
+===========  Blog Classic  ============
+=====================================*/
+.blog-classic .blog-item .blog-content .blog-action a:hover {
+  color: #c72949; }
+.blog-classic .blog-item .blog-content .continue-reading:hover {
+  color: #c72949; }
+
+/*==================================
+===========  Blog Card  ============
+==================================*/
+.blog-card .blog-item .blog-wrapper .blog-content .blog-action .likes a:hover,
+.blog-card .blog-item .blog-wrapper .blog-content .blog-action .comments a:hover,
+.blog-card .blog-item .blog-wrapper .blog-content .blog-action .share a:hover {
+  color: #c72949; }
+.blog-card .blog-item .blog-wrapper .blog-content .blog-action .continue-reading:hover, .blog-card .blog-item .blog-wrapper .blog-content .blog-action .continue-reading:focus {
+  border-color: #c72949;
+  background-color: #c72949; }
+.blog-card .blog-item .blog-wrapper .blog-content .blog-meta .author,
+.blog-card .blog-item .blog-wrapper .blog-content .blog-meta-alt .author {
+  color: #c72949; }
+.blog-card .blog-item .blog-wrapper.theme-color-bg {
+  background-color: #c72949; }
+
+/*=========================================
+===========  Blog Single Post  ============
+=========================================*/
+.single-post-cover .blog-meta .author:hover {
+  color: #c72949; }
+
+/*# sourceMappingURL=red.css.map */

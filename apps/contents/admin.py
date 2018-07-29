@@ -16,3 +16,8 @@ class ContentsAdmin(admin.ModelAdmin):
     search_field = ['user__username', 'category_1']
     list_filter = ['user', 'category_1']
     ordering = ['-id', '-views', '-like_count', '-interest_count']
+
+
+@admin.register(ContentsImages)
+class ContentsImagesAdmin(admin.ModelAdmin):
+    list_display = ['contents']
