@@ -37,3 +37,7 @@ hr {
   color: #fff;
   background-color: #cd807e;
 }
+.border-top-bottom{
+  border-top: 2px solid #c72949;
+  border-bottom: 2px solid #c72949;
+}

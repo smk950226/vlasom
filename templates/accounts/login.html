@@ -1,4 +1,98 @@
-{% load socialaccount %}
+{% extends "base/base.html" %}
+{% load socialaccount static %}
+
+{% block content %}
+<!-- Hero Start -->
+<section id="hero">
+        <div class="fs-hero hero-img" style="background-image:url({% static 'images/login.jpg' %})">
+            <div class="hero-caption text-white center-left">
+                <h3 class="font-weight-light">Adventure Mind</h3>
+                <h1 class="ls-2">Start Your Journey</h1>
+                <p class="mrg-top-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. printer took a galley of type and scrambled it to make a type .</p>
+                <div class="mrg-top-20">
+                    <a href class="btn btn-white-inverse btn-md">Read More</a>
+                </div><!-- margin -->
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+
+</div>
+<!-- wrapper -->
+
+    
+<!-- Modal Start -->
+<div class="modal fade modal-center load-active" id="login" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body no-pdd">
+                <div class="login-panel pdd-horizon-15 pdd-vertical-30">
+                    <h2 class="theme-color text-center">Sign your Account</h2>
+                    <form action="" method="post" class="row mrg-top-20">
+                        {% csrf_token %}
+                        <div class="col-xs-9">
+                            <div class="row mrg-top-10">
+                                <div class="col-xs-1 col-xs-offset-3">
+                                    <img src="{% static "images/logo/logo-3.png" %}" alt="">
+                                </div>
+                                <div class="col-xs-8">
+                                    <input class="form-control" type="text" name="username" autofocus="" maxlength="254" required="" id="id_username">
+                                    {{ form.username.error }}
+                                </div>
+                            </div>
+                            <div class="row mrg-top-10">
+                                <div class="col-xs-1 col-xs-offset-3">
+                                    <img src="{% static "images/logo/logo-3.png" %}" alt="">
+                                </div>
+                                <div class="col-xs-8">
+                                    <input class="form-control" type="password" name="password" required="" id="id_password">
+                                    {{ form.password.error }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3">
+                            <button type="submit">login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-xs-offset-3"> 
+                        <div class="col-sm-6 text-left">
+                            <p><a href="{% url "user_create" %}">회원가입</a></p>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <p><a href="{% url "find_id" %}">아이디</a> / <a href="{% url "password_reset" %}">비밀번호 찾기</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mrg-top-20 mrg-btm-30">
+                    {% for provider in providers %}
+                        {% if provider.social_app %}
+                        <div class="col-xs-2 {% if forloop.first %}col-xs-offset-3{% endif %} text-center">
+                            <a href="{% provider_login_url provider.id %}">
+                                <div class="border-top-bottom pdd-vertical-15">
+                                    <p class="theme-color">
+                                        login with<br/>
+                                        {{ provider.name }}
+                                    </p>
+                                    <img src="{% static "images/logo/logo-3.png" %}" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="modal-close">
+                    <button type="button" class="btn icon-btn-md icon-btn-round btn-dark lh-0" data-dismiss="modal"><i class="ei ei-close"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal End -->
+{% endblock %}
+{% block footer %}
+{% endblock %}
 
 로그인
 {% for provider in providers %}
