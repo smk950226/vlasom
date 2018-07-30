@@ -1184,7 +1184,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 1.1;
   color: inherit;
 }
@@ -1292,7 +1292,7 @@ p {
 .lead {
   margin-bottom: 20px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: normal;
   line-height: 1.4;
 }
 @media (min-width: 768px) {
@@ -4969,7 +4969,7 @@ a.badge:focus {
 .jumbotron p {
   margin-bottom: 15px;
   font-size: 21px;
-  font-weight: 200;
+  font-weight: lighter;
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;

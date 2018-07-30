@@ -12,8 +12,8 @@
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="nav-logo">
-                <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/logo/logo-1.png" %}" alt="Eastern"></a>
-                <a class="logo" href="{% url "website:home" %}"><img class="logo-dark" src="{% static "images/logo/logo-2.png" %}" alt="Eastern"></a>
+                <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/nav-logo-white.png" %}" alt="Eastern"></a>
+                <a class="logo" href="{% url "website:home" %}"><img class="logo-dark" src="{% static "images/nav-logo-red.png" %}" alt="Eastern"></a>
             </div>                    
         </div>
         <div class="collapse navbar-collapse nav-collapse">
@@ -34,11 +34,10 @@
 <section>
     <div class="fs-hero hero-img fixed-bg" style="background-image:url({% static 'images/main.jpg' %})">
         <div class="hero-caption text-white center">
-            <i class="ei ei-heart font-size-50 wow animated fadeInUp"></i>
-            <h1 class="no-mrg-top wow animated fadeInUp" data-wow-delay="500ms">VLASOM</h1>
-            <h4 class="font-weight-light wow animated fadeInUp" data-wow-delay="800ms">VaLuable And Special Own Moment</h4>
-            <div class="border-4 width-30 mrg-horizon-auto mrg-vertical-30 wow animated fadeInUp" data-wow-delay="1100ms"></div>
-            <div class="btn btn-lg btn-round btn-theme wow animated fadeInUp" data-wow-delay="1400ms">view more</div>
+            <img class="wow animated fadeInUp" src="{% static "images/logo-large.png" %}" alt=""><br/>
+            <img class="no-mrg-top wow animated fadeInUp" data-wow-delay="500ms" src="{% static "images/landing-letter.png" %}" alt="">
+            <div class="border-4 width-50 mrg-horizon-auto mrg-vertical-30 wow animated fadeInUp" data-wow-delay="800ms"></div>
+            <div class="btn btn-lg btn-round btn-theme wow animated fadeInUp" data-wow-delay="1100ms">view more</div>
         </div>
     </div>
 </section>
@@ -48,37 +47,37 @@
 <section class="section-1">
     <div class="container">
         <div class="content-block-1 row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="img-style-1 left">
-                    <img class="img-responsive no-mobile-parallax" src="{% static "images/about-bg2.jpg" %}" alt="" data-parallax='{"y": -30}'>
+                    <img class="img-responsive no-mobile-parallax" src="{% static "images/landing-1.png" %}" alt="" data-parallax='{"y": -30}'>
                 </div><!-- img-style-1 -->
             </div>
-            <div class="col-md-6">
-                <div class="text-content-right text-right">
+            <div class="col-md-8">
+                <div class="text-content-right text-right no-pdd-top">
                     <h2 class="right font-weight-bold">소중한 사람과 소중한 순간</h2>
                     <div class="border-4"></div>
-                    <p class="not-width-contraint mrg-top-10 text-dark font-weight-bold">사랑하는 연인, 가족, 친구들과의 잊지못할 소중한 순간을<br/>
+                    <h3 class="not-width-contraint mrg-top-10 text-dark font-weight-bold">사랑하는 연인, 가족, 친구들과의 잊지못할 소중한 순간을<br/>
                     누구보다 특별하게 간직하고 싶다면<br/>
                     <br/>
-                    어떤 사진을 남겨야 할까요?</p>
+                    어떤 사진을 남겨야 할까요?</h3>
                 </div><!-- /padding -->
             </div>
         </div>
 
         <div class="content-block-1 row">
-            <div class="col-md-6">
-                <div class="text-content">
+            <div class="col-md-8">
+                <div class="text-content no-pdd-top">
                     <h2 class="font-weight-bold">스쳐지나가는 정보들</span></h2>
                     <div class="border-4"></div>
-                    <p class="not-width-contraint mrg-top-10 text-dark font-weight-bold">SNS속 무수히 많은 사진찍는 방법들<br/>
+                    <h3 class="not-width-contraint mrg-top-10 text-dark font-weight-bold">SNS속 무수히 많은 사진찍는 방법들<br/>
                     무심코 흘려 넘겼는데 막상 어디서 찾을지 모르겠다면<br/>
                     <br/>
-                    어떻게 구할 수 있을까요?</p>
+                    어떻게 구할 수 있을까요?</h3>
                 </div><!-- /text-content -->
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="img-style-1">
-                    <img class="img-responsive no-mobile-parallax" src="{% static "images/about-bg1.jpg" %}" alt="" data-parallax='{"y": 30}'>
+                    <img class="img-responsive no-mobile-parallax" src="{% static "images/landing-2.png" %}" alt="" data-parallax='{"y": 30}'>
                 </div><!-- img-style-1 -->
             </div>
         </div>
@@ -87,7 +86,7 @@
 <!-- About End -->
 
 <!-- Description Start -->
-<section class="section-2 theme-color-bg opacity-50">
+<section class="section-2 theme-color-bg-opacity">
     <div class="text-center text-white">
         <h1>VLASOM</h1>
         <h1>소중한 순간을 꽃피웁니다</h1>
@@ -110,16 +109,10 @@
                         </div><!-- /folio-image -->
                         <div class="overlay">								
                         </div><!-- /overlay -->
-                        <div class="folio-caption">
+                        <div class="folio-caption theme-color-bg-opacity">
                             <div class="pull-left">
-                                <h3 class="folio-tittle"><a href="">Variations</a></h3>
-                                <br>
-                                <span class="describe">Web Design</span>
+                                <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> jjungbbinnee</a></h3>
                             </div><!-- /pull-left -->
-                            <div class="folio-action pull-right">
-                                <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
-                                <a href="#"><i class="ei ei-heart"></i></a> 
-                            </div><!-- /folio-action -->
                         </div><!-- /folio-caption -->
                     </div><!-- folio-style -->
                 </a>
@@ -132,16 +125,10 @@
                         </div><!-- /folio-image -->
                         <div class="overlay">								
                         </div><!-- /overlay -->
-                        <div class="folio-caption">
+                        <div class="folio-caption theme-color-bg-opacity">
                             <div class="pull-left">
-                                <h3 class="folio-tittle"><a href="">Variations</a></h3>
-                                <br>
-                                <span class="describe">Web Design</span>
+                                <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> jjungbbinnee</a></h3>
                             </div><!-- /pull-left -->
-                            <div class="folio-action pull-right">
-                                <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
-                                <a href="#"><i class="ei ei-heart"></i></a> 
-                            </div><!-- /folio-action -->
                         </div><!-- /folio-caption -->
                     </div><!-- folio-style -->
                 </a>
@@ -154,16 +141,10 @@
                         </div><!-- /folio-image -->
                         <div class="overlay">								
                         </div><!-- /overlay -->
-                        <div class="folio-caption">
+                        <div class="folio-caption theme-color-bg-opacity">
                             <div class="pull-left">
-                                <h3 class="folio-tittle"><a href="">Variations</a></h3>
-                                <br>
-                                <span class="describe">Web Design</span>
+                                <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> jjungbbinnee</a></h3>
                             </div><!-- /pull-left -->
-                            <div class="folio-action pull-right">
-                                <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
-                                <a href="#"><i class="ei ei-heart"></i></a> 
-                            </div><!-- /folio-action -->
                         </div><!-- /folio-caption -->
                     </div><!-- folio-style -->
                 </a>
@@ -176,16 +157,10 @@
                         </div><!-- /folio-image -->
                         <div class="overlay">								
                         </div><!-- /overlay -->
-                        <div class="folio-caption">
+                        <div class="folio-caption theme-color-bg-opacity">
                             <div class="pull-left">
-                                <h3 class="folio-tittle"><a href="">Variations</a></h3>
-                                <br>
-                                <span class="describe">Web Design</span>
+                                <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> jjungbbinnee</a></h3>
                             </div><!-- /pull-left -->
-                            <div class="folio-action pull-right">
-                                <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
-                                <a href="#"><i class="ei ei-heart"></i></a> 
-                            </div><!-- /folio-action -->
                         </div><!-- /folio-caption -->
                     </div><!-- folio-style -->
                 </a>
@@ -198,16 +173,10 @@
                         </div><!-- /folio-image -->
                         <div class="overlay">								
                         </div><!-- /overlay -->
-                        <div class="folio-caption">
+                        <div class="folio-caption theme-color-bg-opacity">
                             <div class="pull-left">
-                                <h3 class="folio-tittle"><a href="">Variations</a></h3>
-                                <br>
-                                <span class="describe">Web Design</span>
+                                <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> jjungbbinnee</a></h3>
                             </div><!-- /pull-left -->
-                            <div class="folio-action pull-right">
-                                <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
-                                <a href="#"><i class="ei ei-heart"></i></a> 
-                            </div><!-- /folio-action -->
                         </div><!-- /folio-caption -->
                     </div><!-- folio-style -->
                 </a>
@@ -220,16 +189,10 @@
                         </div><!-- /folio-image -->
                         <div class="overlay">								
                         </div><!-- /overlay -->
-                        <div class="folio-caption">
+                        <div class="folio-caption theme-color-bg-opacity">
                             <div class="pull-left">
-                                <h3 class="folio-tittle"><a href="">Variations</a></h3>
-                                <br>
-                                <span class="describe">Web Design</span>
+                                <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> jjungbbinnee</a></h3>
                             </div><!-- /pull-left -->
-                            <div class="folio-action pull-right">
-                                <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
-                                <a href="#"><i class="ei ei-heart"></i></a> 
-                            </div><!-- /folio-action -->
                         </div><!-- /folio-caption -->
                     </div><!-- folio-style -->
                 </a>
@@ -242,16 +205,10 @@
                         </div><!-- /folio-image -->
                         <div class="overlay">								
                         </div><!-- /overlay -->
-                        <div class="folio-caption">
+                        <div class="folio-caption theme-color-bg-opacity">
                             <div class="pull-left">
-                                <h3 class="folio-tittle"><a href="">Variations</a></h3>
-                                <br>
-                                <span class="describe">Web Design</span>
+                                <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> jjungbbinnee</a></h3>
                             </div><!-- /pull-left -->
-                            <div class="folio-action pull-right">
-                                <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
-                                <a href="#"><i class="ei ei-heart"></i></a> 
-                            </div><!-- /folio-action -->
                         </div><!-- /folio-caption -->
                     </div><!-- folio-style -->
                 </a>
@@ -264,16 +221,10 @@
                         </div><!-- /folio-image -->
                         <div class="overlay">								
                         </div><!-- /overlay -->
-                        <div class="folio-caption">
+                        <div class="folio-caption theme-color-bg-opacity">
                             <div class="pull-left">
-                                <h3 class="folio-tittle"><a href="">Variations</a></h3>
-                                <br>
-                                <span class="describe">Web Design</span>
+                                <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> jjungbbinnee</a></h3>
                             </div><!-- /pull-left -->
-                            <div class="folio-action pull-right">
-                                <a href="portfolio-single-1.html"><i class="ei ei-link"></i></a> 
-                                <a href="#"><i class="ei ei-heart"></i></a> 
-                            </div><!-- /folio-action -->
                         </div><!-- /folio-caption -->
                     </div><!-- folio-style -->
                 </a>

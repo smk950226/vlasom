@@ -5,10 +5,13 @@ a:hover, a:focus {
   color: #c72949; }
 
 .theme-color {
-  color: #c72949; }
+  color: #c72949 !important; }
 
 .theme-color-bg {
-  background-color: #c72949; }
+  background-color: #c72949 !important; }
+.theme-color-bg-opacity {
+  background-color: #e394a4 !important;
+}
 
 /*================================
 ===========  Section  ============
