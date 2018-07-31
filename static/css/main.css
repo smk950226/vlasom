@@ -3615,7 +3615,7 @@ section {
 }
 
 .header.navbar-fixed-top.sticky .nav-logo a {
-    line-height: 65px;
+    line-height: 75px;
 }
 
 .header.navbar-fixed-top.sticky .nav-tools ul.navbar-nav > li > a,
@@ -3785,7 +3785,7 @@ section {
 }
 
 .header.header-sticky.sticky .nav-logo a {
-    line-height: 65px;
+    line-height: 80px;
 }
 
 .header.header-sticky.sticky ul.navbar-nav > li > a {
@@ -3795,7 +3795,7 @@ section {
 }
 
 .header.header-sticky.sticky .side-header-toggle {
-    margin: 27px 5px;
+    margin: 15px 5px;
 }
 
 .header.header-sticky.sticky .side-header-toggle span.top-bar,
@@ -4818,7 +4818,7 @@ section {
     position: absolute;
     top: 0px;
     left: 30px;
-    margin: 37px 5px;
+    margin: 25px 5px;
     padding: 8px 10px;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -4942,7 +4942,7 @@ section {
     right: 280px;
 }
 
-.wrapper.sideheader-active-right .header ul.navbar-nav {
+.wrapper.sideheader-active-right .header ul.navbar-nav:not(.right-menu) {
     float: left;
 }
 
@@ -5405,14 +5405,14 @@ section {
 .hero-caption,
 .page-cover .cover-caption {
     position: absolute !important;
-    min-width: 550px;
+    min-width: 700px;
 }
 
 @media only screen and (max-width: 767px) {
     .hero-caption,
     .page-cover .cover-caption {
-        min-width: 300px;
-        max-width: 350px;
+        min-width: 450px;
+        max-width: 500px;
     }
 }
 
@@ -5477,7 +5477,7 @@ section {
 @media only screen and (max-width: 767px) {
     .hero-caption p,
     .page-cover .cover-caption p {
-        max-width: 300px;
+        max-width: 450px;
         font-size: 14px;
     }
 }
@@ -8122,7 +8122,10 @@ input.form-control {
     min-height: 40px;
     border-radius: 0;
     padding: 15px;
-    border: 1px solid #ececec;
+    border-top: 1px solid #c72949;
+    border-bottom: 1px solid #c72949;
+    border-left: none;
+    border-right: none;
     font-size: 15px;
     color: #333743;
     letter-spacing: 0.5px;
@@ -8170,7 +8173,7 @@ select.form-control {
     min-height: 40px;
     border-radius: 0;
     padding: 15px;
-    border: 1px solid #ececec;
+    border: 1px solid #c72949;
     font-size: 15px;
     color: #cecece;
     letter-spacing: 0.5px;
@@ -8182,7 +8185,7 @@ textarea.form-control {
     min-height: 200px;
     border-radius: 0;
     padding: 15px;
-    border: 1px solid #ececec;
+    border: 1px solid #c72949;
     font-size: 15px;
     color: #333743;
     letter-spacing: 0.5px;

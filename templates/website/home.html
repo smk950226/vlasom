@@ -1,6 +1,9 @@
 {% extends "base/base.html" %}
+{% load static %}
 
-
+{% block content %}
+<div style="height:1000px"></div>
+{% endblock %}
 {% if user.is_authenticated %}
     <a href="{% url "profile" %}">프로필</a>
     <a href="{% url "logout" %}">로그아웃</a>
