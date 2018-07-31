@@ -31,11 +31,20 @@ hr {
   -moz-box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.08);
   box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.08);
 }
-
 .btn-white-opacity:hover,
 .btn-white-opacity:focus {
   color: #fff;
   background-color: #cd807e;
+}
+.btn-theme-inverse-top-theme {
+  background-color: #cd807e;
+  color: #fff;
+}
+
+.btn-theme-inverse-top-theme:hover,
+.btn-theme-inverse-top-theme:focus {
+  color: #fff !important;
+  background-color: #c72949;
 }
 .border-top-bottom{
   border-top: 2px solid #c72949;
