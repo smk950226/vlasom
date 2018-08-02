@@ -11,10 +11,10 @@
         </div>
         <div class="row pdd-horizon-30 text-dark mrg-top-30">
             <div class="col-xs-6 text-left">
-                <a class="btn btn-md btn-round btn-theme font-weight-bold" href="#">{{ contents.category_1 }}</a><a class="mrg-left-10 btn btn-md btn-round btn-theme font-weight-bold" href="">{{ contents.category_2 }}</a> <h4 class="theme-color">{{ contents.tags }}</h4>
+                <a class="btn btn-md btn-round btn-theme font-weight-bold" href="{% url "contents:contents_list" contents.category_1.id %}">{{ contents.category_1 }}</a>{% if contents.category_2 %}<a class="mrg-left-10 btn btn-md btn-round btn-theme font-weight-bold" href="{% url "contents:contents_list" contents.category_2.id %}">{{ contents.category_2 }}</a>{% endif %} <h4 class="theme-color">{{ contents.tags }}</h4>
             </div>
             <div class="col-xs-6 text-right">
-                <h3>jjungbbinee <img class="mrg-right-15" src="{% static "images/like.png" %}" width="30" height="30" alt="">{{ contents.like_count }}</h3>
+                <h3>{{ contents.user.nickname }} <img class="mrg-right-15" src="{% static "images/like.png" %}" width="30" height="30" alt="">{{ contents.like_count }}</h3>
             </div>
         </div>
         <div class="row border-top-bottom padding-20 mrg-top-30">
@@ -28,7 +28,11 @@
             <h4>{{ contents.description }}</h4>
         </div>
         <div class="row text-center">
-            <a class="mrg-top-60 btn btn-md btn-round btn-theme-inverse-to-theme" href=""><h3 class="text-white no-mrg-vertical padding-10">목록</h3></a>
+            <a class="mrg-top-60 btn btn-md btn-round btn-theme-inverse-to-theme" href="{% url "website:home" %}"><h3 class="text-white no-mrg-vertical padding-10">홈으로</h3></a>
+            <a class="mrg-top-60 btn btn-md btn-round btn-theme-inverse-to-theme" href="{% url "contents:contents_list" contents.category_1.id %}"><h3 class="text-white no-mrg-vertical padding-10">{{ contents.category_1 }} 목록</h3></a>
+            {% if request.user == contents.user %}
+            <a class="mrg-top-60 btn btn-md btn-round btn-theme-inverse-to-theme" href="{% url "contents:contents_update" contents.id %}"><h3 class="text-white no-mrg-vertical padding-10">수정</h3></a>
+            {% endif %}
         </div>
     </div>
 </section>
