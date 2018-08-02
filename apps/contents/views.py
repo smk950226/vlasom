@@ -7,7 +7,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 from apps.common.mixins import LoginRequiredMixin
 from .forms import ContentsCreateForm
-from .models import Contents, ContentsImages
+from .models import Contents, ContentsImages, Category
 
 class ContentsCreate(LoginRequiredMixin, CreateView):
     template_name = 'contents/contents_create.html'
@@ -30,13 +30,21 @@ class ContentsCreate(LoginRequiredMixin, CreateView):
 
 class ContentsList(LoginRequiredMixin, ListView):
     template_name = 'contents/contents_list.html'
-    paginate_by = 20
+    paginate_by = 30
 
     name = 'contents_list'
 
 
     def get_queryset(self):
-        return Contents.objects.all()
+        category = Category.objects.get(id = self.kwargs['category_id'])
+        return Contents.objects.filter(category_1 = category)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = Category.objects.get(id = self.kwargs['category_id']).name
+        return context
+    
+
 
 
 class ContentsDetail(LoginRequiredMixin, DetailView):

@@ -1,131 +1,140 @@
 {% load static %}
-<section class="section-1 no-pdd-top">
-    <div class="container">
+{% for category in category_list %}
+<section class="section-1 {% if not forloop.first %}no-pdd-top{% endif %}">
+    <div class="container mrg-top-50">
         <div class="row">
-            <div class="col-xs-7 cl-md-2">
-                <h2>카테고리 2</h2>
+            <div class="col-xs-7 col-md-2">
+                <h2>{{ category.category.name }}</h2>
             </div>
             <div class="col-xs-5 col-md-offset-8 col-md-2 mrg-top-20 text-right">
-                <a href="" class="btn btn-md btn-round btn-theme-inverse-to-theme">더보기</a>
+                <a href="{% url "contents:contents_list" category.category.id %}" class="btn btn-md btn-round btn-theme-inverse-to-theme">더보기</a>
             </div>
         </div>
         <div class="row">
             <div class="portfolio isotope row col-3 gutter-sm mrg-top-30">
-                <a href="portfolio-single-1.html" class="folio-item web-design">
+                {% if forloop.counter == 1 %}
+                {% for contents in category_1 %}
+                <a href="{% url "contents:contents_detail" contents.id %}" class="folio-item web-design">
                     <div class="folio-style-2">
                         <div class="folio-image">
-                            <img class="img-responsive" src="{% static "images/portfolio/folio-26.jpg" %}" alt="">
+                            <img class="img-responsive" src="{{ contents.image.url }}" alt="">
                         </div><!-- /folio-image -->
                         <div class="row pdd-horizon-30">
                             <div class="col-xs-7">
-                                <p>jjungbbinee<br/>
-                                #태그</p>
+                                <p>{{ contents.user.nickname }}<br/>
+                                {{ contents.tags }}</p>
                             </div>
                             <div class="col-xs-5 text-right">
                                 <p class="mrg-top-10">
                                     <img src="{% static "images/like.png" %}" width="30" height="30" alt="">
-                                    123
+                                    {{ contents.like_count }}
                                 </p>
                             </div>
                         </div>
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
-                <a href="portfolio-single-1.html" class="folio-item web-design">
+                {% empty %}
+                <h2>콘텐츠가 없습니다.</h2>
+                {% endfor %}
+                {% elif forloop.counter == 2 %}
+                {% for contents in category_2 %}
+                <a href="{% url "contents:contents_detail" contents.id %}" class="folio-item web-design">
                     <div class="folio-style-2">
                         <div class="folio-image">
-                            <img class="img-responsive" src="{% static "images/portfolio/folio-26.jpg" %}" alt="">
+                            <img class="img-responsive" src="{{ contents.image.url }}" alt="">
                         </div><!-- /folio-image -->
                         <div class="row pdd-horizon-30">
                             <div class="col-xs-7">
-                                <p>jjungbbinee<br/>
-                                #태그</p>
+                                <p>{{ contents.user.nickname }}<br/>
+                                {{ contents.tags }}</p>
                             </div>
                             <div class="col-xs-5 text-right">
                                 <p class="mrg-top-10">
                                     <img src="{% static "images/like.png" %}" width="30" height="30" alt="">
-                                    123
+                                    {{ contents.like_count }}
                                 </p>
                             </div>
                         </div>
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
-                <a href="portfolio-single-1.html" class="folio-item web-design">
+                {% empty %}
+                <h2>콘텐츠가 없습니다.</h2>
+                {% endfor %}
+                {% elif forloop.counter == 3 %}
+                {% for contents in category_3 %}
+                <a href="{% url "contents:contents_detail" contents.id %}" class="folio-item web-design">
                     <div class="folio-style-2">
                         <div class="folio-image">
-                            <img class="img-responsive" src="{% static "images/portfolio/folio-26.jpg" %}" alt="">
+                            <img class="img-responsive" src="{{ contents.image.url }}" alt="">
                         </div><!-- /folio-image -->
                         <div class="row pdd-horizon-30">
                             <div class="col-xs-7">
-                                <p>jjungbbinee<br/>
-                                #태그</p>
+                                <p>{{ contents.user.nickname }}<br/>
+                                {{ contents.tags }}</p>
                             </div>
                             <div class="col-xs-5 text-right">
                                 <p class="mrg-top-10">
                                     <img src="{% static "images/like.png" %}" width="30" height="30" alt="">
-                                    123
+                                    {{ contents.like_count }}
                                 </p>
                             </div>
                         </div>
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
-                <a href="portfolio-single-1.html" class="folio-item web-design">
+                {% empty %}
+                <h2>콘텐츠가 없습니다.</h2>
+                {% endfor %}
+                {% elif forloop.counter == 4 %}
+                {% for contents in category_4 %}
+                <a href="{% url "contents:contents_detail" contents.id %}" class="folio-item web-design">
                     <div class="folio-style-2">
                         <div class="folio-image">
-                            <img class="img-responsive" src="{% static "images/portfolio/folio-26.jpg" %}" alt="">
+                            <img class="img-responsive" src="{{ contents.image.url }}" alt="">
                         </div><!-- /folio-image -->
                         <div class="row pdd-horizon-30">
                             <div class="col-xs-7">
-                                <p>jjungbbinee<br/>
-                                #태그</p>
+                                <p>{{ contents.user.nickname }}<br/>
+                                {{ contents.tags }}</p>
                             </div>
                             <div class="col-xs-5 text-right">
                                 <p class="mrg-top-10">
                                     <img src="{% static "images/like.png" %}" width="30" height="30" alt="">
-                                    123
+                                    {{ contents.like_count }}
                                 </p>
                             </div>
                         </div>
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
-                <a href="portfolio-single-1.html" class="folio-item web-design">
+                {% empty %}
+                <h2>콘텐츠가 없습니다.</h2>
+                {% endfor %}
+                {% else %}
+                {% for contents in category_5 %}
+                <a href="{% url "contents:contents_detail" contents.id %}" class="folio-item web-design">
                     <div class="folio-style-2">
                         <div class="folio-image">
-                            <img class="img-responsive" src="{% static "images/portfolio/folio-26.jpg" %}" alt="">
+                            <img class="img-responsive" src="{{ contents.image.url }}" alt="">
                         </div><!-- /folio-image -->
                         <div class="row pdd-horizon-30">
                             <div class="col-xs-7">
-                                <p>jjungbbinee<br/>
-                                #태그</p>
+                                <p>{{ contents.user.nickname }}<br/>
+                                {{ contents.tags }}</p>
                             </div>
                             <div class="col-xs-5 text-right">
                                 <p class="mrg-top-10">
                                     <img src="{% static "images/like.png" %}" width="30" height="30" alt="">
-                                    123
+                                    {{ contents.like_count }}
                                 </p>
                             </div>
                         </div>
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
-                <a href="portfolio-single-1.html" class="folio-item web-design">
-                    <div class="folio-style-2">
-                        <div class="folio-image">
-                            <img class="img-responsive" src="{% static "images/portfolio/folio-26.jpg" %}" alt="">
-                        </div><!-- /folio-image -->
-                        <div class="row pdd-horizon-30">
-                            <div class="col-xs-7">
-                                <p>jjungbbinee<br/>
-                                #태그</p>
-                            </div>
-                            <div class="col-xs-5 text-right">
-                                <p class="mrg-top-10">
-                                    <img src="{% static "images/like.png" %}" width="30" height="30" alt="">
-                                    123
-                                </p>
-                            </div>
-                        </div>
-                    </div><!-- folio-style -->
-                </a><!-- /folio-item -->
+                {% empty %}
+                <h2>콘텐츠가 없습니다.</h2>
+                {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>
 </section>
+{% endfor %}
