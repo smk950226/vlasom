@@ -2,6 +2,7 @@ import json
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
 
 from apps.contents.models import Contents, Category
 from .models import Like, Interest
@@ -62,3 +63,18 @@ def interest_create_category(request, pk):
     context = {'message': message,}
 
     return HttpResponse(json.dumps(context), content_type="application/json")
+
+
+class InterestContentsList(ListView):
+    model = Contents
+    template_name = 'preference/interest/interest_contents_list.html'
+
+    def get_queryset(self):
+        return Interest.objects.filter(user = self.request.user, category__isnull = True)
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category_menu'] = Category.objects.all()
+        return context
+    
+    

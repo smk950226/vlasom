@@ -6,26 +6,26 @@
     <div class="container mrg-top-50">
         <div class="row">
             <div class="col-xs-12">
-                <h2>{{ category }}</h2>
+                <h2>{{ request.user.nickname }}님의 관심 콘텐츠</h2>
             </div>
         </div>
         <div class="row">
             <div class="portfolio isotope row col-3 gutter-sm mrg-top-30">
-                {% for contents in contents_list %}
-                <a href="{% url "contents:contents_detail" contents.id %}" class="folio-item web-design">
+                {% for interest in interest_list %}
+                <a href="{% url "contents:contents_detail" interest.contents.id %}" class="folio-item web-design">
                     <div class="folio-style-2">
                         <div class="folio-image">
-                            <img class="img-responsive" src="{{ contents.image.url }}" alt="">
+                            <img class="img-responsive" src="{{ interest.contents.image.url }}" alt="">
                         </div><!-- /folio-image -->
                         <div class="row pdd-horizon-30 mrg-top-10 text-dark">
                             <div class="col-xs-7">
-                                <p class="font-weight-bold">{{ contents.user.nickname }}<br/>
-                                <span class="theme-color">{{ contents.tags }}</span></p>
+                                <p class="font-weight-bold">{{ interest.contents.user.nickname }}<br/>
+                                <span class="theme-color">{{ interest.contents.tags }}</span></p>
                             </div>
                             <div class="col-xs-5 text-right">
                                 <p class="mrg-top-10 font-weight-bold">
                                     <img src="{% static "images/like.png" %}" width="30" height="30" alt="">
-                                    {{ contents.like_count }}
+                                    {{ interest.contents.like_count }}
                                 </p>
                             </div>
                         </div>
