@@ -26,6 +26,12 @@ class ContentsCreate(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse('contents:contents_detail', kwargs={'pk': self.object.id})
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category_menu'] = Category.objects.all()
+        return context
+    
 
 
 class ContentsList(LoginRequiredMixin, ListView):
@@ -42,6 +48,7 @@ class ContentsList(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['category'] = Category.objects.get(id = self.kwargs['category_id']).name
+        context['category_menu'] = Category.objects.all()
         return context
     
 
@@ -56,6 +63,12 @@ class ContentsDetail(LoginRequiredMixin, DetailView):
         self.object.views += 1
         self.object.save()
         return response
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category_menu'] = Category.objects.all()
+        return context
+    
 
 class ContentsUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'contents/contents_update.html'
@@ -67,3 +80,9 @@ class ContentsUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('contents:contents_detail', kwargs={'pk': self.object.id})
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category_menu'] = Category.objects.all() 
+        return context
+    

@@ -63,7 +63,7 @@
                             <a class="dropdown-toggle" href="javascript:void(0);">카테고리 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 {% for category in category_menu  %}
-                                <li><a href="#">{{ category.name }}</a></li>
+                                <li><a href="{% url "contents:contents_list" category.id %}">{{ category.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
@@ -81,55 +81,7 @@
                     </div>
                 </div>
             </header>
-            <!-- Modal Start -->
-            <div class="modal fade modal-center" id="login" role="dialog">
-                <div class="modal-dialog modal-md" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body no-pdd">
-                            <div class="login-panel">
-                                <div class="content-block-2">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-md-7 col-md-offset-5">
-                                                <div class="text-content">
-                                                    <h3 class="mrg-btm-30 mrg-top-15">Sign In</h3>
-                                                    <div class="form-wrapper">
-                                                        <label><b>User Name</b></label>
-                                                        <input type="text" class="form-control" placeholder="Username">
-                                                    </div>
-                                                    <div class="form-wrapper">
-                                                        <label><b>Password</b></label>
-                                                        <input type="password" class="form-control" placeholder="Password">
-                                                    </div>
-                                                    <div>
-                                                    <a href=""><i class="text-gray">Forgot Password ?</i></a>
-                                                    </div>
-                                                    <button class="btn btn-md btn-theme mrg-vertical-20">Sign In</button>
-                                                </div><!-- /content -->
-                                            </div>
-                                        </div>
-                                    </div>  
-                                    <div class="image-container col-md-5">
-                                        <div class="background-holder theme-overlay has-content" style="background-image:url(assets/images/bg-18.jpg)">
-                                            <div class="content pdd-horizon-50">
-                                                <h3 class="mrg-btm-20 text-white">Sign Up Now!</h3>
-                                                <p class="text-white font-size-14">This Modal is locked on, but you can optionaly turn this fucntion off.</p>
-                                                <button class="btn btn-sm btn-white-inverse mrg-vertical-20">Register</button>
-                                                <ul class="social-btn mrg-top-30">
-                                                    <li><a class="btn icon-btn-md btn-white-inverse hover-facebook border-radius-round" href="javascript:void(0);"><i class="ei ei-facebook"></i></a></li>
-                                                    <li><a class="btn icon-btn-md btn-white-inverse hover-twitter border-radius-round" href="javascript:void(0);"><i class="ei ei-twitter"></i></a></li>
-                                                    <li><a class="btn icon-btn-md btn-white-inverse hover-google-plus border-radius-round" href="javascript:void(0);"><i class="ei ei-google-plus"></i></a></li>
-                                                </ul>
-                                            </div><!-- content -->
-                                        </div><!-- /background-holder -->
-                                    </div><!-- /image-container -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal End -->
+            
             <div class="wrapper sideheader-active-right">
 
                 <header id="menu" class="header header-transparent header-sticky">

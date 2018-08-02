@@ -40,6 +40,12 @@ class ProfileView(LoginRequiredMixin,TemplateView):
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category_menu'] = Category.objects.all()
+        return context
+    
+
 class UserCreate(CreateView):
     template_name = 'registration/user_create.html'
     form_class = UserCreateForm
@@ -112,6 +118,12 @@ class UserUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category_menu'] = Category.objects.all()
+        return context
+    
 
 
 class PasswordResetView(BasePasswordResetView):
