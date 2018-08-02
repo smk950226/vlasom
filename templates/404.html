@@ -1,0 +1,380 @@
+{% extends "base/base.html" %}
+
+{% block nav %}
+{% if request.user.is_authenticated %}
+<header id="side-menu" class="side-header side-header-right">
+    <div class="side-header-inner theme-color-bg">
+        <div class="side-header-logo">
+            <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/nav-logo-white.png" %}" alt="vlasom"></a>
+        </div>
+        <ul class="side-header-menu">
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">Home <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index-default.html">Default</a></li>
+                    <li><a href="index-business.html">Business</a></li>
+                    <li><a href="index-architect.html">Architect</a></li>
+                    <li><a href="index-agency.html">Agency</a></li>
+                    <li><a href="index-apps.html">Apps</a></li>
+                    <li><a href="index-travel.html">Travel</a></li>
+                    <li><a href="index-wedding.html">Wedding</a></li>
+                    <li><a href="index-finance.html">Finance</a></li>
+                    <li><a href="index-cafe.html">Cafe</a></li>
+                    <li><a href="index-magazine.html">Magazine</a></li>
+                    <li><a href="index-personal.html">Personal</a></li>
+                    <li><a href="index-wine.html">Wine</a></li>
+                    <li><a href="index-event.html">Event</a></li>
+                    <li><a href="index-education.html">Education</a></li>
+                    <li><a href="index-shop.html">Shop</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">Features <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="sub-menu"><a href="javascript:void(0);">Header <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="header-default.html">Header Default</a></li>
+                            <li><a href="header-fixed.html">Header Fixed</a></li>
+                            <li><a href="header-transparent.html">Header Transparent</a></li>
+                            <li><a href="header-transparent-fixed.html">Header Transparent Fixed</a></li>
+                            <li><a href="header-fullwidth.html">Header Full Width</a></li>
+                            <li><a href="header-logo-center.html">Header Logo Center</a></li>
+                            <li><a href="header-logo-center-transparent.html">Header Logo Center Transparent</a></li>
+                            <li><a href="header-side-left.html">Side Menu Left</a></li>
+                            <li><a href="header-side-right.html">Side Menu Right</a></li>
+                            <li><a href="header-fullscreen.html">Header Fullscreen</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:void(0);">Slider <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="revolution-slider.html">Revolution slider</a></li>
+                            <li><a href="swiper.html">Swiper</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:void(0);">Footer <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="footer1.html">Footer 1</a></li>
+                            <li><a href="footer2.html">Footer 2</a></li>
+                            <li><a href="footer3.html">Footer 3</a></li>
+                            <li><a href="footer4.html">Footer 4</a></li>
+                            <li><a href="footer5.html">Footer 5</a></li>
+                            <li><a href="footer6.html">Footer 6</a></li>
+                            <li><a href="footer7.html">Footer 7</a></li>
+                            <li><a href="footer-reveal.html">Footer Reveal</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:void(0);">Page Tittle <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="sub-menu"><a href="javascript:void(0);">Size <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="page-tittle-sm.html">Page Tittle Small</a></li>
+                                    <li><a href="page-tittle-md.html">Page Tittle Medium</a></li>
+                                    <li><a href="page-tittle-lg.html">Page Tittle Large</a></li>
+                                    <li><a href="page-tittle-xlg.html">Page Tittle Extra Large</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu"><a href="javascript:void(0);">Alignment <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="page-tittle-left.html">Align Left</a></li>
+                                    <li><a href="page-tittle-right.html">Align Right</a></li>
+                                    <li><a href="page-tittle-center.html">Align Center</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="page-tittle-bg.html">Stactic Background</a></li>
+                            <li><a href="page-tittle-parallax.html">Parallax</a></li>
+                            <li><a href="page-tittle-kenburn.html">Kenburn</a></li>
+                            <li><a href="page-tittle-video.html">Video</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:void(0);">Page loader <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="loader1.html">Page Loader 1</a></li>
+                            <li><a href="loader2.html">Page Loader 2</a></li>
+                            <li><a href="loader3.html">Page Loader 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">Pages <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="about-1.html">About us 1</a></li>
+                    <li><a href="about-2.html">About us 2</a></li>
+                    <li><a href="about-3.html">About us 3</a></li>
+                    <li><a href="about-me.html">About Me</a></li>
+                    <li><a href="404.html">404 Page</a></li>
+                    <li><a href="services-1.html">Services 1</a></li>
+                    <li><a href="services-2.html">Services 2</a></li>
+                    <li><a href="services-3.html">Services 3</a></li>
+                    <li><a href="contact-1.html">Contact Us 1</a></li>
+                    <li><a href="contact-2.html">Contact Us 2</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="login-2.html">Login 2</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="account.html">My Account</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="product-single.html">Prodct Single</a></li>
+                    <li><a href="coming-soon.html">Coming Soon</a></li>                                 
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">Elements <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="accordion.html">Accordion</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="cta.html">Call To Action</a></li>
+                    <li><a href="columns.html">Columns</a></li>
+                    <li><a href="content-blocks.html">Content Blocks</a></li>
+                    <li><a href="counters.html">Counters</a></li>
+                    <li><a href="features-box.html">Features Box</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="icons.html">Icons</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="message-box.html">Message Box</a></li>
+                    <li><a href="modal.html">Modal</a></li>
+                    <li><a href="pricing-table.html">Pricing Table</a></li>
+                    <li><a href="progress-bar.html">Prgress Bar</a></li>
+                    <li><a href="rollover.html">Rollover</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="testimonial.html">Testimonial</a></li>
+                    <li><a href="typography.html">Typography</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">Portfolio <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="menu-tittle">Grid</li>
+                    <li><a href="portfolio-grid-2-col.html">2 Columns</a></li>
+                    <li><a href="portfolio-grid-3-col.html">3 Columns</a></li>
+                    <li><a href="portfolio-grid-4-col.html">4 Columns</a></li>
+                    <li><a href="portfolio-grid-5-col.html">5 Columns</a></li>
+                    <li class="menu-tittle">Masonry</li>
+                    <li><a href="portfolio-masonry-2-col.html">2 Columns</a></li>
+                    <li><a href="portfolio-masonry-3-col.html">3 Columns</a></li>
+                    <li><a href="portfolio-masonry-4-col.html">4 Columns</a></li>
+                    <li><a href="portfolio-masonry-5-col.html">5 Columns</a></li>
+                    <li class="menu-tittle">Single</li>
+                    <li><a href="portfolio-single-1.html">Layout 1</a></li>
+                    <li><a href="portfolio-single-2.html">Layout 2</a></li>
+                    <li><a href="portfolio-single-3.html">Layout 3</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">Blog <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="sub-menu left"><a href="javascript:void(0);">Blog Classic</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog-classic-left-sidebar.html">Left Sidebar</a></li>
+                            <li><a href="blog-classic-right-sidebar.html">Right Sidebar</a></li>
+                            <li><a href="blog-classic-full-width.html">Full Width</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu left"><a href="javascript:void(0);">Blog Grid <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog-grid-2-col.html">2 columns</a></li>
+                            <li><a href="blog-grid-3-col.html">3 columns</a></li>
+                            <li><a href="blog-grid-4-col.html">4 columns</a></li>
+                            <li><a href="blog-grid-masonry.html">Masonry</a></li>
+                            <li><a href="blog-grid-left-sidebar.html">Left Sidebar</a></li>
+                            <li><a href="blog-grid-right-sidebar.html">Right Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu left"><a href="javascript:void(0);">Blog Card <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog-card-2-col.html">2 columns</a></li>
+                            <li><a href="blog-card-3-col.html">3 columns</a></li>
+                            <li><a href="blog-card-4-col.html">4 columns</a></li>
+                            <li><a href="blog-card-masonry.html">Masonry</a></li>
+                            <li><a href="blog-card-left-sidebar.html">Left Sidebar</a></li>
+                            <li><a href="blog-card-right-sidebar.html">Right Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu left"><a href="javascript:void(0);">Blog List <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog-list-left-sidebar.html">Left Sidebar</a></li>
+                            <li><a href="blog-list-right-sidebar.html">Right Sidebar</a></li>
+                            <li><a href="blog-list-full-width.html">Full Width</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu left"><a href="javascript:void(0);">Blog Default<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog-default-left-sidebar.html">Left Sidebar</a></li>
+                            <li><a href="blog-default-right-sidebar.html">Right Sidebar</a></li>
+                            <li><a href="blog-default-full-width.html">Full Width</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu left"><a href="javascript:void(0);">Single Post <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="single-post-left-sidebar.html">Left Sidebar</a></li>
+                            <li><a href="single-post-right-sidebar.html">Right Sidebar</a></li>
+                            <li><a href="single-post-full-width.html">Full Width</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="nav-tools">
+            <div class="tools-wrapper container-fluid">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-3 no-pdd-horizon">
+                        <a class="nav-item" href="javascript:void(0);"><i class="ei ei-menu-7"></i></a>   
+                    </div>
+                    <div class="col-sm-3 col-xs-3 no-pdd-horizon">
+                        <a class="nav-item" href="cart.html"><i class="ei ei-shopping-cart"></i></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-3 no-pdd-horizon">
+                        <a class="nav-item" href="javascript:void(0);" data-toggle="modal" data-target="#login"><i class="ei ei-key"></i></a>   
+                    </div>
+                    <div class="col-sm-3 col-xs-3 no-pdd-horizon">
+                        <a class="nav-item" href="javascript:void(0);"><i class="ei ei-search-alt"></i></a>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Modal Start -->
+<div class="modal fade modal-center" id="login" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body no-pdd">
+                <div class="login-panel">
+                    <div class="content-block-2">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-7 col-md-offset-5">
+                                    <div class="text-content">
+                                        <h3 class="mrg-btm-30 mrg-top-15">Sign In</h3>
+                                        <div class="form-wrapper">
+                                            <label><b>User Name</b></label>
+                                            <input type="text" class="form-control" placeholder="Username">
+                                        </div>
+                                        <div class="form-wrapper">
+                                            <label><b>Password</b></label>
+                                            <input type="password" class="form-control" placeholder="Password">
+                                        </div>
+                                        <div>
+                                        <a href=""><i class="text-gray">Forgot Password ?</i></a>
+                                        </div>
+                                        <button class="btn btn-md btn-theme mrg-vertical-20">Sign In</button>
+                                    </div><!-- /content -->
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="image-container col-md-5">
+                            <div class="background-holder theme-overlay has-content" style="background-image:url(assets/images/bg-18.jpg)">
+                                <div class="content pdd-horizon-50">
+                                    <h3 class="mrg-btm-20 text-white">Sign Up Now!</h3>
+                                    <p class="text-white font-size-14">This Modal is locked on, but you can optionaly turn this fucntion off.</p>
+                                    <button class="btn btn-sm btn-white-inverse mrg-vertical-20">Register</button>
+                                    <ul class="social-btn mrg-top-30">
+                                        <li><a class="btn icon-btn-md btn-white-inverse hover-facebook border-radius-round" href="javascript:void(0);"><i class="ei ei-facebook"></i></a></li>
+                                        <li><a class="btn icon-btn-md btn-white-inverse hover-twitter border-radius-round" href="javascript:void(0);"><i class="ei ei-twitter"></i></a></li>
+                                        <li><a class="btn icon-btn-md btn-white-inverse hover-google-plus border-radius-round" href="javascript:void(0);"><i class="ei ei-google-plus"></i></a></li>
+                                    </ul>
+                                </div><!-- content -->
+                            </div><!-- /background-holder -->
+                        </div><!-- /image-container -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal End -->
+<div class="wrapper sideheader-active-right">
+
+    <header id="menu" class="header header-transparent header-sticky">
+        <nav class="navbar theme-color-bg">
+            <div class="container-fluid">
+                <div class="menu-header">
+                    <button type="button" class="side-header-toggle">
+                        <img src="{% static "images/menu-white.png" %}" alt="" width="35" height="35">
+                        <span class="sr-only"></span>
+                    </button>
+                    <div class="nav-logo mrg-left-100">
+                        <a class="logo" href="{% url "website:home" %}"><img src="{% static "images/nav-logo-white.png" %}" alt="vlasom"></a>
+                    </div>                    
+                </div>
+                <ul class="nav navbar-nav mrg-left-30 mobile-none">
+                    <li class="nav-item">
+                        <a>
+                            <form action="" method="get">
+                                <button class="btn-clear" type="submit"><img src="{% static "images/nav-search.png" %}" width="35" height="35" alt=""></button>
+                                <input class="nav-search" type="text" name="q" value="{{ q }}">
+                            </form>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav right-menu mrg-right-100 mobile-none">
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href=""><img src="{% static "images/nav-nickname.png" %}" width="35" height="35" alt=""><span class="font-weight-bold text-white font-size-20 mrg-left-10 mrg-right-30" style="line-height: 35px;">{{ request.user.nickname }}</span></a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a href=""><img src="{% static "images/home.png" %}" width="35" height="35" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href=""><img src="{% static "images/more.png" %}" width="35" height="35" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href=""><img src="{% static "images/history.png" %}" width="35" height="35" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href=""><img src="{% static "images/like-list.png" %}" width="35" height="35" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Side Header Toggle Button Start -->
+{% else %}
+<div class="wrapper">
+    <header id="menu" class="header header-transparent header-sticky">
+        <nav class="navbar">
+            <div class="container">
+                <div class="menu-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="top-bar"></span>
+                        <span class="middle-bar"></span>
+                        <span class="bottom-bar"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="nav-logo">
+                        <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/nav-logo-white.png" %}" alt="Eastern"></a>
+                        <a class="logo" href="{% url "website:home" %}"><img class="logo-dark" src="{% static "images/nav-logo-red.png" %}" alt="Eastern"></a>
+                    </div>                    
+                </div>
+                <div class="collapse navbar-collapse nav-collapse">
+                    <ul class="nav navbar-nav" >
+                        <li class="nav-item">
+                            <a href="{% url "login" %}">login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url "user_create" %}">signup</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+{% endif %}
+{% endblock %}
+{% block content %}
+<section>
+    <div class="fs-hero hero-img fixed-bg" style="background-image:url({% static 'images/main.jpg' %})">
+        <div class="hero-caption text-white center">
+            <h2>죄송합니다.</h2>
+            <h2>요청하신 페이지를 찾을 수 없습니다.<br/>
+            주소를 확인해주세요.</h2>
+            <a class="btn btn-lg btn-round btn-theme" href="{% url "website:home" %}">home</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

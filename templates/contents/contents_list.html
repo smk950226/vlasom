@@ -1,7 +1,10 @@
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+{% extends "base/base.html" %}
+
+{% block contents %}
+{% include "contents/partials/contents_list/contents_list_body.html" %}
+{% endblock %}
 콘텐츠 리스트
-<hr/>
-{% for contents in contents_list %}
+<hr/> for contents in contents_list %}
 <a href="{% url "contents:contents_detail" contents.id %}">{{ contents.user}} / {{contents.category_1}} / {{ contents.views }}</a>
 <a class="like" href="{% url "preference:like_create" contents.id %}">좋아요/</a>
 <a class="interest" href="{% url "preference:interest_create_contents" contents.id %}">/찜하기</a>

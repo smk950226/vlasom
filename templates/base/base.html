@@ -49,7 +49,7 @@
         <header id="side-menu" class="side-header side-header-right">
                 <div class="side-header-inner theme-color-bg">
                     <div class="side-header-logo">
-                        <a class="logo" href="index.html"><img class="logo-light" src="{% static "images/nav-logo-white.png" %}" alt="vlasom"></a>
+                        <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/nav-logo-white.png" %}" alt="vlasom"></a>
                     </div>
                     <ul class="side-header-menu">
                         <li class="nav-item dropdown">
@@ -356,6 +356,11 @@
                                 </li>
                             </ul>
                             <ul class="nav navbar-nav right-menu mrg-right-100 mobile-none">
+                                {% if request.user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a href=""><img src="{% static "images/nav-nickname.png" %}" width="35" height="35" alt=""><span class="font-weight-bold text-white font-size-20 mrg-left-10 mrg-right-30" style="line-height: 35px;">{{ request.user.nickname }}</span></a>
+                                </li>
+                                {% endif %}
                                 <li class="nav-item">
                                     <a href=""><img src="{% static "images/home.png" %}" width="35" height="35" alt=""></a>
                                 </li>
