@@ -2,11 +2,15 @@
 {% load static %}
 
 {% block content %}
+{% if request.path == '/search/' %}
+{% include "website/partials/home/contents_search.html" %}
+{% else %}
 {% include "website/partials/home/contents.html" %}
 
 {% include "website/partials/home/hot_contents.html" %}
 
 {% include "website/partials/home/new_contents.html" %}
+{% endif %}
 
 {% endblock %}
 

@@ -43,3 +43,14 @@ class LandingView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['hot_contents'] = Contents.objects.all().order_by('-like_count')[:27]
         return context
+
+
+class SearchResult(SearchView):
+    model = Contents
+    template_name = 'website/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category_menu'] = Category.objects.all()
+        return context
+    

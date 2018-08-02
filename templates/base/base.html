@@ -99,9 +99,9 @@
                             <ul class="nav navbar-nav mrg-left-30 mobile-none">
                                 <li class="nav-item">
                                     <a>
-                                        <form action="" method="get">
+                                        <form action="{% url "website:search" %}" method="get">
                                             <button class="btn-clear" type="submit"><img src="{% static "images/nav-search.png" %}" width="35" height="35" alt=""></button>
-                                            <input class="nav-search" type="text" name="q" value="{{ q }}">
+                                            <input class="nav-search" type="text" name="q" value="{{ q }}" autocomplete="off">
                                         </form>
                                     </a>
                                 </li>
