@@ -7,7 +7,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 from apps.common.mixins import LoginRequiredMixin
 from .forms import ContentsCreateForm
-from .models import Contents
+from .models import Contents, ContentsImages
 
 class ContentsCreate(LoginRequiredMixin, CreateView):
     template_name = 'contents/contents_create.html'
@@ -19,6 +19,9 @@ class ContentsCreate(LoginRequiredMixin, CreateView):
         contents = form.save(commit = False)
         contents.user = self.request.user
         contents.save()
+        files = self.request.FILES.getlist('image')
+        for f in files:
+            ContentsImages.objects.create(user = self.request.user, image = f)
         return super().form_valid(form)
 
     def get_success_url(self):
