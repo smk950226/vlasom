@@ -1,3 +1,43 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="section-1">
+    <div class="container mrg-top-100">
+        <div class="row">
+            <div class="col-xs-12">
+                <img src="{% static "images/img-6.jpg" %}" width="100%" alt="">
+            </div>
+        </div>
+        <div class="row pdd-horizon-30 text-dark mrg-top-30">
+            <div class="col-xs-6 text-left">
+                <h3>태그 및 카테고리<br/>
+                간단한 설명</h3>
+            </div>
+            <div class="col-xs-6 text-right">
+                <h3>jjungbbinee <img src="{% static "images/like.png" %}" width="30" height="30" alt=""></h3>
+            </div>
+        </div>
+        <div class="row border-top-bottom padding-20 mrg-top-30">
+            <div class="text-center">
+                <img src="{% static "images/bg-13.jpg" %}" width="150" height="150" alt="">
+                <img src="{% static "images/bg-13.jpg" %}" width="150" height="150" alt="">
+                <img src="{% static "images/bg-13.jpg" %}" width="150" height="150" alt="">
+                <img src="{% static "images/bg-13.jpg" %}" width="150" height="150" alt="">
+                <img src="{% static "images/bg-13.jpg" %}" width="150" height="150" alt="">
+            </div>
+        </div>
+        <div class="mrg-top-50 border-all padding-20 min-height-600">
+            <h4>하이</h4>
+        </div>
+        <div class="row text-center">
+            <a class="mrg-top-60 btn btn-md btn-round btn-theme-inverse-to-theme" href=""><h3 class="text-white no-mrg-vertical padding-10">목록</h3></a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
 콘텐츠 상세
 <hr/>
 {{ contents.user }}
