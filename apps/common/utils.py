@@ -23,4 +23,7 @@ def get_image_filename(instance, filename):
     return '/'.join([instance.category_1.name, instance.user.nickname, filename])
 
 def get_image_filename2(instance, filename):
-    return '/'.join([instance.contents.category_1.name, instance.user.nickname, filename]) 
+    return '/'.join([instance.contents.category_1.name, instance.user.nickname, filename])
+
+def profile_image_upload_to(instance, filename):
+    return '/'.join(['profile', instance.nickname, filename])

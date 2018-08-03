@@ -9,7 +9,7 @@ from django.utils.http import urlsafe_base64_encode
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.validators import ASCIIUsernameValidator, UnicodeUsernameValidator
 
-from apps.common.utils import birth_year, birth_month, birth_day, gender_choice
+from apps.common.utils import birth_year, birth_month, birth_day, gender_choice, profile_image_upload_to
 
 
 class UserManager(BaseUserManager):
@@ -60,6 +60,7 @@ class User(AbstractUser):
     birth_month = models.PositiveIntegerField('생월', choices = birth_month, default = int(timezone.now().strftime("%m")))
     birth_day = models.PositiveIntegerField('생일', choices = birth_day, default = int(timezone.now().strftime("%d")))
     is_verified = models.BooleanField('인증여부', default=False, help_text='사용자의 이메일 인증 여부를 나타냅니다.')
+    profile_image = models.ImageField('프로필 사진', upload_to = profile_image_upload_to, blank = True, null = True)
 
     objects = UserManager()
 

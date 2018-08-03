@@ -70,6 +70,48 @@ hr {
   border: none;
   padding: 0;
 }
+.profile-wrapper {
+  border-radius: 15px;
+  overflow: hidden;
+}
+.profile-wrapper img {
+  max-height: 400px;
+}
+.input-label {
+  background: #cd807e;
+  height: 56px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.input-label h1,.input-label h2,.input-label h3,.input-label h4,.input-label h5,.input-label h6 {
+  margin: 0 !important;
+  color: #fff !important;
+  line-height: 56px;
+}
+.input-box {
+  border-top: 1px solid #cd807e;
+  border-right: 1px solid #cd807e;
+  border-bottom: 1px solid #cd807e;
+  border-left: none;
+  height: 56px;
+  padding-left: 14px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.input-box h1,.input-box h2,.input-box h3,.input-box h4,.input-box h5,.input-box h6 {
+  margin: 0 !important;
+  line-height: 56px;
+}
+.input-box-border-all {
+  border: 1px solid #cd807e;
+  height: 56px;
+  line-height: 56px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.input-box-border-all img {
+  margin-top: -5px;
+}
 .justify-content-start {
   -ms-flex-pack: start !important;
   justify-content: flex-start !important;

@@ -18,6 +18,8 @@ from allauth.socialaccount.views import SignupView
 
 from .forms import UserCreateForm, UserUpdateForm, UserVerifyForm, SetPasswordForm, PasswordChangeForm
 from apps.common.mixins import LoginRequiredMixin
+from apps.contents.models import Category, Contents
+from apps.preference.models import Interest
 
 User = get_user_model()
 
@@ -43,6 +45,9 @@ class ProfileView(LoginRequiredMixin,TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['category_menu'] = Category.objects.all()
+        context['interest_category'] = Interest.objects.filter(user = self.request.user, contents__isnull = True)
+        context['interest_contents'] = Interest.objects.filter(user = self.request.user, category__isnull = True)
+        context['upload_list'] = Contents.objects.filter(user = self.request.user)
         return context
     
 

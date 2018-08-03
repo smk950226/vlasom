@@ -8125,7 +8125,7 @@ input.form-control {
     border-top: 1px solid #c72949;
     border-bottom: 1px solid #c72949;
     border-left: none;
-    border-right: none;
+    border-right: 1px solid #c72949;
     font-size: 15px;
     color: #333743;
     letter-spacing: 0.5px;
