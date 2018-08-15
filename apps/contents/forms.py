@@ -13,6 +13,9 @@ class ContentsCreateForm(forms.ModelForm):
         widgets = {
             'image': forms.ClearableFileInput(attrs={
                 'multiple': True,
+            }),
+            'description': forms.Textarea(attrs={
+                'rows': 20,
             })
         }
 

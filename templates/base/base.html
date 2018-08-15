@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="{% static "plugins/magnific-popup/css/magnific-popup.css" %}" />
     <link rel="stylesheet" href="{% static "plugins/swiper/css/swiper.css" %}" />
     <link rel="stylesheet" href="{% static "plugins/youtube-player/css/YTPlayer.css" %}" />
-    <link rel="stylesheet" href="{% static "plugins/fileuploader/jquery.fileuploader.min.css" %}">
     <link rel="stylesheet" href="{% static "plugins/fileuploader/font/font-fileuploader.css" %}">
+    <link rel="stylesheet" href="{% static "plugins/fileuploader/jquery.fileuploader.min.css" %}">
     
     <!-- CSS -->
     <link rel="stylesheet" href="{% static "css/animate.min.css" %}" />
@@ -118,7 +118,7 @@
                                     <a href=""><img src="{% static "images/home.png" %}" width="35" height="35" alt=""></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href=""><img src="{% static "images/more.png" %}" width="35" height="35" alt=""></a>
+                                    <a href="{% url "contents:contents_create" %}"><img src="{% static "images/more.png" %}" width="35" height="35" alt=""></a>
                                 </li>
                                 <li class="nav-item">
                                     <a href=""><img src="{% static "images/history.png" %}" width="35" height="35" alt=""></a>

@@ -21,7 +21,7 @@ class ContentsCreate(LoginRequiredMixin, CreateView):
         contents.save()
         files = self.request.FILES.getlist('image')
         for f in files:
-            ContentsImages.objects.create(user = self.request.user, image = f)
+            ContentsImages.objects.create(user = self.request.user, contents=contents, image = f)
         return super().form_valid(form)
 
     def get_success_url(self):
