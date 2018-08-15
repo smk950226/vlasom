@@ -129,10 +129,6 @@ hr {
 .input-box-border-all div {
   height: 100%;
 }
-.justify-content-start {
-  -ms-flex-pack: start !important;
-  justify-content: flex-start !important;
-}
 #id_gender_1, #id_gender_2 {
   display: none;
 }
@@ -145,6 +141,17 @@ hr {
 .invalid-feedback {
   display: none !important;
 }
+.max-height-600{
+  max-height: 600px;
+}
+.pointer {
+  cursor: pointer;
+}
+.justify-content-start {
+  -ms-flex-pack: start !important;
+  justify-content: flex-start !important;
+}
+
 .justify-content-center {
   -ms-flex-pack: center !important;
   justify-content: center !important;

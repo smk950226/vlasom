@@ -5,8 +5,8 @@
 <section class="section-1">
     <div class="container mrg-top-100">
         <div class="row">
-            <div class="col-xs-12">
-                <img src="{{ contents.image.url }}" width="100%" alt="">
+            <div class="col-xs-12 text-center">
+                <img id="image_large" class="max-height-600" src="{{ contents.image.url }}" height="100%" alt="">
             </div>
         </div>
         <div class="row pdd-horizon-30 text-dark mrg-top-30">
@@ -20,7 +20,17 @@
         <div class="row border-top-bottom padding-20 mrg-top-30">
             <div class="text-center">
                 {% for image in contents.contentsimages_set.all %}
-                <img src="{{ image.image.url }}" width="150" height="150" alt="">
+                <div style="display: none;">
+                    <a {% if forloop.counter == 7 %}id="slide-start"{% endif %} href="{{ image.image.url }}" class="lightbox-img"></a>
+                </div>
+                {% endfor %}
+                {% for image in contents.contentsimages_set.all %}
+                {% if forloop.counter < 7 %}
+                <input type="radio" name="contents_images" value="{{ forloop.counter }}" id="{{ forloop.counter }}" style="display: none;" {% if forloop.first %}checked{% endif %}>
+                <label id="{{ forloop.counter }}_label" for="{{ forloop.counter }}"><img class="target-img" src="{{ image.image.url }}" width="150" height="150" alt=""></label>
+                {% elif forloop.counter == 7 %}
+                <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="150" height="150" alt="" style="opacity: 0.4;">
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -37,23 +47,13 @@
     </div>
 </section>
 {% endblock %}
-
-
-콘텐츠 상세
-<hr/>
-{{ contents.user }}
-<hr/>
-{{ contents.category_1 }} / {{ contents.category_2 }}
-<hr/>
-{{ contents.tags }}
-<hr/>
-{{ contents.description }}
-<hr/>
-{{ contents.views }}
-<br/>
-<br/>
-<br/>
-<hr/>
-<a href="{% url "contents:contents_update" contents.id %}">콘텐츠 수정</a>
-<a href="{% url "contents:contents_list" %}">콘텐츠 목록</a>
-<a href="{% url "website:home" %}">홈으로</a>
+{% block extrajs %}
+<script>
+    $('input[name="contents_images"]').on('change',function(){
+        $('#image_large').attr({'src': $('input[name="contents_images"]:checked').next().children('.target-img').attr('src')});
+    })
+    $('.slide-start-trigger').on('click',function(){
+        $('#slide-start').trigger('click');
+    })
+</script>
+{% endblock %}

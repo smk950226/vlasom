@@ -106,21 +106,25 @@
         <div class="portfolio isotope masonry gutter row col-3 mrg-top-50">
             {% for contents in hot_contents %}
             <div class="folio-item">
-                <a href="{{ contents.image.url }}" class="lightbox-img">
-                    <div class="folio-style-3">
-                        <div class="folio-image">
-                            <img class="img-responsive" src="{{ contents.image.url }}" alt="">
-                        </div><!-- /folio-image -->
-                        <div class="overlay">								
-                        </div><!-- /overlay -->
-                        <div class="folio-caption theme-color-bg-opacity">
-                            <div class="pull-left">
-                                <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> {{ contents.user.nickname }}</a></h3>
-                            </div><!-- /pull-left -->
-                        </div><!-- /folio-caption -->
-                    </div><!-- folio-style -->
-                </a>
+                <a id="{{ forloop.counter }}_slide" href="{{ contents.image.url }}" class="lightbox-img"></a>
+                <div id="{{ forloop.counter }}" class="folio-style-3 pointer">
+                    <div class="folio-image">
+                        <img class="img-responsive" src="{{ contents.image.url }}" alt="">
+                    </div><!-- /folio-image -->
+                    <div class="overlay">								
+                    </div><!-- /overlay -->
+                    <div class="folio-caption theme-color-bg-opacity">
+                        <div class="pull-left">
+                            <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> {{ contents.user.nickname }}</a></h3>
+                        </div><!-- /pull-left -->
+                    </div><!-- /folio-caption -->
+                </div><!-- folio-style -->
             </div><!-- /folio-item -->
+            <script>
+                $('#{{ forloop.counter }}').on('click', function(){
+                    $('#{{ forloop.counter }}_slide').trigger('click');
+                })
+            </script>
             {% endfor %}
         </div><!-- /portfolio-->    
     </div>
