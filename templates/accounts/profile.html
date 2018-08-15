@@ -23,7 +23,13 @@
                     </div>
                     <div class="col-xs-2">
                         <div class="input-box-border-all text-center">
-                            <img src="{% static "images/male.png" %}" width="60%" alt="">
+                            {% if request.user.gender == 'M' %}
+                            <div style="background-image: url({% static 'images/male.png' %}); background-size: contain; background-position: center; background-repeat: no-repeat;">
+                            </div>
+                            {% else %}
+                            <div style="background-image: url({% static 'images/female.png' %}); background-size: contain; background-position: center; background-repeat: no-repeat;">
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

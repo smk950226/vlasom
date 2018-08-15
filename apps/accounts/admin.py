@@ -34,6 +34,7 @@ class UserAdmin(BaseUserAdmin):
             'nickname',
             'profile_image',
             'email',
+            'gender',
             'birth_year',
             'birth_month',
             'birth_day',

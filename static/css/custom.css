@@ -46,6 +46,9 @@ hr {
 .border-all {
   border: 2px solid #c72949;
 }
+.border-left-none {
+  border-left: none !important;
+}
 .min-height-600 {
   min-height: 600px !important;
 }
@@ -79,49 +82,69 @@ hr {
 }
 .input-label {
   background: #cd807e;
-  height: 56px;
+  height: 46px;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
 .input-label h1,.input-label h2,.input-label h3,.input-label h4,.input-label h5,.input-label h6 {
   margin: 0 !important;
   color: #fff !important;
-  line-height: 56px;
+  line-height: 46px;
+}
+.input-submit {
+  background: #cd807e;
+  height: 102px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: none;
+  width: 100%;
+}
+.input-submit h1,.input-submit h2,.input-submit h3,.input-submit h4,.input-submit h5,.input-submit h6 {
+  margin: 0 !important;
+  color: #fff !important;
+  line-height: 102px;
 }
 .input-box {
-  border-top: 1px solid #cd807e;
-  border-right: 1px solid #cd807e;
-  border-bottom: 1px solid #cd807e;
+  border-top: 1px solid #c72949;
+  border-right: 1px solid #c72949;
+  border-bottom: 1px solid #c72949;
   border-left: none;
-  height: 56px;
+  height: 46px;
   padding-left: 14px;
   box-sizing: border-box;
   text-align: left;
 }
 .input-box h1,.input-box h2,.input-box h3,.input-box h4,.input-box h5,.input-box h6 {
   margin: 0 !important;
-  line-height: 56px;
+  line-height: 46px;
 }
 .input-box-border-all {
-  border: 1px solid #cd807e;
-  height: 56px;
+  border: 1px solid #c72949;
+  height: 46px;
   line-height: 56px;
   box-sizing: border-box;
   text-align: left;
+  padding: 3px;
 }
-.input-box-border-all img {
-  margin-top: -5px;
+.input-box-border-all div {
+  height: 100%;
 }
 .justify-content-start {
   -ms-flex-pack: start !important;
   justify-content: flex-start !important;
 }
-
-.justify-content-end {
-  -ms-flex-pack: end !important;
-  justify-content: flex-end !important;
+#id_gender_1, #id_gender_2 {
+  display: none;
 }
-
+#gender_1_label img, #gender_2_label img {
+  margin-top: -15px;
+}
+#id_is_agreed_1, #id_is_agreed_2 {
+  display: none;
+}
+.invalid-feedback {
+  display: none !important;
+}
 .justify-content-center {
   -ms-flex-pack: center !important;
   justify-content: center !important;

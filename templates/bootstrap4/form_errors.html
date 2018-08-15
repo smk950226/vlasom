@@ -1,0 +1,24 @@
+</div>
+</div>
+</section>
+</header>
+</div>
+<div class="modal fade modal-center load-active" id="modal-medium" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body no-pdd">
+                <div class="padding-30">
+                    <h3 class="mrg-vertical-15 text-center">Error!</h3>
+                    <p>
+                        {% for error in errors %}
+                            {{ error }}<br>
+                        {% endfor %}
+                    </p>
+                </div>
+                <div class="modal-close">
+                    <button type="button" class="btn icon-btn-md icon-btn-round btn-dark lh-0" data-dismiss="modal"><i class="ei ei-close"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

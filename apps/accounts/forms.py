@@ -42,6 +42,7 @@ class UserCreateForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'placeholder': 'example@email.com'}),
             'name': forms.TextInput(attrs={'placeholder': '홍길동'}),
             'nickname': forms.TextInput(attrs={'placeholder': 'Nickname'}),
+            'gender': forms.RadioSelect(),
         }
 
     def __init__(self, *args, **kwargs):
@@ -67,8 +68,8 @@ class UserCreateForm(forms.ModelForm):
 
 
 class UserUpdateForm(forms.ModelForm):
-    login_id_readonly = forms.CharField(label='로그인 ID', widget=forms.TextInput(attrs={'readonly': ''}))
-    email_readonly = forms.CharField(label='이메일', widget=forms.TextInput(attrs={'readonly': ''}))
+    login_id_readonly = forms.CharField(label='로그인 ID', widget=forms.TextInput(attrs={'readonly': ''}), required=False)
+    email_readonly = forms.CharField(label='이메일', widget=forms.TextInput(attrs={'readonly': ''}), required=False)
 
     class Meta:
         model = User
@@ -77,15 +78,12 @@ class UserUpdateForm(forms.ModelForm):
             'email_readonly',
             'name',
             'nickname',
+            'gender',
+            'profile_image',
             'birth_year',
             'birth_month',
             'birth_day',
         ]
-        labels = {
-            'name': '이름 변경',
-            'nickname': '닉네임 변경',
-            'birth': '생년월일 변경',
-        }
 
     def __init__(self, *args, **kwargs):
         super(UserUpdateForm, self).__init__(*args, **kwargs)

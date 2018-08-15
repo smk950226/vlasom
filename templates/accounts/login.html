@@ -1,63 +1,72 @@
 {% extends "base/base_accounts.html" %}
-{% load socialaccount static %}
+{% load socialaccount static bootstrap4 %}
 
 {% block accounts_body %}
-<div class="login-panel pdd-horizon-15 pdd-vertical-30">
-    <h2 class="theme-color text-center">Sign your Account</h2>
-    <form action="" method="post" class="row mrg-top-20">
+<div class="pdd-vertical-80 pdd-horizon-40" style="background-image: url({% static 'images/accounts-bg.png' %}); background-size: contain; background-repeat: no-repeat; background-position: center;">
+    <h3 class="theme-color">Sign your Account</h3>
+    <form class="mrg-top-40" action="" method="post">
         {% csrf_token %}
-        <div class="col-xs-9">
-            <div class="row mrg-top-10">
-                <div class="col-xs-1 col-xs-offset-3">
-                    <img src="{% static "images/logo/logo-3.png" %}" alt="">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-1">
+                <div class="row">
+                    <div class="col-xs-3 pdd-right-5">
+                        <div class="input-label">
+                            <h2><img src="{% static "images/nav-nickname.png" %}" width="25" alt="" style="margin-top: -7px;"></h2>
+                        </div>
+                    </div>
+                    {% bootstrap_field form.username show_label=False form_group_class='col-xs-9 no-pdd-horizon' field_class='form-control2' %}
                 </div>
-                <div class="col-xs-8">
-                    <input class="form-control" type="text" name="username" autofocus="" maxlength="254" required="" id="id_username">
-                    {{ form.username.error }}
+                <div class="row mrg-top-10">
+                    <div class="col-xs-3 pdd-right-5">
+                        <div class="input-label">
+                            <h2>hi</h2>
+                        </div>
+                    </div>
+                    {% bootstrap_field form.password show_label=False form_group_class='col-xs-9 no-pdd-horizon' field_class='form-control2' %}
                 </div>
             </div>
-            <div class="row mrg-top-10">
-                <div class="col-xs-1 col-xs-offset-3">
-                    <img src="{% static "images/logo/logo-3.png" %}" alt="">
-                </div>
-                <div class="col-xs-8">
-                    <input class="form-control" type="password" name="password" required="" id="id_password">
-                    {{ form.password.error }}
-                </div>
+            <div class="col-xs-2 pdd-left-5">
+                <button type="submit" class="input-submit">
+                    <h4>login</h4>
+                </button>
             </div>
-        </div>
-        <div class="col-xs-3">
-            <button type="submit">login</button>
         </div>
     </form>
-</div>
-<div class="row">
-    <div class="col-xs-6 col-xs-offset-3"> 
-        <div class="col-sm-6 text-left">
-            <p><a href="{% url "user_create" %}">회원가입</a></p>
-        </div>
-        <div class="col-sm-6 text-right">
-            <p><a href="{% url "find_id" %}">아이디</a> / <a href="{% url "password_reset" %}">비밀번호 찾기</a></p>
-        </div>
-    </div>
-</div>
-<div class="row mrg-top-20 mrg-btm-30">
-    {% for provider in providers %}
-        {% if provider.social_app %}
-        <div class="col-xs-2 {% if forloop.first %}col-xs-offset-3{% endif %} text-center">
-            <a href="{% provider_login_url provider.id %}">
-                <div class="border-top-bottom pdd-vertical-15">
-                    <p class="theme-color">
-                        login with<br/>
-                        {{ provider.name }}
-                    </p>
-                    <img src="{% static "images/logo/logo-3.png" %}" alt="">
-                </div>
+    <div class="row mrg-top-20">
+        <div class="col-xs-5 col-xs-offset-1 text-left pdd-left-50">
+            <a class="font-weight-bold" href="{% url "user_create" %}">
+                회원가입
             </a>
         </div>
-        {% endif %}
-    {% endfor %}
+        <div class="col-xs-5 text-right pdd-right-50">
+            <a class="font-weight-bold" href="{% url "find_id" %}">아이디</a> <span class="text-dark font-weight-bold">/</span> <a class="font-weight-bold" href="{% url "password_reset" %}">비밀번호</a> <span class="text-dark font-weight-bold">찾기</span>
+        </div>
+    </div>
+    <div class="row mrg-top-40">
+        {% for provider in providers %}
+            {% if provider.social_app %}
+            <div class="col-xs-2 {% if forloop.first %}col-xs-offset-3{% endif %} text-center">
+                <a href="{% provider_login_url provider.id %}">
+                    <div class="border-top-bottom pdd-vertical-15">
+                        <p class="theme-color">
+                            login with<br/>
+                            {{ provider.name }}
+                        </p>
+                        {% if provider.name == 'Kakao' %}
+                        <img src="{% static "images/kakao.png" %}" alt="">
+                        {% elif provider.name == 'Facebook' %}
+                        <img src="{% static "images/facebook.png" %}" alt="">
+                        {% elif provider.name == 'Google' %}
+                        <img src="{% static "images/google.png" %}" alt="">
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
 </div>
+{% bootstrap_form_errors form %}
 {% endblock %}
 
 {% block footer %}

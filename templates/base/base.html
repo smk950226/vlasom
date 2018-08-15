@@ -37,7 +37,7 @@
 	<div class="loader-wrapper">
 		<div class="loaders">
 			<div class="loader-logo-pulse">
-				<img src="{% static "images/logo/logo-2.png" %}" alt="Eastern"> 
+				<img src="{% static "images/logo-red.png" %}" alt="Eastern"> 
 			</div>
 			<div class="loader-1">
 			</div>
@@ -55,8 +55,8 @@
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle" href="javascript:void(0);">프로필 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">내 프로필</a></li>
-                                <li><a href="#">내가 찜한 내역</a></li>
+                                <li><a href="{% url "profile" %}">내 프로필</a></li>
+                                <li><a href="{% url "preference:interest_list" %}">내가 찜한 내역</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

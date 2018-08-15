@@ -8119,9 +8119,9 @@ section {
 --------------------------*/
 
 input.form-control {
-    min-height: 40px;
+    height: 46px;
     border-radius: 0;
-    padding: 15px;
+    padding-left: 14px;
     border-top: 1px solid #c72949;
     border-bottom: 1px solid #c72949;
     border-left: none;
@@ -8130,30 +8130,73 @@ input.form-control {
     color: #333743;
     letter-spacing: 0.5px;
     box-shadow: none;
+    font-family: 'THEvanillabean', sans-serif;
+    font-weight: bold;
 }
 
 input.form-control::-webkit-input-placeholder {
     color: #cecece;
     font-size: 14px;
+    line-height: 46px;
 }
 
 input.form-control:-moz-placeholder {
     color: #cecece;
     font-size: 14px;
+    line-height: 46px;
 }
 
 input.form-control::-moz-placeholder {
     color: #cecece;
     font-size: 14px;
+    line-height: 46px;
 }
 
 input.form-control:-ms-input-placeholder {
     color: #cecece;
     font-size: 14px;
+    line-height: 46px;
 }
 
 input.no-border {
     border: 0;
+}
+.form-control2 input.form-control {
+    height: 46px;
+    border-radius: 0;
+    padding-left: 14px;
+    border-top: 1px solid #c72949;
+    border-bottom: 1px solid #c72949;
+    border-left: none;
+    border-right: none;
+    font-size: 15px;
+    color: #333743;
+    letter-spacing: 0.5px;
+    box-shadow: none;
+}
+
+.form-control2 input.form-control::-webkit-input-placeholder {
+    color: #cecece;
+    font-size: 14px;
+    line-height: 46px;
+}
+
+.form-control2 input.form-control:-moz-placeholder {
+    color: #cecece;
+    font-size: 14px;
+    line-height: 46px;
+}
+
+.form-control2 input.form-control::-moz-placeholder {
+    color: #cecece;
+    font-size: 14px;
+    line-height: 46px;
+}
+
+.form-control2 input.form-control:-ms-input-placeholder {
+    color: #cecece;
+    font-size: 14px;
+    line-height: 46px;
 }
 
 input.material-input {
@@ -8170,7 +8213,8 @@ input.material-input:focus {
 }
 
 select.form-control {
-    min-height: 40px;
+    height: 46px;
+    line-height: 46px;
     border-radius: 0;
     padding: 15px;
     border: 1px solid #c72949;

@@ -67,6 +67,14 @@ a:hover, a:focus {
   .btn-theme-inverse:hover, .btn-theme-inverse:focus {
     background-color: #fff;
     border-color: #fff; }
+.btn-theme-inverse2 {
+  color: #c72949;
+  border-color: #cd807e;
+  background-color: #cd807e; }
+  .btn-theme-inverse2:hover, .btn-theme-inverse2:focus {
+    background-color: #c72949;
+    border-color: #c72949;
+    color: #fff; }
 
 .btn-white:hover, .btn-white:focus,
 .btn-gray:hover,
