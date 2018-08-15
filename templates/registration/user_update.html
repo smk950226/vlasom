@@ -5,12 +5,27 @@
 <section class="section-1">
     <div class="container text-center mrg-top-50">
         <h1 class="theme-color">My Profile</h1>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="row mrg-top-60">
-                <div class="col-xs-12 col-md-5 profile-wrapper no-pdd">
-                    <img id="profile_image" src="{{ request.user.profile_image.url }}" width="100%" alt="">
-                    {% bootstrap_field form.profile_image show_label=False form_group_class='' %}
+            <div class="row mrg-top-60">   
+                <div class="portfolio col-xs-12 col-md-5 profile-wrapper no-pdd" style="cursor:pointer;">
+                    <div id="profile_image_wrapper" class="folio-item">
+                        <div class="folio-style-3">
+                            <div class="folio-image">
+                                <img id="profile_img" class="img-responsive" src="{{ request.user.profile_image.url }}" alt="">
+                            </div><!-- /folio-image -->
+                            <div class="overlay">								
+                            </div><!-- /overlay -->
+                            <div class="folio-caption theme-color-bg-opacity">
+                                <div class="pull-left">
+                                    <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> 수정하기</a></h3>
+                                </div><!-- /pull-left -->
+                            </div><!-- /folio-caption -->
+                        </div><!-- folio-style -->
+                    </div><!-- /folio-item -->
+                    <div style="display: none;">
+                        {% bootstrap_field form.profile_image show_label=False form_group_class='' %}
+                    </div>
                 </div>
                 <div class="col-xs-12 col-md-6 col-md-offset-1">
                     <div class="row">
@@ -116,5 +131,19 @@
             $('#gender_2_label').html('<img src="{% static "images/female-before.png" %}" width="30" alt="">');
         }
     });
+
+    $('#profile_image_wrapper').on('click', function(){
+        $('#id_profile_image').trigger('click');
+    })
+
+    $('#id_profile_image').on('change', function(){
+        if (this.files && this.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#profile_img').attr({'src': e.target.result});
+            }
+            reader.readAsDataURL(this.files[0])
+        } 
+    })
 </script>
 {% endblock %}

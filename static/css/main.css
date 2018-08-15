@@ -8219,10 +8219,10 @@ select.form-control {
     padding: 15px;
     border: 1px solid #c72949;
     font-size: 15px;
-    color: #cecece;
     letter-spacing: 0.5px;
     padding: 0px 12px;
     box-shadow: none;
+    font-family: 'THEvanillabean', sans-serif;
 }
 
 textarea.form-control {
