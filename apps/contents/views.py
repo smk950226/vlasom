@@ -69,7 +69,7 @@ class ContentsDetail(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['category_menu'] = Category.objects.all()
-        context['like_set_contents'] = Like.objects.filter(user = self.request.user).values_list('contents', flat=True) 
+        context['like_set_contents'] = list(Like.objects.filter(user = self.request.user).values_list('contents', flat=True)) 
         return context
     
 
