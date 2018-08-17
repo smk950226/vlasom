@@ -6,6 +6,8 @@ from django.views.generic import CreateView, ListView, DetailView, UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
 
 from apps.common.mixins import LoginRequiredMixin
+from apps.preference.models import Like
+
 from .forms import ContentsCreateForm
 from .models import Contents, ContentsImages, Category
 
@@ -67,6 +69,7 @@ class ContentsDetail(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['category_menu'] = Category.objects.all()
+        context['like_set_contents'] = Like.objects.filter(user = self.request.user).values_list('contents', flat=True) 
         return context
     
 

@@ -26,7 +26,9 @@ def like_create(request, pk):
     
     context = {'message': message,}
 
-    return HttpResponse(json.dumps(context), content_type="application/json")
+    return render(request, 'preference/_like.html', {
+        'like_count': contents.like_count,
+    })
 
 @login_required
 def interest_create_contents(request, pk):

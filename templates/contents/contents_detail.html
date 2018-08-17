@@ -1,5 +1,5 @@
 {% extends "base/base.html" %}
-{% load static %}
+{% load static common %}
 
 {% block content %}
 <section class="section-1">
@@ -14,7 +14,7 @@
                 <a class="btn btn-md btn-round btn-theme font-weight-bold" href="{% url "contents:contents_list" contents.category_1.id %}">{{ contents.category_1 }}</a>{% if contents.category_2 %}<a class="mrg-left-10 btn btn-md btn-round btn-theme font-weight-bold" href="{% url "contents:contents_list" contents.category_2.id %}">{{ contents.category_2 }}</a>{% endif %} <h4 class="theme-color">{{ contents.tags }}</h4>
             </div>
             <div class="col-xs-6 text-right">
-                <h3>{{ contents.user.nickname }} <img class="mrg-right-15" src="{% static "images/like.png" %}" width="30" height="30" alt="">{{ contents.like_count }}</h3>
+                <h3>{{ contents.user.nickname }} <a class="like" href="{% url "preference:like_create" contents.id %}"><img class="mrg-right-15" src="{% static "images/like.png" %}" width="30" height="30" alt=""><span id="like_count" {% if contents.id in like_set_contents %}class="theme-color"{% endif %}>{{ contents.like_count }}</span></h3></a>
             </div>
         </div>
         <div class="row border-top-bottom padding-20 mrg-top-30">
@@ -55,5 +55,18 @@
     $('.slide-start-trigger').on('click',function(){
         $('#slide-start').trigger('click');
     })
+    $(function() {
+        $('.like').click(function() {
+            $.get($(this).attr('href'))
+            .done(function(html) {
+                $('#like_count').html(html);
+            })
+            .fail(function(response) {
+                console.log('문제가 발생하였습니다. 다시 시도해 주세요.');
+                console.log(response);
+            });
+            return false;
+        });
+    });
 </script>
 {% endblock %}
