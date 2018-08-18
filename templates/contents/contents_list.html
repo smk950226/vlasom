@@ -1,5 +1,5 @@
 {% extends "base/base.html" %}
-{% load static %}
+{% load static bootstrap3 %}
 
 {% block content %}
 <section class="section-1">
@@ -13,6 +13,9 @@
             <div id="contents_list" class="portfolio isotope row col-3 gutter-sm mrg-top-30">
                 {% include 'contents/partials/contents_list/_contents_list.html' %}
             </div>
+        </div>
+        <div class="row text-center">
+            {% bootstrap_pagination page_obj %}
         </div>
     </div>
 </section>
