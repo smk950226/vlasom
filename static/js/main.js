@@ -324,14 +324,6 @@ var Eastern = function() {
         });
     }
 
-    // Counter
-    var counterPlugin = function() {
-        $('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
-    }
-
     // Progress Bar
     var progressBar = function() {
         $('.progress-wrapper').each(function() {
@@ -347,13 +339,6 @@ var Eastern = function() {
                 offset: "100%"
             });
         })
-    }
-
-    //Youtube Player
-    var youtubePlayer = function() {
-        $(function() {
-            jQuery(".video-player").YTPlayer();
-        });
     }
 
     //WOW
@@ -466,9 +451,7 @@ var Eastern = function() {
             swiperSlider(); // Swiper Slider Control
             parallaxScroll(); // Parallax Scroll Control
             magnificPopup(); // Magnific Popup Control
-            counterPlugin(); // Counter Control
             progressBar(); // Progress Bar Control
-            youtubePlayer(); // YoutubePlayer Control
             wowReveal(); // Wow Control
             quantitySelector(); // Quantity Selector Control
             footerReveal(); // Footer Reveal Control
