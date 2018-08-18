@@ -10,70 +10,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="portfolio isotope row col-3 gutter-sm mrg-top-30">
-                {% for contents in contents_list %}
-                <a href="{% url "contents:contents_detail" contents.id %}" class="folio-item web-design">
-                    <div class="folio-style-2">
-                        <div class="folio-image">
-                            <img class="img-responsive" src="{{ contents.image.url }}" alt="">
-                        </div><!-- /folio-image -->
-                        <div class="row pdd-horizon-30 mrg-top-10 text-dark">
-                            <div class="col-xs-7">
-                                <p class="font-weight-bold">{{ contents.user.nickname }}<br/>
-                                <span class="theme-color">{{ contents.tags }}</span></p>
-                            </div>
-                            <div class="col-xs-5 text-right">
-                                <p class="mrg-top-10 font-weight-bold">
-                                    <img src="{% static "images/like.png" %}" width="30" height="30" alt="">
-                                    {{ contents.like_count }}
-                                </p>
-                            </div>
-                        </div>
-                    </div><!-- folio-style -->
-                </a><!-- /folio-item -->
-                {% empty %}
-                <h2>콘텐츠가 없습니다.</h2>
-                {% endfor %}
+            <div id="contents_list" class="portfolio isotope row col-3 gutter-sm mrg-top-30">
+                {% include 'contents/partials/contents_list/_contents_list.html' %}
             </div>
         </div>
     </div>
 </section>
 {% endblock %}
-콘텐츠 리스트
-<hr/> for contents in contents_list %}
-<a href="{% url "contents:contents_detail" contents.id %}">{{ contents.user}} / {{contents.category_1}} / {{ contents.views }}</a>
-<a class="like" href="{% url "preference:like_create" contents.id %}">좋아요/</a>
-<a class="interest" href="{% url "preference:interest_create_contents" contents.id %}">/찜하기</a>
-<hr/>
-<br/>
-<hr/>
-<a href="{% url "contents:contents_create" %}">콘텐츠 등록하기</a>
-
-<script>
-    $(function() {
-        $('.like').click(function() {
-            $.get($(this).attr('href'))
-            .done(function(response) {
-                alert(response.message)
-            })
-            .fail(function(response) {
-                console.log('문제가 발생하였습니다. 다시 시도해 주세요.');
-                console.log(response)
-            });
-            return false;
-        });
-    });
-    $(function() {
-        $('.interest').click(function() {
-            $.get($(this).attr('href'))
-            .done(function(response) {
-                alert(response.message)
-            })
-            .fail(function(response) {
-                console.log('문제가 발생하였습니다. 다시 시도해 주세요.');
-                console.log(response)
-            });
-            return false;
-        });
-    });
-</script>
