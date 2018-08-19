@@ -13,3 +13,24 @@
 {% endif %}
 
 {% endblock %}
+{% block extrajs %}
+<script>
+        $(function(){
+                var search_params = new URLSearchParams(window.location.search);
+                var current_page = search_params.get('q');
+
+                if (current_page){
+                        $('.pagination li a').each(function(index){
+                                if ($(this).attr('href')){
+                                        if(index == 0){
+                                                $(this).attr({'href': '?q='+current_page+'&page='+ 1});
+                                        }
+                                        else{
+                                                $(this).attr({'href': '?q='+current_page+'&page='+ index});
+                                        }
+                                }
+                        })
+                }
+        })
+</script>
+{% endblock %}

@@ -48,6 +48,7 @@ class LandingView(TemplateView):
 class SearchResult(SearchView):
     model = Contents
     template_name = 'website/home.html'
+    paginate_by = 2
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
