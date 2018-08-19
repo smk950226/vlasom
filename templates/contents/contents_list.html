@@ -5,9 +5,18 @@
 <section class="section-1">
     <div class="container mrg-top-50">
         <div class="row">
+            {% if request.path == '/contents/hot/list/' or request.path == '/contents/new/list/' %}
             <div class="col-xs-12">
-                <h2>{{ category }}</h2>
+                <h2>{{ category.name }}</h2>
             </div>
+            {% else %}
+            <div class="col-xs-7 col-md-2">
+                <h2>{{ category.name }}</h2>
+            </div>
+            <div class="col-xs-5 col-md-offset-8 col-md-2 mrg-top-20 text-right">
+                <a href="{% url "preference:interest_create_category" category.id %}" class="btn btn-md btn-round {% if category_is_interested %}btn-theme{% else %}btn-theme-inverse-to-theme{% endif %} interest">{{ category }} 찜하기</a>
+            </div>
+            {% endif %}
         </div>
         <div class="row">
             <div id="contents_list" class="portfolio isotope row col-3 gutter-sm mrg-top-30">
@@ -19,4 +28,21 @@
         </div>
     </div>
 </section>
+{% endblock %}
+{% block extrajs %}
+<script>
+    $(function() {
+        $('.interest').click(function() {
+            $.get($(this).attr('href'))
+            .done(function(response) {
+                alert(response.message)
+            })
+            .fail(function(response) {
+                console.log('문제가 발생하였습니다. 다시 시도해 주세요.');
+                console.log(response)
+            });
+            return false;
+        });
+    });
+</script>
 {% endblock %}

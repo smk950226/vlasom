@@ -52,14 +52,16 @@ def interest_create_contents(request, pk):
 def interest_create_category(request, pk):
     category = get_object_or_404(Category, id=pk)
 
-    if Interest.objects.filter(user = request.user).filter(category = Category).exists():
-        category.interest_count =  Interest.objects.filter(user = request.user).filter(category = Category).count()
-        contents.save()
+    if Interest.objects.filter(user = request.user).filter(category = category).exists():
+        category.interest_count =  Interest.objects.filter(user = request.user).filter(category = category).count()
+        category.save()
         message = '이미 찜하였습니다.'
+    elif len(Interest.objects.filter(user = request.user, contents__isnull = True)) >= 5:
+        message = '카테고리는 최대 5개만 관심등록할 수 있습니다.'
     else:
-        Interest.objects.create(user = request.user, category = Category)
-        category.interest_count =  Interest.objects.filter(user = request.user).filter(category = Category).count()
-        contents.save()
+        Interest.objects.create(user = request.user, category = category)
+        category.interest_count =  Interest.objects.filter(user = request.user).filter(category = category).count()
+        category.save()
         message = '찜하였습니다.'
     
     context = {'message': message,}

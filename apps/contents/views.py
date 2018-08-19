@@ -44,13 +44,27 @@ class ContentsList(LoginRequiredMixin, ListView):
 
 
     def get_queryset(self):
-        category = Category.objects.get(id = self.kwargs['category_id'])
-        return Contents.objects.filter(category_1 = category)
+        if self.request.path == '/contents/hot/list/':
+            return Contents.objects.all().order_by('-like_count')
+        elif self.request.path == '/contents/new/list/':
+            return Contents.objects.all().order_by('-regist_dt')
+        else:
+            category = Category.objects.get(id = self.kwargs['category_id'])
+            return Contents.objects.filter(category_1 = category)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['category'] = Category.objects.get(id = self.kwargs['category_id']).name
+        if self.request.path == '/contents/hot/list/':
+            context['category'] = '인기 콘텐츠'
+        elif self.request.path == '/contents/new/list/':
+            context['category'] = '최근 콘텐츠'
+        else:
+            context['category'] = Category.objects.get(id = self.kwargs['category_id'])
         context['category_menu'] = Category.objects.all()
+        if Interest.objects.filter(user = self.request.user, category = Category.objects.get(id = self.kwargs['category_id'])).exists():
+            context['category_is_interested'] = True 
+        else:
+            context['category_is_interested'] = False
         return context
     
 

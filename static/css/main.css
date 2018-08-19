@@ -6531,6 +6531,7 @@ section {
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
+    cursor: pointer;
 }
 
 .btn.btn-sm {
