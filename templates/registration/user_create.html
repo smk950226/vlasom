@@ -5,7 +5,7 @@
 <div class="pdd-vertical-40 pdd-horizon-40" style="background-image: url({% static 'images/accounts-bg3.png' %}); background-size: contain; background-repeat: no-repeat; background-position: center;">
     <h3 class="theme-color"><img src="{% static "images/signup.png" %}" width="30" height="40" alt=""><br/>
         Register</h3>
-    <form class="mrg-top-10" action="" method="post">
+    <form id="user_create_form" class="mrg-top-10" action="" method="post">
         {% csrf_token %}
         <div class="row">
             <div class="col-xs-2 col-xs-offset-1 pdd-right-5">
@@ -86,7 +86,7 @@
                 <label id="is_agreed_2" for="id_is_agreed_2"><img src="{% static "images/male-before.png" %}" width="20" height="20" alt=""></label>
             </div>
         </div>
-        <button class="btn btn-md btn-round btn-theme-inverse2 no-pdd-vertical mrg-top-10 mrg-btm-20" type="submit">
+        <button id="user_create_btn" class="btn btn-md btn-round btn-theme-inverse2 no-pdd-vertical mrg-top-10 mrg-btm-20" type="submit">
             <h5 style="color: inherit; mrg-vertical-5">Join</h5>
         </button>
     </form>
@@ -131,5 +131,17 @@
         }
     });
     
+    $('#user_create_btn').on('click', function(e){
+        e.preventDefault();
+        if (!$('input[name="gender"]').is(':checked')){
+            alert('성별을 선택해 주세요.');
+        }
+        if (!($('#id_is_agreed_1').is(":checked") && $('#id_is_agreed_2').is(":checked"))){
+            alert('약관에 동의해 주세요.');
+        }
+        if ($('input[name="gender"]').is(':checked') && $('#id_is_agreed_1').is(":checked") && $('#id_is_agreed_2').is(":checked")) {
+            $('#user_create_form').submit();
+        }
+    })
 </script>
 {% endblock %}

@@ -109,7 +109,7 @@ class UserConfirm(RedirectView):
             self.user.is_verified = True
             self.user.save()
             messages.success(self.request, self.success_message)
-        return reverse('home')
+        return reverse('website:home')
 
 
 class UserUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
