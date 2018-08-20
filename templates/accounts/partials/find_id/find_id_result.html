@@ -1,0 +1,36 @@
+<form class="mrg-top-30 mrg-btm-20" action="" method="get">
+    {% if result %}
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <p class="text-dark font-weight-bold">
+                회원님의 아이디는 다음과 같습니다.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-2 pdd-right-5 mrg-top-10">
+            <div class="input-label">
+                <h5>ID</h5>
+            </div>
+        </div>
+        <div class="col-xs-6 no-pdd-left mrg-top-10">
+            <input type="email" name="email" value="{{ result }}" class="form-control" readonly>
+        </div>
+    </div>
+    <a class="btn btn-md btn-round btn-theme-inverse2 no-pdd-vertical mrg-top-10 mrg-btm-20" href="{% url "login" %}">
+        <h5 style="color: inherit; mrg-vertical-5">로그인</h5>
+    </a>
+    {% else %}
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <p class="text-dark font-weight-bold">
+                입력하신 정보와 일치하는<br/>
+                아이디가 존자해지 않습니다.
+            </p>
+        </div>
+    </div>
+    <a class="btn btn-md btn-round btn-theme-inverse2 no-pdd-vertical mrg-top-10 mrg-btm-20" href="{% url "find_id" %}">
+        <h5 style="color: inherit; mrg-vertical-5">ID 찾기</h5>
+    </a>
+    {% endif %}
+</form>

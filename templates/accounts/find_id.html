@@ -1,11 +1,16 @@
-아이디 찾기
+{% extends "base/base_accounts.html" %}
+{% load static %}
 
-<form action="{% url "find_id_result" %}" method="get">
-    {% csrf_token %}
-    <input type="text" name="name">
-    <input type="email" name="email">
-    <input type="integer" name="birth_year">
-    <input type="integer" name="birth_month">
-    <input type="integer" name="birth_day">
-    <input type="submit">
-</form>
+{% block accounts_body %}
+<div class="pdd-vertical-40 pdd-horizon-40" style="background-image: url({% static 'images/accounts-bg3.png' %}); background-size: contain; background-repeat: no-repeat; background-position: center;">
+    <div class="mrg-vertical-80">
+        <h3 class="theme-color"><img src="{% static "images/signup.png" %}" width="30" height="40" alt=""><br/>
+            Forgot your ID?</h3>
+        {% if not result_step %}
+            {% include 'accounts/partials/find_id/find_id_form.html' %}
+        {% else %}
+            {% include 'accounts/partials/find_id/find_id_result.html' %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
