@@ -35,9 +35,10 @@ def interest_create_contents(request, pk):
     contents = get_object_or_404(Contents, id=pk)
 
     if Interest.objects.filter(user = request.user).filter(contents = contents).exists():
+        Interest.objects.filter(user = request.user).filter(contents = contents).delete()
         contents.interest_count = Interest.objects.filter(user = request.user).filter(contents = contents).count()
         contents.save()
-        message = '이미 찜하였습니다.'
+        message = '찜하기를 취소하였습니다.'
     else:
         Interest.objects.create(user = request.user, contents = contents)
         contents.interest_count = Interest.objects.filter(user = request.user).filter(contents = contents).count()
@@ -53,9 +54,10 @@ def interest_create_category(request, pk):
     category = get_object_or_404(Category, id=pk)
 
     if Interest.objects.filter(user = request.user).filter(category = category).exists():
+        Interest.objects.filter(user = request.user).filter(category = category).delete()
         category.interest_count =  Interest.objects.filter(user = request.user).filter(category = category).count()
         category.save()
-        message = '이미 찜하였습니다.'
+        message = '찜하기를 취소하였습니다.'
     elif len(Interest.objects.filter(user = request.user, contents__isnull = True)) >= 5:
         message = '카테고리는 최대 5개만 관심등록할 수 있습니다.'
     else:
@@ -72,6 +74,7 @@ def interest_create_category(request, pk):
 class InterestContentsList(ListView):
     model = Contents
     template_name = 'preference/interest/interest_contents_list.html'
+    paginate_by = 30
 
     def get_queryset(self):
         return Interest.objects.filter(user = self.request.user, category__isnull = True)

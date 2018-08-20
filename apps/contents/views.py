@@ -48,6 +48,8 @@ class ContentsList(LoginRequiredMixin, ListView):
             return Contents.objects.all().order_by('-like_count')
         elif self.request.path == '/contents/new/list/':
             return Contents.objects.all().order_by('-regist_dt')
+        elif self.request.path == '/contents/uploaded/':
+            return Contents.objects.filter(user = self.request.user).order_by('-regist_dt')
         else:
             category = Category.objects.get(id = self.kwargs['category_id'])
             return Contents.objects.filter(category_1 = category)
@@ -58,13 +60,15 @@ class ContentsList(LoginRequiredMixin, ListView):
             context['category'] = '인기 콘텐츠'
         elif self.request.path == '/contents/new/list/':
             context['category'] = '최근 콘텐츠'
+        elif self.request.path == '/contents/uploaded/':
+            context['category'] = '업로드한 콘텐츠'
         else:
             context['category'] = Category.objects.get(id = self.kwargs['category_id'])
+            if Interest.objects.filter(user = self.request.user, category = Category.objects.get(id = self.kwargs['category_id'])).exists():
+                context['category_is_interested'] = True 
+            else:
+                context['category_is_interested'] = False
         context['category_menu'] = Category.objects.all()
-        if Interest.objects.filter(user = self.request.user, category = Category.objects.get(id = self.kwargs['category_id'])).exists():
-            context['category_is_interested'] = True 
-        else:
-            context['category_is_interested'] = False
         return context
     
 
@@ -103,4 +107,3 @@ class ContentsUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         context = super().get_context_data(**kwargs)
         context['category_menu'] = Category.objects.all() 
         return context
-    

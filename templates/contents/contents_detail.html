@@ -14,7 +14,7 @@
                 <a class="btn btn-md btn-round btn-theme font-weight-bold" href="{% url "contents:contents_list" contents.category_1.id %}">{{ contents.category_1 }}</a>{% if contents.category_2 %}<a class="mrg-left-10 btn btn-md btn-round btn-theme font-weight-bold" href="{% url "contents:contents_list" contents.category_2.id %}">{{ contents.category_2 }}</a>{% endif %} <h4 class="theme-color">{% if contents.tags %}{{ contents.tags }}{% endif %}</h4>
             </div>
             <div class="col-xs-6 text-right">
-                <h3>{{ contents.user.nickname }} <a class="like" href="{% url "preference:like_create" contents.id %}"><img class="mrg-right-15" src="{% static "images/like.png" %}" width="30" height="30" alt=""><span id="like_count" {% if contents.id in like_set_contents %}class="theme-color"{% endif %}>{{ contents.like_count }}</span></a><a class="interest mrg-left-15 btn btn-md btn-round {% if contents.id in interest_set_contents %}btn-theme{% else %}btn-theme-inverse-to-theme{% endif %} font-weight-bold" href="{% url "preference:interest_create_contents" contents.id %}">찜하기</a></h3>
+                <h3>{{ contents.user.nickname }} <a class="like" href="{% url "preference:like_create" contents.id %}"><img class="mrg-right-15" src="{% static "images/like.png" %}" width="30" height="30" alt=""><span id="like_count" {% if contents.id in like_set_contents %}class="theme-color"{% endif %}>{{ contents.like_count }}</span></a><a class="interest mrg-left-15 btn btn-md btn-round {% if contents.id in interest_set_contents %}btn-theme{% else %}btn-theme-inverse-to-theme{% endif %} font-weight-bold" href="{% url "preference:interest_create_contents" contents.id %}">{% if contents.id in interest_set_contents %}찜하기 취소{% else %}찜하기{% endif %}</a></h3>
             </div>
         </div>
         <div class="row border-top-bottom padding-20 mrg-top-30">
@@ -72,7 +72,8 @@
         $('.interest').click(function() {
             $.get($(this).attr('href'))
             .done(function(response) {
-                alert(response.message)
+                alert(response.message);
+                window.location.reload();
             })
             .fail(function(response) {
                 console.log('문제가 발생하였습니다. 다시 시도해 주세요.');
