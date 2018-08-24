@@ -151,7 +151,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 AUTH_USER_MODEL = 'accounts.User'
-LOGIN_REDIRECT_URL = 'website:home'
+LOGIN_REDIRECT_URL = '/'
 
 SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USER_MODEL_USERNAME_FIELD = 'login_id'
