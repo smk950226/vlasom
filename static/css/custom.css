@@ -64,6 +64,12 @@ hr {
   .text-center-mobile {
     text-align: center !important;
   }
+  .text-left-mobile {
+    text-align: left !important;
+  }
+  .text-right-mobile {
+    text-align: right !important;
+  }
   .mrg-top-5-mobile {
     margin-top: 5px !important;
   }

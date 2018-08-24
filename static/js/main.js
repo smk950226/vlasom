@@ -131,6 +131,24 @@ var Eastern = function() {
 
             }
         });
+        $(".side-header-toggle-in-menu").on('click', function(e) {
+            e.preventDefault();
+            $(".side-header-left").toggleClass("active");
+            $(".sideheader-active-left").toggleClass("active");
+            $(".side-header-right").toggleClass("active");
+            $(".sideheader-active-right").toggleClass("active");
+            $(".side-header-toggle-in-menu").toggleClass("active");
+        });
+
+        $(window).on('scroll', function() {
+            if ($(window).scrollTop() > 1) {
+                $('.side-header-toggle-wrapper').addClass('shadow');
+
+            } else {
+                $('.side-header-toggle-wrapper').removeClass('shadow');
+
+            }
+        });
     }
 
     // Mobile Header Toggle

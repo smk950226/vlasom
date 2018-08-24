@@ -16,23 +16,25 @@
             {% csrf_token %}
             {% bootstrap_field form.image show_label=False form_group_class='' %}
             <div class="row mrg-top-15 text-center">
-                <div class="col-xs-2 no-pdd-right">
+                <div class="col-xs-3 col-sm-2 no-pdd-right">
                     <div class="input-label">
-                        <h3>Category</h3>
+                        <h3 class="mobile-none">카테고리</h3>
+                        <h4 class="mobile-only">카테고리</h4>
                     </div>
                 </div>
-                <div class="col-xs-10 no-pdd-left">
+                <div class="col-xs-9 col-sm-10 no-pdd-left">
                     {% bootstrap_field form.category_1 show_label=False form_group_class='col-xs-6 no-pdd-horizon' %}
                     {% bootstrap_field form.category_2 show_label=False form_group_class='col-xs-6 no-pdd-horizon' %}
                 </div>
             </div>
             <div class="row mrg-top-15 text-center">
-                <div class="col-xs-2 no-pdd-right">
+                <div class="col-xs-3 col-sm-2 no-pdd-right">
                     <div class="input-label">
-                        <h3>Tag</h3>
+                        <h3 class="mobile-none">Tag</h3>
+                        <h4 class="mobile-only">Tag</h4>
                     </div>
                 </div>
-                <div class="col-xs-10 no-pdd-left">
+                <div class="col-xs-9 col-sm-10 no-pdd-left">
                     {% bootstrap_field form.tags show_label=False show_help=False form_group_class='' %}
                 </div>
             </div>

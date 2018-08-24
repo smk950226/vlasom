@@ -4863,6 +4863,22 @@ section {
     box-shadow: none;
     outline: none !important;
 }
+.side-header-toggle-in-menu {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    margin: 15px 5px;
+    padding: 8px 10px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    border: 0px;
+    box-shadow: none;
+    outline: none !important;
+}
 
 .side-header-toggle.go-right {
     right: 30px;

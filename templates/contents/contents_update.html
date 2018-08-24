@@ -12,45 +12,58 @@
             {% csrf_token %}
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <img id="image_large" class="max-height-600" src="{{ contents.image.url }}" height="100%" alt="">
+                    <img class="max-height-600 image_large mobile-none" src="{{ contents.image.url }}" height="100%" alt="">
+                    <img class="max-height-600 image_large mobile-only" src="{{ contents.image.url }}" width="100%" alt="">
                 </div>
             </div>
             <div class="row border-top-bottom padding-20 mrg-top-30">
                 <div class="text-center">
-                    {% for image in contents_images %}
-                    <div style="display: none;">
-                        <a {% if forloop.counter == 7 %}id="slide-start"{% endif %} href="{{ image.image.url }}" class="lightbox-img"></a>
-                    </div>
-                    {% endfor %}
-                    {% for image in contents.contentsimages_set.all %}
-                    {% if forloop.counter < 7 %}
-                    <input type="radio" name="contents_images" value="{{ forloop.counter }}" id="{{ forloop.counter }}" style="display: none;" {% if forloop.first %}checked{% endif %}>
-                    <label id="{{ forloop.counter }}_label" for="{{ forloop.counter }}"><img class="target-img" src="{{ image.image.url }}" width="150" height="150" alt=""></label>
-                    {% elif forloop.counter == 7 %}
-                    <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="150" height="150" alt="" style="opacity: 0.4;">
-                    {% endif %}
-                    {% endfor %}
+                        {% for image in contents_images %}
+                        <div style="display: none;">
+                            <a {% if forloop.first %}id="slide-start"{% endif %} href="{{ image.image.url }}" class="lightbox-img"></a>
+                        </div>
+                        {% endfor %}
+                        {% for image in contents_images %}
+                        <span class="mobile-none">
+                            {% if forloop.counter < 7 %}
+                            <input type="radio" name="contents_images" value="{{ forloop.counter }}" id="{{ forloop.counter }}" style="display: none;" {% if forloop.first %}checked{% endif %}>
+                            <label id="{{ forloop.counter }}_label" for="{{ forloop.counter }}"><img class="target-img" src="{{ image.image.url }}" width="150" height="150" alt=""></label>
+                            {% elif forloop.counter == 7 %}
+                            <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="150" height="150" alt="" style="opacity: 0.4;">
+                            {% endif %}
+                        </span>
+                        <span class="mobile-only">
+                            {% if forloop.counter < 3 %}
+                            <input type="radio" name="contents_images" value="{{ forloop.counter }}" id="{{ forloop.counter }}_2" style="display: none;" {% if forloop.first %}checked{% endif %}>
+                            <label id="{{ forloop.counter }}_label_2" for="{{ forloop.counter }}_2"><img class="target-img" src="{{ image.image.url }}" width="85" height="85" alt=""></label>
+                            {% elif forloop.counter == 3 %}
+                            <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="85" height="85" alt="" style="opacity: 0.4;">
+                            {% endif %}
+                        </span>
+                        {% endfor %}
                 </div>
             </div>
             <div class="row mrg-top-15 text-center">
-                <h4 class="theme-color text-left mrg-btm-20">* 사진은 수정할 수 없습니다.</h4>
-                <div class="col-xs-2 no-pdd-right">
+                <h4 class="theme-color text-left mrg-btm-20 mrg-left-10">* 사진은 수정할 수 없습니다.</h4>
+                <div class="col-xs-3 col-sm-2 no-pdd-right">
                     <div class="input-label">
-                        <h3>Category</h3>
+                        <h3 class="mobile-none">카테고리</h3>
+                        <h4 class="mobile-only">카테고리</h4>
                     </div>
                 </div>
-                <div class="col-xs-10 no-pdd-left">
+                <div class="col-xs-9 col-sm-10 no-pdd-left">
                     {% bootstrap_field form.category_1 show_label=False form_group_class='col-xs-6 no-pdd-horizon' %}
                     {% bootstrap_field form.category_2 show_label=False form_group_class='col-xs-6 no-pdd-horizon' %}
                 </div>
             </div>
             <div class="row mrg-top-15 text-center">
-                <div class="col-xs-2 no-pdd-right">
+                <div class="col-xs-3 col-sm-2 no-pdd-right">
                     <div class="input-label">
-                        <h3>Tag</h3>
+                        <h3 class="mobile-none">Tag</h3>
+                        <h4 class="mobile-only">Tag</h4>
                     </div>
                 </div>
-                <div class="col-xs-10 no-pdd-left">
+                <div class="col-xs-9 col-sm-10 no-pdd-left">
                     {% bootstrap_field form.tags show_label=False show_help=False form_group_class='' %}
                 </div>
             </div>
@@ -68,7 +81,7 @@
 {% block extrajs %}
 <script>
     $('input[name="contents_images"]').on('change',function(){
-        $('#image_large').attr({'src': $('input[name="contents_images"]:checked').next().children('.target-img').attr('src')});
+        $('.image_large').attr({'src': $('input[name="contents_images"]:checked').next().children('.target-img').attr('src')});
     })
     $('.slide-start-trigger').on('click',function(){
         $('#slide-start').trigger('click');

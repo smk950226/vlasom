@@ -55,6 +55,10 @@
                     <div class="side-header-logo">
                         <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/nav-logo-white.png" %}" alt="vlasom"></a>
                     </div>
+                    <button type="button" class="side-header-toggle-in-menu">
+                        <i class="ei ei-close text-white"></i>
+                        <span class="sr-only"></span>
+                    </button>
                     <ul class="side-header-menu">
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle" href="javascript:void(0);">프로필 <span class="caret"></span></a>
@@ -136,6 +140,7 @@
  
         {% block content %}
         {% endblock %}
+        <div id="footer-line" class="theme-color-bg" style="height: 20px;"></div>
         <footer id="mobile-footer-nav" class="mobile-only border-top pdd-vertical-10 bg-white animated show" style="position: fixed; bottom: 0; left: 0; width: 100%;">
             <div class="container">
                 <div class="row text-center">
@@ -180,6 +185,9 @@
     <!-- Java Scripts -->
     <script type="text/javascript" src="{% static "js/main.js" %}"></script>
     <script>
+        if($('#hero')){
+            $('#footer-line').attr({'style': 'display: none;'});
+        }
         $(function(){
             var lastScrollTop = 0, delta = 15;
 

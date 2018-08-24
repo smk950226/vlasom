@@ -19,11 +19,11 @@
                 <h3 class="mobile-only">{{ request.user.nickname }}님이 {{ category }}</h3>
             </div>
             {% else %}
-            <div class="col-xs-7 col-md-2">
+            <div class="col-xs-6 col-sm-7 col-md-2">
                 <h2>{{ category.name }}</h2>
             </div>
-            <div class="col-xs-5 col-md-offset-8 col-md-2 mrg-top-20 text-right">
-                <a href="{% url "preference:interest_create_category" category.id %}" class="btn btn-md btn-round {% if category_is_interested %}btn-theme{% else %}btn-theme-inverse-to-theme{% endif %} interest">{% if category_is_interested %}찜하기 취소{% else %}{{ category }} 찜하기{% endif %}</a>
+            <div class="col-xs-6 col-sm-5 col-md-offset-8 col-md-2 mrg-top-20 text-right">
+                <a href="{% url "preference:interest_create_category" category.id %}" class="btn btn-sm btn-round {% if category_is_interested %}btn-theme{% else %}btn-theme-inverse-to-theme{% endif %} interest">{% if category_is_interested %}찜하기 취소{% else %}{{ category }} 찜하기{% endif %}</a>
             </div>
             {% endif %}
         </div>
