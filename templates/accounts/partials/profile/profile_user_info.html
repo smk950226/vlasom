@@ -6,19 +6,21 @@
             <div class="col-xs-12 col-md-5 profile-wrapper no-pdd">
                 <img id="profile_image" src="{{ request.user.profile_image.url }}" width="100%" alt="">
             </div>
-            <div class="col-xs-12 col-md-6 col-md-offset-1">
+            <div class="col-xs-12 col-md-6 col-md-offset-1 mrg-top-30-mobile">
                 <div class="row">
                     <div class="col-xs-4">
                         <div class="input-label">
-                            <h3>ID</h3>
+                            <h3 class="mobile-none">ID</h3>
+                            <h4 class="mobile-only">ID</h4>
                         </div>
                     </div>
                     <div class="col-xs-6 no-pdd-left">
                         <div class="input-box">
-                            <h3>{{ request.user.login_id }}</h3>
+                            <h3 class="mobile-none">{{ request.user.login_id }}</h3>
+                            <h4 class="mobile-only">{{ request.user.login_id }}</h4>
                         </div>
                     </div>
-                    <div class="col-xs-2">
+                    <div class="col-xs-2 no-pdd-left-mobile">
                         <div class="input-box-border-all text-center">
                             {% if request.user.gender == 'M' %}
                             <div style="background-image: url({% static 'images/male.png' %}); background-size: contain; background-position: center; background-repeat: no-repeat;">
@@ -33,53 +35,61 @@
                 <div class="row mrg-top-15">
                     <div class="col-xs-4">
                         <div class="input-label">
-                            <h3>이름</h3>
+                            <h3 class="mobile-none">이름</h3>
+                            <h4 class="mobile-only">이름</h4>
                         </div>
                     </div>
                     <div class="col-xs-8 no-pdd-left">
                         <div class="input-box">
-                            <h3>{{ request.user.name }}</h3>
+                            <h3 class="mobile-none">{{ request.user.name }}</h3>
+                            <h4 class="mobile-only">{{ request.user.name }}</h4>
                         </div>
                     </div>
                 </div>
                 <div class="row mrg-top-15">
                     <div class="col-xs-4">
                         <div class="input-label">
-                            <h3>닉네임</h3>
+                            <h3 class="mobile-none">닉네임</h3>
+                            <h4 class="mobile-only">닉네임</h4>
                         </div>
                     </div>
                     <div class="col-xs-8 no-pdd-left">
                         <div class="input-box">
-                            <h3>{{ request.user.nickname }}</h3>
+                            <h3 class="mobile-none">{{ request.user.nickname }}</h3>
+                            <h4 class="mobile-only">{{ request.user.nickname }}</h4>
                         </div>
                     </div>
                 </div>
                 <div class="row mrg-top-15">
                     <div class="col-xs-4">
                         <div class="input-label">
-                            <h3>이메일</h3>
+                            <h3 class="mobile-none">이메일</h3>
+                            <h4 class="mobile-only">이메일</h4>
                         </div>
                     </div>
                     <div class="col-xs-8 no-pdd-left">
                         <div class="input-box">
-                            <h3>{{ request.user.email }}</h3>
+                            <h3 class="mobile-none">{{ request.user.email }}</h3>
+                            <h4 class="mobile-only">{{ request.user.email }}</h4>
                         </div>
                     </div>
                 </div>
                 <div class="row mrg-top-15">
                     <div class="col-xs-4">
                         <div class="input-label">
-                            <h3>Birth</h3>
+                            <h3 class="mobile-none">Birth</h3>
+                            <h4 class="mobile-only">Birth</h4>
                         </div>
                     </div>
                     <div class="col-xs-8 no-pdd-left">
                         <div class="input-box">
-                            <h3>{{ request.user.birth_year }}.{{ request.user.birth_month|stringformat:"02d" }}.{{ request.user.birth_day|stringformat:"02d" }}</h3>
+                            <h3 class="mobile-none">{{ request.user.birth_year }}.{{ request.user.birth_month|stringformat:"02d" }}.{{ request.user.birth_day|stringformat:"02d" }}</h3>
+                            <h4 class="mobile-only">{{ request.user.birth_year }}.{{ request.user.birth_month|stringformat:"02d" }}.{{ request.user.birth_day|stringformat:"02d" }}</h4>
                         </div>
                     </div>
                 </div>
                 <div class="row mrg-top-15">
-                    <div class="col-xs-12 text-right">
+                    <div class="col-xs-12 text-right text-center-mobile">
                         <a href="{% url "user_update" %}" class="btn btn-md btn-round btn-theme-inverse-to-theme">프로필 수정</a>
                     </div>
                 </div>

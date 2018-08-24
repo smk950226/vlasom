@@ -60,6 +60,7 @@
                             <a class="dropdown-toggle" href="javascript:void(0);">프로필 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{% url "profile" %}">내 프로필</a></li>
+                                <li><a href="{% url "contents:contents_list_uploaded" %}">내가 업로드한 내역</a></li>
                                 <li><a href="{% url "preference:interest_list" %}">내가 찜한 내역</a></li>
                             </ul>
                         </li>
@@ -117,7 +118,7 @@
                                 </li>
                                 {% endif %}
                                 <li class="nav-item">
-                                    <a href=""><img src="{% static "images/home.png" %}" width="35" height="35" alt=""></a>
+                                    <a href="{% url "website:home" %}"><img src="{% static "images/home.png" %}" width="35" height="35" alt=""></a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{% url "contents:contents_create" %}"><img src="{% static "images/more.png" %}" width="35" height="35" alt=""></a>
@@ -135,6 +136,24 @@
  
         {% block content %}
         {% endblock %}
+        <footer id="mobile-footer-nav" class="mobile-only border-top pdd-vertical-10 bg-white animated show" style="position: fixed; bottom: 0; left: 0; width: 100%;">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-xs-3">
+                        <a href="{% url "website:home" %}"><img src="{% static "images/home-red.png" %}" width="35" height="35" alt=""></a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href="{% url "preference:interest_list" %}"><img src="{% static "images/like-list-red.png" %}" width="35" height="35" alt=""></a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href="{% url "contents:contents_create" %}"><img src="{% static "images/more-red.png" %}" width="35" height="35" alt=""></a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href="{% url "profile" %}"><img src="{% static "images/profile-red.png" %}" width="35" height="35" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div><!-- wrapper -->
     
     {% block footer %}
@@ -160,6 +179,41 @@
     
     <!-- Java Scripts -->
     <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+    <script>
+        $(function(){
+            var lastScrollTop = 0, delta = 15;
+
+            $(window).scroll(function (event) {
+                var st = $(this).scrollTop();
+                if (Math.abs(lastScrollTop - st) <= delta) return;
+                if ((st > lastScrollTop) && (lastScrollTop > 0)) {
+                    if($("#mobile-footer-nav").hasClass('show')){
+                        $("#mobile-footer-nav").removeClass('show');
+                        $("#mobile-footer-nav").addClass('none');
+                    }
+                    else if($("#mobile-footer-nav").hasClass('none')){
+
+                    }
+                    else{
+                        $("#mobile-footer-nav").addClass('none');
+                    }
+                }
+                else {
+                    if($("#mobile-footer-nav").hasClass('show')){
+
+                    }
+                    else if($("#mobile-footer-nav").hasClass('none')){
+                        $("#mobile-footer-nav").removeClass('none');
+                        $("#mobile-footer-nav").addClass('show');
+                    }
+                    else{
+                        $("#mobile-footer-nav").addClass('show')
+                    }
+                }
+                lastScrollTop = st;
+            })
+        })
+    </script>
     {% block extrajs %}
     {% endblock %}
 </body>

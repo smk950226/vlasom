@@ -12,6 +12,7 @@
                 <a class="dropdown-toggle" href="javascript:void(0);">프로필 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="{% url "profile" %}">내 프로필</a></li>
+                    <li><a href="{% url "contents:contents_list_uploaded" %}">내가 업로드한 내역</a></li>
                     <li><a href="{% url "preference:interest_list" %}">내가 찜한 내역</a></li>
                 </ul>
             </li>

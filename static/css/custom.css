@@ -39,6 +39,9 @@ hr {
   color: #fff !important;
   background-color: #c72949;
 }
+.border-top {
+  border-top: 2px solid #c72949;
+}
 .border-top-bottom{
   border-top: 2px solid #c72949;
   border-bottom: 2px solid #c72949;
@@ -52,12 +55,47 @@ hr {
 .min-height-600 {
   min-height: 600px !important;
 }
+.show { display: block; }
+.none { display: none; }
 @media only screen and (max-width: 993px) {
   .mobile-none {
     display: none !important;
   }
   .text-center-mobile {
     text-align: center !important;
+  }
+  .mrg-top-5-mobile {
+    margin-top: 5px !important;
+  }
+  .mrg-top-10-mobile {
+    margin-top: 10px !important;
+  }
+  .mrg-top-15-mobile {
+    margin-top: 15px !important;
+  }
+  .mrg-top-20-mobile {
+    margin-top: 20px !important;
+  }
+  .mrg-top-25-mobile {
+    margin-top: 25px !important;
+  }
+  .mrg-top-30-mobile {
+    margin-top: 30px !important;
+  }
+  .mrg-top-35-mobile {
+    margin-top: 35px !important;
+  }
+  .mrg-top-40-mobile {
+    margin-top: 40px !important;
+  }
+  .mrg-top-45-mobile {
+    margin-top: 45px !important;
+  }
+  .mrg-top-50-mobile {
+    margin-top: 50px !important;
+  }
+  .no-pdd-left-mobile {
+    padding-left: 0 !important;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -143,7 +181,16 @@ hr {
 #gender_1_label img, #gender_2_label img {
   margin-top: -20px;
 }
+#id_gender_1_2, #id_gender_2_2 {
+  display: none;
+}
+#gender_1_label_2 img, #gender_2_label_2 img {
+  margin-top: -20px;
+}
 #id_is_agreed_1, #id_is_agreed_2 {
+  display: none;
+}
+#id_is_agreed_1_2, #id_is_agreed_2_2 {
   display: none;
 }
 .invalid-feedback {

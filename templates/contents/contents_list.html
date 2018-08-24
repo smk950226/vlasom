@@ -15,7 +15,8 @@
             </div>
             {% elif request.path == '/contents/uploaded/' %}
             <div class="col-xs-12">
-                <h2>{{ request.user.nickname }}님이 {{ category }}</h2>
+                <h2 class="mobile-none">{{ request.user.nickname }}님이 {{ category }}</h2>
+                <h3 class="mobile-only">{{ request.user.nickname }}님이 {{ category }}</h3>
             </div>
             {% else %}
             <div class="col-xs-7 col-md-2">
