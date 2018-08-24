@@ -3721,6 +3721,7 @@ section {
 }
 
 .header.header-transparent,
+.header.header-theme-color,
 .header.header-sticky.sticky {
     background-color: transparent;
     top: 0px;
@@ -3732,20 +3733,38 @@ section {
     background-color: transparent;
     position: absolute;
 }
+.header.header-theme-color {
+    background-color: #c72949;
+    position: absolute;
+}
 
 .header.header-transparent .nav-logo img.logo-light {
+    display: inline-block;
+}
+.header.header-theme-color .nav-logo img.logo-light {
     display: inline-block;
 }
 
 .header.header-transparent .nav-logo img.logo-dark {
     display: none;
 }
+.header.header-theme-color .nav-logo img.logo-dark {
+    display: none;
+}
 
 .header.header-transparent .nav-tools ul.navbar-nav > li > a {
     color: #fff;
 }
+.header.header-theme-color .nav-tools ul.navbar-nav > li > a {
+    color: #fff;
+}
 
 .header.header-transparent .nav-tools .nav-item .login-btn {
+    color: #fff;
+    border-color: #fff;
+    background-color: transparent;
+}
+.header.header-theme-color .nav-item .login-btn {
     color: #fff;
     border-color: #fff;
     background-color: transparent;
@@ -3758,6 +3777,15 @@ section {
     .header.header-transparent .navbar-collapse ul.navbar-nav > li:hover > a,
     .header.header-transparent .navbar-collapse ul.navbar-nav > li:focus > a,
     .header.header-transparent .navbar-collapse ul.navbar-nav > li.active > a {
+        color: #cecece;
+    }
+
+    .header.header-theme-color .navbar-collapse ul.navbar-nav > li > a {
+        color: #fff;
+    }
+    .header.header-theme-color .navbar-collapse ul.navbar-nav > li:hover > a,
+    .header.header-theme-color .navbar-collapse ul.navbar-nav > li:focus > a,
+    .header.header-theme-color .navbar-collapse ul.navbar-nav > li.active > a {
         color: #cecece;
     }
 }
@@ -4393,6 +4421,11 @@ section {
 .header.header-transparent .navbar-toggle span.top-bar,
 .header.header-transparent .navbar-toggle span.middle-bar,
 .header.header-transparent .navbar-toggle span.bottom-bar {
+    background-color: #fff;
+}
+.header.header-theme-color .navbar-toggle span.top-bar,
+.header.header-theme-color .navbar-toggle span.middle-bar,
+.header.header-theme-color .navbar-toggle span.bottom-bar {
     background-color: #fff;
 }
 

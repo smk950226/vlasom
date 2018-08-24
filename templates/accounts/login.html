@@ -69,5 +69,70 @@
 {% bootstrap_form_errors form %}
 {% endblock %}
 
-{% block footer %}
+{% block accounts_body_mobile %}
+<div class="pdd-vertical-80 pdd-horizon-40 text-center">
+    <h3 class="theme-color">VLASOM</h3>
+    <form class="mrg-top-40" action="" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-xs-8 col-sm-8 col-sm-offset-1">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 pdd-right-5">
+                        <div class="input-label">
+                            <h2><img src="{% static "images/nav-nickname.png" %}" width="25" alt="" style="margin-top: -7px;"></h2>
+                        </div>
+                    </div>
+                    {% bootstrap_field form.username show_label=False form_group_class='col-xs-8 col-sm-9 no-pdd-horizon' field_class='form-control2' %}
+                </div>
+                <div class="row mrg-top-10">
+                    <div class="col-xs-4 col-sm-3 pdd-right-5">
+                        <div class="input-label">
+                            <h2>hi</h2>
+                        </div>
+                    </div>
+                    {% bootstrap_field form.password show_label=False form_group_class='col-xs-8 col-sm-9 no-pdd-horizon' field_class='form-control2' %}
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-2 pdd-left-5">
+                <button type="submit" class="input-submit">
+                    <h4>login</h4>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="row mrg-top-20">
+        <div class="col-xs-12 col-sm-5 col-sm-offset-1 text-left text-center-mobile">
+            <a class="font-weight-bold" href="{% url "user_create" %}">
+                회원가입
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-5 text-right text-center-mobile">
+            <a class="font-weight-bold" href="{% url "find_id" %}">아이디</a> <span class="text-dark font-weight-bold">/</span> <a class="font-weight-bold" href="{% url "password_reset" %}">비밀번호</a> <span class="text-dark font-weight-bold">찾기</span>
+        </div>
+    </div>
+    <div class="row mrg-top-40">
+        {% for provider in providers %}
+            {% if provider.social_app %}
+            <div class="col-xs-4 col-sm-2 {% if forloop.first %}col-sm-offset-3{% endif %} text-center">
+                <a href="{% provider_login_url provider.id %}">
+                    <div class="border-top-bottom pdd-vertical-15">
+                        <p class="theme-color">
+                            login with<br/>
+                            {{ provider.name }}
+                        </p>
+                        {% if provider.name == 'Kakao' %}
+                        <img src="{% static "images/kakao.png" %}" alt="">
+                        {% elif provider.name == 'Facebook' %}
+                        <img src="{% static "images/facebook.png" %}" alt="">
+                        {% elif provider.name == 'Google' %}
+                        <img src="{% static "images/google.png" %}" alt="">
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% bootstrap_form_errors form %}
 {% endblock %}

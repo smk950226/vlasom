@@ -12,6 +12,9 @@ a:hover, a:focus {
 .theme-color-bg-opacity {
   background-color: #e394a4 !important;
 }
+.theme-color-bg-light {
+  background-color: #ffc6c6 !important;
+}
 
 /*================================
 ===========  Section  ============

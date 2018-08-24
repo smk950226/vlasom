@@ -52,8 +52,16 @@ hr {
 .min-height-600 {
   min-height: 600px !important;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 993px) {
   .mobile-none {
+    display: none !important;
+  }
+  .text-center-mobile {
+    text-align: center !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .mobile-only {
     display: none !important;
   }
 }
@@ -133,7 +141,7 @@ hr {
   display: none;
 }
 #gender_1_label img, #gender_2_label img {
-  margin-top: -15px;
+  margin-top: -20px;
 }
 #id_is_agreed_1, #id_is_agreed_2 {
   display: none;
