@@ -8,7 +8,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from apps.common.mixins import LoginRequiredMixin
 from apps.preference.models import Like, Interest
 
-from .forms import ContentsCreateForm
+from .forms import ContentsCreateForm, ContentsUpdateForm
 from .models import Contents, ContentsImages, Category
 
 class ContentsCreate(LoginRequiredMixin, CreateView):
@@ -94,7 +94,7 @@ class ContentsDetail(LoginRequiredMixin, DetailView):
 
 class ContentsUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'contents/contents_update.html'
-    form_class = ContentsCreateForm
+    form_class = ContentsUpdateForm
     model = Contents
     success_message = '성공적으로 내 콘텐츠를 수정했습니다.'
 
@@ -105,5 +105,18 @@ class ContentsUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['contents_images'] = ContentsImages.objects.filter(contents = self.kwargs['pk'])
         context['category_menu'] = Category.objects.all() 
         return context
+
+
+def contents_delete(request, pk):
+    try:
+        Contents.objects.filter(id = pk).delete()
+        message = '삭제하였습니다.'
+    except:
+        message = '오류가 발생하여 삭제하지 못하였습니다.'
+    
+    context = {'message': message}
+
+    return HttpResponse(json.dumps(context), content_type="application/json")

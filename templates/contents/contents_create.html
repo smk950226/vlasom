@@ -10,11 +10,6 @@
     <div class="container mrg-top-100">
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="row">
-                <div class="col-xs-12">
-                    <img id="image_preview" src="" width="100%" alt="">
-                </div>
-            </div>
             {% bootstrap_field form.image show_label=False form_group_class='' %}
             <div class="row mrg-top-15 text-center">
                 <div class="col-xs-2 no-pdd-right">
@@ -175,14 +170,5 @@
 		}
         */
     });
-    $('#id_image').on('change', function(){
-        if (this.files && this.files[0]){
-            var reader = new FileReader();
-            reader.onload = function(e){
-                $('#image_preview').attr({'src': e.target.result});
-            }
-            reader.readAsDataURL(this.files[0])
-        } 
-    })
 </script>
 {% endblock %}

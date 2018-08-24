@@ -42,6 +42,7 @@
             <a class="mrg-top-60 btn btn-md btn-round btn-theme-inverse-to-theme" href="{% url "contents:contents_list" contents.category_1.id %}"><h3 class="text-white no-mrg-vertical padding-10">{{ contents.category_1 }} 목록</h3></a>
             {% if request.user == contents.user %}
             <a class="mrg-top-60 btn btn-md btn-round btn-theme-inverse-to-theme" href="{% url "contents:contents_update" contents.id %}"><h3 class="text-white no-mrg-vertical padding-10">수정</h3></a>
+            <a class="mrg-top-60 btn btn-md btn-round btn-theme-inverse-to-theme contents-delete" href="{% url "contents:contents_delete" contents.id %}"><h3 class="text-white no-mrg-vertical padding-10">삭제</h3></a>
             {% endif %}
         </div>
     </div>
@@ -80,6 +81,25 @@
                 console.log(response)
             });
             return false;
+        });
+    });
+    $(function() {
+        $('.contents-delete').click(function(e) {
+            e.preventDefault();
+            var delete_yn = confirm('정말 삭제하시겠습니까?');
+            if (delete_yn){
+                $.get($(this).attr('href'))
+                .done(function(response) {
+                    alert(response.message);
+                    var referrer =  document.referrer;
+                    window.location.href = referrer;
+                })
+                .fail(function(response) {
+                    console.log('문제가 발생하였습니다. 다시 시도해 주세요.');
+                    console.log(response);
+                });
+                return false;
+            }
         });
     });
 </script>

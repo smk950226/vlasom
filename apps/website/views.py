@@ -20,7 +20,7 @@ class HomeView(LoginRequiredMixin, SearchView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['hot_contents'] = Contents.objects.all().order_by('-like_count')[:12]
-        context['new_contents'] = Contents.objects.all().order_by('regist_dt')
+        context['new_contents'] = Contents.objects.all().order_by('-regist_dt')
         context['category_menu'] = Category.objects.all()
         context['category_list'] = Interest.objects.filter(user = self.request.user, contents__isnull=True)
         i = 1
