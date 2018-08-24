@@ -1,6 +1,10 @@
 {% extends "base/base.html" %}
 {% load static common %}
 
+{% block title %}
+    <title>VLASOM :: {{ contents.category_1 }}-{{ contents.id }}</title>
+{% endblock %}
+
 {% block content %}
 <section class="section-1">
     <div class="container mrg-top-100">

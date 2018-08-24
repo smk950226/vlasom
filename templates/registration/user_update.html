@@ -1,6 +1,10 @@
 {% extends "base/base.html" %}
 {% load static bootstrap3 %}
 
+{% block title %}
+    <title>VLASOM :: {{ request.user.nickname }}님</title>
+{% endblock %}
+
 {% block content %}
 <section class="section-1">
     <div class="container text-center mrg-top-50">
