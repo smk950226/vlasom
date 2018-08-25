@@ -40,7 +40,7 @@
             <img class="wow animated fadeInUp" src="{% static "images/logo-large.png" %}" alt="VLASOM"><br/>
             <img class="no-mrg-top wow animated fadeInUp" data-wow-delay="500ms" src="{% static "images/landing-letter.png" %}" alt="VLASOM">
             <div class="border-4 width-50 mrg-horizon-auto mrg-vertical-30 wow animated fadeInUp" data-wow-delay="800ms"></div>
-            <div class="btn btn-lg btn-round btn-theme wow animated fadeInUp" data-wow-delay="1100ms">view more</div>
+            <a href="#hot_contents" class="btn btn-lg btn-round btn-theme wow animated fadeInUp slide-trigger" data-wow-delay="1100ms">view more</a>
         </div>
     </div>
 </section>
@@ -101,7 +101,7 @@
 <!-- Description End -->
 
 <!-- Portfolio Start -->
-<section class="section-1" id="activity">
+<section class="section-1" id="hot_contents">
     <div class="container">
         <div class="portfolio isotope masonry gutter row col-5 mrg-top-50">
             {% for contents in hot_contents %}
