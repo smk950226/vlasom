@@ -14,6 +14,9 @@
                     <h5>닉네임</h5>
                 </div>
             </div>
+            <div class="col-xs-6 no-pdd-left pdd-right-5">
+                <input type="text" name="nickname" value="라라랜드" autocomplete="off" class="form-control" placeholder="닉네임" title="" required="" id="id_nickname">
+            </div>
             {% bootstrap_field form.nickname show_label=False show_help=False form_group_class='col-xs-6 no-pdd-left pdd-right-5' %}
             <div class="col-xs-2 no-pdd-left">
                 <div class="input-box-border-all text-center">
@@ -23,6 +26,7 @@
                     <label id="gender_2_label" for="id_gender_2"><img src="{% static "images/female-before.png" %}" width="30" alt=""></label>
                 </div>
             </div>
+            <div class="col-xs-12 help-block">{{ form.nickname.errors }}</div>
         </div>
         <div class="row">
             <div class="col-xs-2 col-xs-offset-1 pdd-right-5 mrg-top-10">
@@ -30,7 +34,10 @@
                     <h5>이메일</h5>
                 </div>
             </div>
-            {% bootstrap_field form.email show_label=False show_help=False form_group_class='col-xs-8 no-pdd-left mrg-top-10' %}
+            <div class="col-xs-8 no-pdd-left mrg-top-10">
+                <input type="email" name="email" value="smk950226@naver.com" placeholder="이메일 주소" class="form-control" title="" required="" id="id_email">
+            </div>
+            <div class="col-xs-12 help-block">{{ form.email.errors }}</div>
         </div>
         <div class="row">
             <div class="col-xs-2 col-xs-offset-1 pdd-right-5 mrg-top-10">
@@ -74,7 +81,7 @@
         <div class="row">
             <div class="col-xs-3 col-sm-2 col-sm-offset-1 pdd-right-5">
                 <div class="input-label">
-                    <h5>ID</h5>
+                    <h5>닉네임</h5>
                 </div>
             </div>
             <div class="col-xs-4 col-sm-6 no-pdd-left pdd-right-5">
@@ -88,7 +95,7 @@
                     <label id="gender_2_label_2" for="id_gender_2_2"><img src="{% static "images/female-before.png" %}" width="30" alt=""></label>
                 </div>
             </div>
-            <div class="help-block">{{ form.nickname.errors }}</div>
+            <div class="col-xs-12 help-block">{{ form.nickname.errors }}</div>
         </div>
         <div class="row">
             <div class="col-xs-3 col-sm-2 col-sm-offset-1 pdd-right-5 mrg-top-10">
@@ -99,7 +106,7 @@
             <div class="col-xs-9 col-sm-8 no-pdd-left mrg-top-10">
                 <input type="email" name="email" placeholder="example@email.com" maxlength="254" class="form-control" title="" required="" id="id_email_2">
             </div>
-            <div class="help-block">{{ form.email.errors }}</div>
+            <div class="col-xs-12 help-block">{{ form.email.errors }}</div>
         </div>
         <div class="row">
             <div class="col-xs-3 col-sm-2 col-sm-offset-1 pdd-right-5 mrg-top-10">
