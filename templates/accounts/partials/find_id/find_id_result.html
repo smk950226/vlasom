@@ -1,25 +1,39 @@
 <form class="mrg-top-30 mrg-btm-20" action="" method="get">
     {% if result %}
-    <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-            <p class="text-dark font-weight-bold">
-                회원님의 아이디는 다음과 같습니다.
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-3 col-sm-2 col-sm-offset-2 pdd-right-5 mrg-top-10">
-            <div class="input-label">
-                <h5>ID</h5>
+        {% if result.join_channel != 'WEB' %}
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <p class="text-dark font-weight-bold">
+                    소셜로그인 회원은<br/>
+                    아이디를 찾을 수 없습니다.
+                </p>
             </div>
         </div>
-        <div class="col-xs-9 col-sm-6 no-pdd-left mrg-top-10">
-            <input type="email" name="email" value="{{ result }}" class="form-control" readonly>
+        <a class="btn btn-md btn-round btn-theme-inverse2 no-pdd-vertical mrg-top-10 mrg-btm-20" href="{% url "login" %}">
+            <h5 style="color: inherit; mrg-vertical-5">로그인</h5>
+        </a>
+        {% else %}
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <p class="text-dark font-weight-bold">
+                    회원님의 아이디는 다음과 같습니다.
+                </p>
+            </div>
         </div>
-    </div>
-    <a class="btn btn-md btn-round btn-theme-inverse2 no-pdd-vertical mrg-top-10 mrg-btm-20" href="{% url "login" %}">
-        <h5 style="color: inherit; mrg-vertical-5">로그인</h5>
-    </a>
+        <div class="row">
+            <div class="col-xs-3 col-sm-2 col-sm-offset-2 pdd-right-5 mrg-top-10">
+                <div class="input-label">
+                    <h5>ID</h5>
+                </div>
+            </div>
+            <div class="col-xs-9 col-sm-6 no-pdd-left mrg-top-10">
+                <input type="email" name="email" value="{{ result }}" class="form-control" readonly>
+            </div>
+        </div>
+        <a class="btn btn-md btn-round btn-theme-inverse2 no-pdd-vertical mrg-top-10 mrg-btm-20" href="{% url "login" %}">
+            <h5 style="color: inherit; mrg-vertical-5">로그인</h5>
+        </a>
+        {% endif %}
     {% else %}
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2">

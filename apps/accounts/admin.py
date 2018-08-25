@@ -34,6 +34,7 @@ class UserAdmin(BaseUserAdmin):
             'nickname',
             'profile_image',
             'email',
+            'join_channel',
             'gender',
             'birth_year',
             'birth_month',

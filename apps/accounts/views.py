@@ -156,5 +156,5 @@ class FindId(TemplateView):
         if name and email:
             context['result_step'] = True
             if User.objects.filter(name = name, email = email):
-                context['result'] = User.objects.filter(name = name, email = email).first().login_id
+                context['result'] = User.objects.filter(name = name, email = email).first()
         return context

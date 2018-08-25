@@ -90,9 +90,12 @@ class SocialSignupForm(AllauthSignupForm):
         user.birth_day = self.cleaned_data['birth_day']
         user.nickname = self.cleaned_data['nickname']
         user.is_verified = True
-        if join_channel == 'KAKAO':
+        name = self.sociallogin.account.extra_data.get('name','')
+        if name:
+            user.name = name
+        else:
             user.name = self.sociallogin.account.extra_data['properties']['nickname']
-
+        
         user.save()
         self.custom_signup(request, user)
         return user
