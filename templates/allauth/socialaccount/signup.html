@@ -14,9 +14,7 @@
                     <h5>닉네임</h5>
                 </div>
             </div>
-            <div class="col-xs-6 no-pdd-left pdd-right-5">
-                <input type="text" name="nickname" autocomplete="off" class="form-control" placeholder="닉네임" title="" required="" id="id_nickname">
-            </div>
+            {% bootstrap_field form.nickname show_label=False show_help=False form_group_class='col-xs-6 no-pdd-left pdd-right-5' %}
             <div class="col-xs-2 no-pdd-left">
                 <div class="input-box-border-all text-center">
                     <input type="radio" name="gender" value="M" required id="id_gender_1">
@@ -25,7 +23,6 @@
                     <label id="gender_2_label" for="id_gender_2"><img src="{% static "images/female-before.png" %}" width="30" alt="female"></label>
                 </div>
             </div>
-            <div class="col-xs-12 help-block">{{ form.nickname.errors }}</div>
         </div>
         <div class="row">
             <div class="col-xs-2 col-xs-offset-1 pdd-right-5 mrg-top-10">
@@ -33,10 +30,7 @@
                     <h5>이메일</h5>
                 </div>
             </div>
-            <div class="col-xs-8 no-pdd-left mrg-top-10">
-                <input type="email" name="email" placeholder="이메일 주소" class="form-control" title="" required="" id="id_email">
-            </div>
-            <div class="col-xs-12 help-block">{{ form.email.errors }}</div>
+            {% bootstrap_field form.email show_label=False show_help=False form_group_class='col-xs-8 no-pdd-left mrg-top-10' %}
         </div>
         <div class="row">
             <div class="col-xs-2 col-xs-offset-1 pdd-right-5 mrg-top-10">
