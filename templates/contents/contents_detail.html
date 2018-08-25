@@ -54,13 +54,13 @@
         </div>
         <div class="row text-center">
             <div class="col-xs-12">
-                <a class="mrg-top-60 btn btn-sm btn-round btn-theme-inverse-to-theme" href="{% url "website:home" %}"><h4 class="text-white no-mrg-vertical padding-10">홈으로</h4></a>
-                <a class="mrg-top-60 btn btn-sm btn-round btn-theme-inverse-to-theme" href="{% url "contents:contents_list" contents.category_1.id %}"><h4 class="text-white no-mrg-vertical padding-10">{{ contents.category_1 }} 목록</h4></a>
+                <a class="mrg-top-60 btn btn-sm btn-round btn-theme-inverse-to-theme" href="{% url "website:home" %}"><h6 class="text-white no-mrg-vertical padding-5">홈으로</h6></a>
+                <a class="mrg-top-60 btn btn-sm btn-round btn-theme-inverse-to-theme" href="{% url "contents:contents_list" contents.category_1.id %}"><h6 class="text-white no-mrg-vertical padding-5">{{ contents.category_1 }} 목록</h6></a>
             </div>
             {% if request.user == contents.user %}
             <div class="col-xs-12">
-                <a class="mrg-top-10 btn btn-sm btn-round btn-theme-inverse-to-theme" href="{% url "contents:contents_update" contents.id %}"><h4 class="text-white no-mrg-vertical padding-10">수정</h4></a>
-                <a class="mrg-top-10 btn btn-sm btn-round btn-theme-inverse-to-theme contents-delete" href="{% url "contents:contents_delete" contents.id %}"><h4 class="text-white no-mrg-vertical padding-10">삭제</h4></a>
+                <a class="mrg-top-10 btn btn-sm btn-round btn-theme-inverse-to-theme" href="{% url "contents:contents_update" contents.id %}"><h6 class="text-white no-mrg-vertical padding-5">수정</h6></a>
+                <a class="mrg-top-10 btn btn-sm btn-round btn-theme-inverse-to-theme contents-delete" href="{% url "contents:contents_delete" contents.id %}"><h6 class="text-white no-mrg-vertical padding-5">삭제</h6></a>
             </div>
             {% endif %}
         </div>

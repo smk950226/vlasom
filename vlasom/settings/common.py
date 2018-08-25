@@ -185,7 +185,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'resources/media')
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'sm95226@gmail.com'
+EMAIL_HOST_USER = 'vlasomdev@gmail.com'
 EMAIL_HOST_PASSWORD = get_secret("EMAIL_PW")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

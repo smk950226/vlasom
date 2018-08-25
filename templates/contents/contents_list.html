@@ -11,16 +11,18 @@
         <div class="row">
             {% if request.path == '/contents/hot/list/' or request.path == '/contents/new/list/' %}
             <div class="col-xs-12">
-                <h2>{{ category }}</h2>
+                <h3 class="mobile-none">{{ category }}</h3>
+                <h4 class="mobile-only mrg-top-30">{{ category }}</h4>
             </div>
             {% elif request.path == '/contents/uploaded/' %}
             <div class="col-xs-12">
-                <h2 class="mobile-none">{{ request.user.nickname }}님이 {{ category }}</h2>
-                <h3 class="mobile-only">{{ request.user.nickname }}님이 {{ category }}</h3>
+                <h3 class="mobile-none">{{ request.user.nickname }}님이 {{ category }}</h3>
+                <h4 class="mobile-only mrg-top-30">{{ request.user.nickname }}님이 {{ category }}</h4>
             </div>
             {% else %}
             <div class="col-xs-6 col-sm-7 col-md-2">
-                <h2>{{ category.name }}</h2>
+                <h3 class="mobile-none">{{ category.name }}</h3>
+                <h4 class="mobile-only mrg-top-30">{{ category.name }}</h4>
             </div>
             <div class="col-xs-6 col-sm-5 col-md-offset-8 col-md-2 mrg-top-20 text-right">
                 <a href="{% url "preference:interest_create_category" category.id %}" class="btn btn-sm btn-round {% if category_is_interested %}btn-theme{% else %}btn-theme-inverse-to-theme{% endif %} interest">{% if category_is_interested %}찜하기 취소{% else %}{{ category }} 찜하기{% endif %}</a>
@@ -28,7 +30,7 @@
             {% endif %}
         </div>
         <div class="row">
-            <div id="contents_list" class="portfolio isotope row col-3 gutter-sm mrg-top-30">
+            <div id="contents_list" class="portfolio isotope row col-5 gutter-sm mrg-top-30">
                 {% include 'contents/partials/contents_list/_contents_list.html' %}
             </div>
         </div>

@@ -27,7 +27,7 @@ AWS_S3_REGION_NAME = get_secret("AWS_S3_REGION_NAME")
 
 SITE_ID = 2
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.vlasom.com', '127.0.0.1']
 

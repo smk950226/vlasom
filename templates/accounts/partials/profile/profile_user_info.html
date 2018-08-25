@@ -12,16 +12,16 @@
             </div>
             <div class="col-xs-12 col-md-6 col-md-offset-1 mrg-top-30-mobile">
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-xs-3">
                         <div class="input-label">
-                            <h3 class="mobile-none">ID</h3>
-                            <h4 class="mobile-only">ID</h4>
+                            <h4 class="mobile-none">ID</h4>
+                            <h5 class="mobile-only">ID</h5>
                         </div>
                     </div>
-                    <div class="col-xs-6 no-pdd-left">
+                    <div class="col-xs-7 no-pdd-left">
                         <div class="input-box">
-                            <h3 class="mobile-none">{{ request.user.login_id }}</h3>
-                            <h4 class="mobile-only">{{ request.user.login_id }}</h4>
+                            <h4 class="mobile-none">{{ request.user.login_id }}</h4>
+                            <h5 class="mobile-only">{{ request.user.login_id }}</h5>
                         </div>
                     </div>
                     <div class="col-xs-2 no-pdd-left-mobile">
@@ -37,64 +37,64 @@
                     </div>
                 </div>
                 <div class="row mrg-top-15">
-                    <div class="col-xs-4">
+                    <div class="col-xs-3">
                         <div class="input-label">
-                            <h3 class="mobile-none">이름</h3>
-                            <h4 class="mobile-only">이름</h4>
+                            <h4 class="mobile-none">이름</h4>
+                            <h5 class="mobile-only">이름</h5>
                         </div>
                     </div>
-                    <div class="col-xs-8 no-pdd-left">
+                    <div class="col-xs-9 no-pdd-left">
                         <div class="input-box">
-                            <h3 class="mobile-none">{{ request.user.name }}</h3>
-                            <h4 class="mobile-only">{{ request.user.name }}</h4>
+                            <h4 class="mobile-none">{{ request.user.name }}</h4>
+                            <h5 class="mobile-only">{{ request.user.name }}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="row mrg-top-15">
-                    <div class="col-xs-4">
+                    <div class="col-xs-3">
                         <div class="input-label">
-                            <h3 class="mobile-none">닉네임</h3>
-                            <h4 class="mobile-only">닉네임</h4>
+                            <h4 class="mobile-none">닉네임</h4>
+                            <h5 class="mobile-only">닉네임</h5>
                         </div>
                     </div>
-                    <div class="col-xs-8 no-pdd-left">
+                    <div class="col-xs-9 no-pdd-left">
                         <div class="input-box">
-                            <h3 class="mobile-none">{{ request.user.nickname }}</h3>
-                            <h4 class="mobile-only">{{ request.user.nickname }}</h4>
+                            <h4 class="mobile-none">{{ request.user.nickname }}</h4>
+                            <h5 class="mobile-only">{{ request.user.nickname }}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="row mrg-top-15">
-                    <div class="col-xs-4">
+                    <div class="col-xs-3">
                         <div class="input-label">
-                            <h3 class="mobile-none">이메일</h3>
-                            <h4 class="mobile-only">이메일</h4>
+                            <h4 class="mobile-none">이메일</h4>
+                            <h5 class="mobile-only">이메일</h5>
                         </div>
                     </div>
-                    <div class="col-xs-8 no-pdd-left">
+                    <div class="col-xs-9 no-pdd-left">
                         <div class="input-box">
-                            <h3 class="mobile-none">{{ request.user.email }}</h3>
-                            <h4 class="mobile-only">{{ request.user.email }}</h4>
+                            <h4 class="mobile-none">{{ request.user.email }}</h4>
+                            <h5 class="mobile-only">{{ request.user.email }}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="row mrg-top-15">
-                    <div class="col-xs-4">
+                    <div class="col-xs-3">
                         <div class="input-label">
-                            <h3 class="mobile-none">Birth</h3>
-                            <h4 class="mobile-only">Birth</h4>
+                            <h4 class="mobile-none">Birth</h4>
+                            <h5 class="mobile-only">Birth</h5>
                         </div>
                     </div>
-                    <div class="col-xs-8 no-pdd-left">
+                    <div class="col-xs-9 no-pdd-left">
                         <div class="input-box">
-                            <h3 class="mobile-none">{{ request.user.birth_year }}.{{ request.user.birth_month|stringformat:"02d" }}.{{ request.user.birth_day|stringformat:"02d" }}</h3>
-                            <h4 class="mobile-only">{{ request.user.birth_year }}.{{ request.user.birth_month|stringformat:"02d" }}.{{ request.user.birth_day|stringformat:"02d" }}</h4>
+                            <h4 class="mobile-none">{{ request.user.birth_year }}.{{ request.user.birth_month|stringformat:"02d" }}.{{ request.user.birth_day|stringformat:"02d" }}</h4>
+                            <h5 class="mobile-only">{{ request.user.birth_year }}.{{ request.user.birth_month|stringformat:"02d" }}.{{ request.user.birth_day|stringformat:"02d" }}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="row mrg-top-15">
                     <div class="col-xs-12 text-right text-center-mobile">
-                        <a href="{% url "user_update" %}" class="btn btn-md btn-round btn-theme-inverse-to-theme">프로필 수정</a>
+                        <a href="{% url "user_update" %}" class="btn btn-sm btn-round btn-theme-inverse-to-theme">프로필 수정</a>
                     </div>
                 </div>
             </div>

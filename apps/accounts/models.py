@@ -86,7 +86,7 @@ class User(AbstractUser):
         uid = urlsafe_base64_encode(force_bytes(self.pk)).decode()
         token = default_token_generator.make_token(self)
 
-        url = 'http://{}/accounts/signup/confirm/{}/{}/'.format(current_site.domain, uid, token)
+        url = 'https://{}/accounts/signup/confirm/{}/{}/'.format(current_site.domain, uid, token)
 
         email_subject = render_to_string('registration/verify/user_verify_subject.txt')
         email_content = render_to_string('registration/verify/user_verify_email.html', context={'url': url, 'site_name': current_site.name})

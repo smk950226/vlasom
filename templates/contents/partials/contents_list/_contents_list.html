@@ -20,5 +20,10 @@
     </div><!-- folio-style -->
 </a><!-- /folio-item -->
 {% empty %}
-<h2>콘텐츠가 없습니다.</h2>
+</div>
+<div class="text-center">
+    <h2>콘텐츠가 없습니다.<br/>
+    새로운 콘텐츠를 등록해 보세요.</h2>
+    <a class="btn btn-sm btn-round btn-theme" href="{% url "contents:contents_create" %}">콘텐츠 등록하러가기</a>
+</div>
 {% endfor %}

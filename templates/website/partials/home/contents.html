@@ -4,14 +4,15 @@
     <div class="container mrg-top-50">
         <div class="row">
             <div class="col-xs-7 col-md-2">
-                <h2>{{ category.category.name }}</h2>
+                <h3 class="mobile-none">{{ category.category.name }}</h3>
+                <h4 class="mobile-only mrg-top-30">{{ category.category.name }}</h4>
             </div>
             <div class="col-xs-5 col-md-offset-8 col-md-2 mrg-top-20 text-right">
-                <a href="{% url "contents:contents_list" category.category.id %}" class="btn btn-md btn-round btn-theme-inverse-to-theme">더보기</a>
+                <a href="{% url "contents:contents_list" category.category.id %}" class="btn btn-sm btn-round btn-theme-inverse-to-theme">더보기</a>
             </div>
         </div>
         <div class="row">
-            <div class="portfolio isotope row col-3 gutter-sm mrg-top-30">
+            <div class="portfolio isotope row col-5 gutter-sm mrg-top-30">
                 {% if forloop.counter == 1 %}
                 {% for contents in category_1 %}
                 <a href="{% url "contents:contents_detail" contents.id %}" class="folio-item web-design">
@@ -34,7 +35,12 @@
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
                 {% empty %}
-                <h2>콘텐츠가 없습니다.</h2>
+                </div>
+                <div class="text-center">
+                    <h2>콘텐츠가 없습니다.<br/>
+                    새로운 콘텐츠를 등록해 보세요.</h2>
+                    <a class="btn btn-sm btn-round btn-theme" href="{% url "contents:contents_create" %}">콘텐츠 등록하러가기</a>
+                </div>
                 {% endfor %}
                 {% elif forloop.counter == 2 %}
                 {% for contents in category_2 %}
@@ -58,7 +64,12 @@
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
                 {% empty %}
-                <h2>콘텐츠가 없습니다.</h2>
+                </div>
+                <div class="text-center">
+                    <h2>콘텐츠가 없습니다.<br/>
+                    새로운 콘텐츠를 등록해 보세요.</h2>
+                    <a class="btn btn-sm btn-round btn-theme" href="{% url "contents:contents_create" %}">콘텐츠 등록하러가기</a>
+                </div>
                 {% endfor %}
                 {% elif forloop.counter == 3 %}
                 {% for contents in category_3 %}
@@ -82,7 +93,12 @@
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
                 {% empty %}
-                <h2>콘텐츠가 없습니다.</h2>
+                </div>
+                <div class="text-center">
+                    <h2>콘텐츠가 없습니다.<br/>
+                    새로운 콘텐츠를 등록해 보세요.</h2>
+                    <a class="btn btn-sm btn-round btn-theme" href="{% url "contents:contents_create" %}">콘텐츠 등록하러가기</a>
+                </div>
                 {% endfor %}
                 {% elif forloop.counter == 4 %}
                 {% for contents in category_4 %}
@@ -106,7 +122,12 @@
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
                 {% empty %}
-                <h2>콘텐츠가 없습니다.</h2>
+                </div>
+                <div class="text-center">
+                    <h2>콘텐츠가 없습니다.<br/>
+                    새로운 콘텐츠를 등록해 보세요.</h2>
+                    <a class="btn btn-sm btn-round btn-theme" href="{% url "contents:contents_create" %}">콘텐츠 등록하러가기</a>
+                </div>
                 {% endfor %}
                 {% else %}
                 {% for contents in category_5 %}
@@ -130,7 +151,12 @@
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
                 {% empty %}
-                <h2>콘텐츠가 없습니다.</h2>
+                </div>
+                <div class="text-center">
+                    <h2>콘텐츠가 없습니다.<br/>
+                    새로운 콘텐츠를 등록해 보세요.</h2>
+                    <a class="btn btn-sm btn-round btn-theme" href="{% url "contents:contents_create" %}">콘텐츠 등록하러가기</a>
+                </div>
                 {% endfor %}
                 {% endif %}
             </div>

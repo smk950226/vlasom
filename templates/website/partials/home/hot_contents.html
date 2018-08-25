@@ -3,14 +3,14 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-7 col-md-2">
-                <h2>인기 콘텐츠</h2>
+                <h3>인기 콘텐츠</h3>
             </div>
             <div class="col-xs-5 col-md-offset-8 col-md-2 mrg-top-20 text-right">
-                <a href="{% url "contents:contents_list_hot" %}" class="btn btn-md btn-round btn-theme-inverse-to-theme">더보기</a>
+                <a href="{% url "contents:contents_list_hot" %}" class="btn btn-sm btn-round btn-theme-inverse-to-theme">더보기</a>
             </div>
         </div>
         <div class="row">
-            <div class="portfolio isotope masonry gutter row col-3 mrg-top-30">
+            <div class="portfolio isotope masonry gutter row col-5 mrg-top-30">
                 {% for contents in hot_contents %}
                 <div class="folio-item">
                     <a href="{% url "contents:contents_detail" contents.id %}">
@@ -29,7 +29,12 @@
                     </a>
                 </div><!-- /folio-item -->
                 {% empty %}
-                <h2>콘텐츠가 없습니다.</h2>
+                </div>
+                <div class="text-center">
+                    <h2>콘텐츠가 없습니다.<br/>
+                    새로운 콘텐츠를 등록해 보세요.</h2>
+                    <a class="btn btn-sm btn-round btn-theme" href="{% url "contents:contents_create" %}">콘텐츠 등록하러가기</a>
+                </div>
                 {% endfor %}
         </div>    
     </div>

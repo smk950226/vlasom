@@ -1,17 +1,19 @@
 {% load static %}
 <section class="section-1 no-pdd-top">
     <div class="container">
-        <h2>관심 목록</h2>
+        <h3 class="mobile-none">관심 목록</h3>
+        <h4 class="mobile-only">관심 목록</h4>
         <div class="row">
             <div class="col-xs-7 col-md-2">
-                    <h3>콘텐츠</h3>
+                <h4 class="mobile-none">콘텐츠</h4>
+                <h5 class="mobile-only">콘텐츠</h5>
             </div>
-            <div class="col-xs-5 col-md-offset-8 col-md-2 mrg-top-20 text-right">
-                <a href="{% url "preference:interest_list" %}" class="btn btn-md btn-round btn-theme-inverse-to-theme">더보기</a>
+            <div class="col-xs-5 col-md-offset-8 col-md-2 text-right">
+                <a href="{% url "preference:interest_list" %}" class="btn btn-sm btn-round btn-theme-inverse-to-theme">더보기</a>
             </div>
         </div>
         <div class="row">
-            <div class="portfolio isotope row col-3 gutter-sm mrg-top-30">
+            <div class="portfolio isotope row col-5 gutter-sm mrg-top-30">
                 {% for interest in interest_contents %}
                 <a href="{% url "contents:contents_detail" interest.contents.id %}" class="folio-item web-design">
                     <div class="folio-style-2">
@@ -33,16 +35,26 @@
                     </div><!-- folio-style -->
                 </a><!-- /folio-item -->
                 {% empty %}
-                <h2>콘텐츠가 없습니다.</h2>
+                </div>
+                <div class="text-center">
+                    <h2>콘텐츠가 없습니다.<br/>
+                    새로운 콘텐츠를 등록해 보세요.</h2>
+                    <a class="btn btn-sm btn-round btn-theme" href="{% url "contents:contents_create" %}">콘텐츠 등록하러가기</a>
+                </div>
                 {% endfor %}
             </div>
         </div>
         <div class="row">
-            <h3>카테고리</h3>
+            <div class="col-xs-12"> 
+                <h4 class="mobile-none">카테고리</h4>
+                <h5 class="mobile-only">카테고리</h5>
+            </div>
             {% for interest in interest_category %}
             <a class="btn btn-md btn-round btn-theme font-weight-bold mrg-top-30" href="{% url "contents:contents_list" interest.category.id %}">{{ interest.category.name }}</a>
             {% empty %}
-            <h2>카테고리가 없습니다.</h2>
+            <div class="text-center">
+                <h3>카테고리가 없습니다.</h3>
+            </div>
             {% endfor %}
         </div>
     </div>

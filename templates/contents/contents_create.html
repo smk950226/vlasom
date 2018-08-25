@@ -16,30 +16,28 @@
             {% csrf_token %}
             {% bootstrap_field form.image show_label=False form_group_class='' %}
             <div class="row mrg-top-15 text-center">
-                <div class="col-xs-3 col-sm-2 no-pdd-right">
+                <div class="col-xs-3 col-sm-1 no-pdd-right mrg-top-10">
                     <div class="input-label">
-                        <h3 class="mobile-none">카테고리</h3>
-                        <h4 class="mobile-only">카테고리</h4>
+                        <h4 class="mobile-none">카테고리</h3>
+                        <h5 class="mobile-only">카테고리</h4>
                     </div>
                 </div>
-                <div class="col-xs-9 col-sm-10 no-pdd-left">
+                <div class="col-xs-9 col-sm-5 no-pdd-left mrg-top-10">
                     {% bootstrap_field form.category_1 show_label=False form_group_class='col-xs-6 no-pdd-horizon' %}
                     {% bootstrap_field form.category_2 show_label=False form_group_class='col-xs-6 no-pdd-horizon' %}
                 </div>
-            </div>
-            <div class="row mrg-top-15 text-center">
-                <div class="col-xs-3 col-sm-2 no-pdd-right">
+                <div class="col-xs-3 col-sm-1 no-pdd-right mrg-top-10">
                     <div class="input-label">
-                        <h3 class="mobile-none">Tag</h3>
-                        <h4 class="mobile-only">Tag</h4>
+                        <h4 class="mobile-none">Tag</h3>
+                        <h5 class="mobile-only">Tag</h4>
                     </div>
                 </div>
-                <div class="col-xs-9 col-sm-10 no-pdd-left">
+                <div class="col-xs-9 col-sm-5 no-pdd-left mrg-top-10">
                     {% bootstrap_field form.tags show_label=False show_help=False form_group_class='' %}
                 </div>
             </div>
-            <div class="mrg-top-50">
-                {% bootstrap_field form.description show_label=False show_help=False form_group_class='' placeholder='이 사진을 어떻게 찍었는지 간단하게 설명해 주세요.' %}
+            <div class="mrg-top-50 row">
+                {% bootstrap_field form.description show_label=False show_help=False form_group_class='col-xs-12' placeholder='이 사진을 어떻게 찍었는지 간단하게 설명해 주세요.' %}
             </div>
             <div class="row text-center">
                 <input class="mrg-top-60 btn btn-md btn-round btn-theme-inverse-to-theme" type="submit" value="업로드">
