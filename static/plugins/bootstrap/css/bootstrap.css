@@ -2917,6 +2917,7 @@ select[multiple].input-lg {
   margin-top: 5px;
   margin-bottom: 10px;
   color: #737373;
+  max-width: 400px;
 }
 @media (min-width: 768px) {
   .form-inline .form-group {

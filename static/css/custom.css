@@ -60,6 +60,9 @@ hr {
 }
 .show { display: block; }
 .none { display: none; }
+.help-block {
+  max-width: 400px !important;
+}
 @media only screen and (max-width: 993px) {
   .mobile-none {
     display: none !important;

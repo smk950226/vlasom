@@ -140,7 +140,10 @@
  
         {% block content %}
         {% endblock %}
-        <div id="footer-line" class="theme-color-bg" style="height: 20px;"></div>
+        
+    
+    {% block footer %}
+    <div id="footer-line" class="theme-color-bg" style="height: 20px;"></div>
         <footer id="mobile-footer-nav" class="mobile-only border-top pdd-vertical-10 bg-white animated show" style="position: fixed; bottom: 0; left: 0; width: 100%;">
             <div class="container">
                 <div class="row text-center">
@@ -160,8 +163,6 @@
             </div>
         </footer>
     </div><!-- wrapper -->
-    
-    {% block footer %}
     {% endblock %}
     
     <!-- Jquery Plugins -->
