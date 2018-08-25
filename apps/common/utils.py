@@ -19,6 +19,8 @@ birth_day = tuple(birth_day_list)
 
 gender_choice = (('M','남성'),('F','여성'))
 
+join_channel = (('WEB', 'WEB'),('KAKAO', 'KAKAO'),('FACEBOOK','FACEBOOK'),('GOOGLE','GOOGLE'))
+
 def get_image_filename(instance, filename):
     return '/'.join([instance.category_1.name, instance.user.nickname, filename])
 

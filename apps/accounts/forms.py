@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import SetPasswordForm as BaseSetPasswordForm, PasswordChangeForm as BasePasswordChangeForm
 from django.utils.safestring import mark_safe
+from allauth.socialaccount.forms import SignupForm as AllauthSignupForm
+from allauth.socialaccount.adapter import get_adapter
 
 from apps.common.validators import validate_password
 from apps.common.utils import birth_year, birth_month, birth_day
@@ -65,6 +67,48 @@ class UserCreateForm(forms.ModelForm):
             user.save()
 
         return user
+
+
+class SocialSignupForm(AllauthSignupForm):
+    nickname = forms.CharField(label = '닉네임', required=True, widget = forms.TextInput(attrs={'autocomplete': 'off'}))
+    gender = forms.CharField(label = '성별', required=True, widget = forms.RadioSelect())
+    birth_year = forms.IntegerField(label = '생년', required=True, widget = forms.Select(choices = birth_year))
+    birth_month = forms.IntegerField(label = '생월', required=True, widget = forms.Select(choices = birth_month))
+    birth_day = forms.IntegerField(label = '생일', required=True, widget = forms.Select(choices = birth_day))
+
+    def save(self, request):
+        adapter = get_adapter(request)
+        user = adapter.save_user(request, self.sociallogin, form=self, commit=False)
+        join_channel = self.sociallogin.account.get_provider().name.upper()
+        
+        user.join_channel = join_channel
+        user.login_id = str(user.join_channel) + '_id_' + str(user.id)
+        user.email = self.cleaned_data['email']
+        user.gender = self.cleaned_data['gender']
+        user.birth_year = self.cleaned_data['birth_year']
+        user.birth_month = self.cleaned_data['birth_month']
+        user.birth_day = self.cleaned_data['birth_day']
+        user.nickname = self.cleaned_data['nickname']
+        user.is_verified = True
+        if join_channel == 'KAKAO':
+            user.name = self.sociallogin.account.extra_data['properties']['nickname']
+
+        user.save()
+        self.custom_signup(request, user)
+        return user
+
+    def clean_nickname(self):
+        value = self.cleaned_data['nickname']
+        if value:
+            value = self.validate_unique_nickname(value)
+        return value
+
+    def validate_unique_nickname(self, value):
+        try:
+            return get_adapter().validate_unique_nickname(value)
+        except forms.ValidationError:
+            raise forms.ValidationError(
+                get_adapter().error_messages['nickname_taken'])
 
 
 class UserUpdateForm(forms.ModelForm):

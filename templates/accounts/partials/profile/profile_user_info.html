@@ -4,7 +4,11 @@
         <h1 class="theme-color">My Profile</h1>
         <div class="row mrg-top-60">
             <div class="col-xs-12 col-md-5 profile-wrapper no-pdd">
+                {% if request.user.profile_image %}
                 <img id="profile_image" src="{{ request.user.profile_image.url }}" width="100%" alt="">
+                {% else %}
+                <img id="profile_image" src="{% static "images/signup.png" %}" alt="">
+                {% endif %}
             </div>
             <div class="col-xs-12 col-md-6 col-md-offset-1 mrg-top-30-mobile">
                 <div class="row">
