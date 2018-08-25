@@ -16,13 +16,13 @@
                     <a href="{% url "contents:contents_detail" contents.id %}">
                         <div class="folio-style-3">
                             <div class="folio-image">
-                                <img class="img-responsive" src="{{ contents.image.url }}" alt="">
+                                <img class="img-responsive" src="{{ contents.image.url }}" alt="{{ contents.category_1 }}">
                             </div><!-- /folio-image -->
                             <div class="overlay">								
                             </div><!-- /overlay -->
                             <div class="folio-caption theme-color-bg-opacity">
                                 <div class="pull-left">
-                                    <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> {{ contents.user.nickname }}</a></h3>
+                                    <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt="logo"> {{ contents.user.nickname }}</a></h3>
                                 </div><!-- /pull-left -->
                             </div><!-- /folio-caption -->
                         </div><!-- folio-style -->

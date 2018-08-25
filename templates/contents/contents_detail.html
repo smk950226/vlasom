@@ -10,8 +10,8 @@
     <div class="container mrg-top-100">
         <div class="row">
             <div class="col-xs-12 text-center">
-                <img class="max-height-600 image_large mobile-none" src="{{ contents.image.url }}" height="100%" alt="">
-                <img class="max-height-600 image_large mobile-only" src="{{ contents.image.url }}" width="100%" alt="">
+                <img class="max-height-600 image_large mobile-none" src="{{ contents.image.url }}" height="100%" alt="{{ contents.category_1 }}">
+                <img class="max-height-600 image_large mobile-only" src="{{ contents.image.url }}" width="100%" alt="{{ contents.category_1 }}">
             </div>
         </div>
         <div class="row pdd-horizon-30 text-dark mrg-top-30">
@@ -19,7 +19,7 @@
                 <a class="btn btn-md btn-round btn-theme font-weight-bold" href="{% url "contents:contents_list" contents.category_1.id %}">{{ contents.category_1 }}</a>{% if contents.category_2 %}<a class="mrg-left-10 btn btn-md btn-round btn-theme font-weight-bold" href="{% url "contents:contents_list" contents.category_2.id %}">{{ contents.category_2 }}</a>{% endif %} <h4 class="theme-color">{% if contents.tags %}{{ contents.tags }}{% endif %}</h4>
             </div>
             <div class="col-xs-12 col-sm-6 text-right text-left-mobile">
-                <h4>{{ contents.user.nickname }} <a class="like" href="{% url "preference:like_create" contents.id %}"><img class="mrg-right-15" src="{% static "images/like.png" %}" width="25" height="25" alt=""><span id="like_count" {% if contents.id in like_set_contents %}class="theme-color"{% endif %}>{{ contents.like_count }}</span></a><a class="interest mrg-left-15 btn btn-sm btn-round {% if contents.id in interest_set_contents %}btn-theme{% else %}btn-theme-inverse-to-theme{% endif %} font-weight-bold" href="{% url "preference:interest_create_contents" contents.id %}">{% if contents.id in interest_set_contents %}찜하기 취소{% else %}찜하기{% endif %}</a></h4>
+                <h4>{{ contents.user.nickname }} <a class="like" href="{% url "preference:like_create" contents.id %}"><img class="mrg-right-15" src="{% static "images/like.png" %}" width="25" height="25" alt="like"><span id="like_count" {% if contents.id in like_set_contents %}class="theme-color"{% endif %}>{{ contents.like_count }}</span></a><a class="interest mrg-left-15 btn btn-sm btn-round {% if contents.id in interest_set_contents %}btn-theme{% else %}btn-theme-inverse-to-theme{% endif %} font-weight-bold" href="{% url "preference:interest_create_contents" contents.id %}">{% if contents.id in interest_set_contents %}찜하기 취소{% else %}찜하기{% endif %}</a></h4>
             </div>
         </div>
         <div class="row border-top-bottom padding-20 mrg-top-30">
@@ -33,17 +33,17 @@
                 <span class="mobile-none">
                     {% if forloop.counter < 7 %}
                     <input type="radio" name="contents_images" value="{{ forloop.counter }}" id="{{ forloop.counter }}" style="display: none;" {% if forloop.first %}checked{% endif %}>
-                    <label id="{{ forloop.counter }}_label" for="{{ forloop.counter }}"><img class="target-img" src="{{ image.image.url }}" width="150" height="150" alt=""></label>
+                    <label id="{{ forloop.counter }}_label" for="{{ forloop.counter }}"><img class="target-img" src="{{ image.image.url }}" width="150" height="150" alt="{{ image.contents.category_1 }}"></label>
                     {% elif forloop.counter == 7 %}
-                    <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="150" height="150" alt="" style="opacity: 0.4;">
+                    <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="150" height="150" alt="{{ image.contents.category_1 }}" style="opacity: 0.4;">
                     {% endif %}
                 </span>
                 <span class="mobile-only">
                     {% if forloop.counter < 3 %}
                     <input type="radio" name="contents_images" value="{{ forloop.counter }}" id="{{ forloop.counter }}_2" style="display: none;" {% if forloop.first %}checked{% endif %}>
-                    <label id="{{ forloop.counter }}_label_2" for="{{ forloop.counter }}_2"><img class="target-img" src="{{ image.image.url }}" width="85" height="85" alt=""></label>
+                    <label id="{{ forloop.counter }}_label_2" for="{{ forloop.counter }}_2"><img class="target-img" src="{{ image.image.url }}" width="85" height="85" alt="{{ image.contents.category_1 }}"></label>
                     {% elif forloop.counter == 3 %}
-                    <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="85" height="85" alt="" style="opacity: 0.4;">
+                    <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="85" height="85" alt="{{ image.contents.category_1 }}" style="opacity: 0.4;">
                     {% endif %}
                 </span>
                 {% endfor %}

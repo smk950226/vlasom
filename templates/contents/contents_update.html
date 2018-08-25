@@ -12,8 +12,8 @@
             {% csrf_token %}
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <img class="max-height-600 image_large mobile-none" src="{{ contents.image.url }}" height="100%" alt="">
-                    <img class="max-height-600 image_large mobile-only" src="{{ contents.image.url }}" width="100%" alt="">
+                    <img class="max-height-600 image_large mobile-none" src="{{ contents.image.url }}" height="100%" alt="{{ contents.category_1 }}">
+                    <img class="max-height-600 image_large mobile-only" src="{{ contents.image.url }}" width="100%" alt="{{ contents.category_1 }}">
                 </div>
             </div>
             <div class="row border-top-bottom padding-20 mrg-top-30">
@@ -27,17 +27,17 @@
                         <span class="mobile-none">
                             {% if forloop.counter < 7 %}
                             <input type="radio" name="contents_images" value="{{ forloop.counter }}" id="{{ forloop.counter }}" style="display: none;" {% if forloop.first %}checked{% endif %}>
-                            <label id="{{ forloop.counter }}_label" for="{{ forloop.counter }}"><img class="target-img" src="{{ image.image.url }}" width="150" height="150" alt=""></label>
+                            <label id="{{ forloop.counter }}_label" for="{{ forloop.counter }}"><img class="target-img" src="{{ image.image.url }}" width="150" height="150" alt="{{ image.contents.category_1 }}"></label>
                             {% elif forloop.counter == 7 %}
-                            <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="150" height="150" alt="" style="opacity: 0.4;">
+                            <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="150" height="150" alt="{{ image.contents.category_1 }}" style="opacity: 0.4;">
                             {% endif %}
                         </span>
                         <span class="mobile-only">
                             {% if forloop.counter < 3 %}
                             <input type="radio" name="contents_images" value="{{ forloop.counter }}" id="{{ forloop.counter }}_2" style="display: none;" {% if forloop.first %}checked{% endif %}>
-                            <label id="{{ forloop.counter }}_label_2" for="{{ forloop.counter }}_2"><img class="target-img" src="{{ image.image.url }}" width="85" height="85" alt=""></label>
+                            <label id="{{ forloop.counter }}_label_2" for="{{ forloop.counter }}_2"><img class="target-img" src="{{ image.image.url }}" width="85" height="85" alt="{{ image.contents.category_1 }}"></label>
                             {% elif forloop.counter == 3 %}
-                            <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="85" height="85" alt="" style="opacity: 0.4;">
+                            <img class="target-img pointer slide-start-trigger" src="{{ image.image.url }}" width="85" height="85" alt="{{ image.contents.category_1 }}" style="opacity: 0.4;">
                             {% endif %}
                         </span>
                         {% endfor %}

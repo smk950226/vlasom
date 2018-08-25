@@ -5,9 +5,9 @@
         <div class="row mrg-top-60">
             <div class="col-xs-12 col-md-5 profile-wrapper no-pdd">
                 {% if request.user.profile_image %}
-                <img id="profile_image" src="{{ request.user.profile_image.url }}" width="100%" alt="">
+                <img id="profile_image" src="{{ request.user.profile_image.url }}" width="100%" alt="{{ request.user.nickname }}">
                 {% else %}
-                <img id="profile_image" src="{% static "images/signup.png" %}" alt="">
+                <img id="profile_image" src="{% static "images/login-logo.png" %}" width="100%" alt="{{ request.user.nickname }}">
                 {% endif %}
             </div>
             <div class="col-xs-12 col-md-6 col-md-offset-1 mrg-top-30-mobile">

@@ -14,8 +14,8 @@
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="nav-logo">
-                        <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/nav-logo-white.png" %}" alt="Eastern"></a>
-                        <a class="logo" href="{% url "website:home" %}"><img class="logo-dark" src="{% static "images/nav-logo-red.png" %}" alt="Eastern"></a>
+                        <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/nav-logo-white.png" %}" alt="VLASOM"></a>
+                        <a class="logo" href="{% url "website:home" %}"><img class="logo-dark" src="{% static "images/nav-logo-red.png" %}" alt="VLASOM"></a>
                     </div>                    
                 </div>
                 <div class="collapse navbar-collapse nav-collapse">
@@ -37,8 +37,8 @@
 <section>
     <div class="fs-hero hero-img fixed-bg" style="background-image:url({% static 'images/main.jpg' %})">
         <div class="hero-caption text-white center">
-            <img class="wow animated fadeInUp" src="{% static "images/logo-large.png" %}" alt=""><br/>
-            <img class="no-mrg-top wow animated fadeInUp" data-wow-delay="500ms" src="{% static "images/landing-letter.png" %}" alt="">
+            <img class="wow animated fadeInUp" src="{% static "images/logo-large.png" %}" alt="VLASOM"><br/>
+            <img class="no-mrg-top wow animated fadeInUp" data-wow-delay="500ms" src="{% static "images/landing-letter.png" %}" alt="VLASOM">
             <div class="border-4 width-50 mrg-horizon-auto mrg-vertical-30 wow animated fadeInUp" data-wow-delay="800ms"></div>
             <div class="btn btn-lg btn-round btn-theme wow animated fadeInUp" data-wow-delay="1100ms">view more</div>
         </div>
@@ -52,7 +52,7 @@
         <div class="content-block-1 row">
             <div class="col-md-4">
                 <div class="img-style-1 left">
-                    <img class="img-responsive no-mobile-parallax" src="{% static "images/landing-1.png" %}" alt="" data-parallax='{"y": -30}'>
+                    <img class="img-responsive no-mobile-parallax" src="{% static "images/landing-1.png" %}" alt="description" data-parallax='{"y": -30}'>
                 </div><!-- img-style-1 -->
             </div>
             <div class="col-md-8">
@@ -80,7 +80,7 @@
             </div>
             <div class="col-md-4">
                 <div class="img-style-1">
-                    <img class="img-responsive no-mobile-parallax" src="{% static "images/landing-2.png" %}" alt="" data-parallax='{"y": 30}'>
+                    <img class="img-responsive no-mobile-parallax" src="{% static "images/landing-2.png" %}" alt="description" data-parallax='{"y": 30}'>
                 </div><!-- img-style-1 -->
             </div>
         </div>
@@ -109,13 +109,13 @@
                 <a id="{{ forloop.counter }}_slide" href="{{ contents.image.url }}" class="lightbox-img"></a>
                 <div id="{{ forloop.counter }}" class="folio-style-3 pointer">
                     <div class="folio-image">
-                        <img class="img-responsive" src="{{ contents.image.url }}" alt="">
+                        <img class="img-responsive" src="{{ contents.image.url }}" alt="{{ contents.category_1 }}">
                     </div><!-- /folio-image -->
                     <div class="overlay">								
                     </div><!-- /overlay -->
                     <div class="folio-caption theme-color-bg-opacity">
                         <div class="pull-left">
-                            <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt=""> {{ contents.user.nickname }}</a></h3>
+                            <h3 class="folio-tittle"><a class="text-white" href=""><img src="{% static "images/logo-img-overlap.png" %}" alt="logo"> {{ contents.user.nickname }}</a></h3>
                         </div><!-- /pull-left -->
                     </div><!-- /folio-caption -->
                 </div><!-- folio-style -->

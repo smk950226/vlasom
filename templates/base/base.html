@@ -41,7 +41,7 @@
 	<div class="loader-wrapper">
 		<div class="loaders">
 			<div class="loader-logo-pulse">
-				<img src="{% static "images/logo-red.png" %}" alt="Eastern"> 
+				<img src="{% static "images/logo-red.png" %}" alt="VLASOM"> 
 			</div>
 			<div class="loader-1">
 			</div>
@@ -53,7 +53,7 @@
         <header id="side-menu" class="side-header side-header-right">
                 <div class="side-header-inner theme-color-bg">
                     <div class="side-header-logo">
-                        <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/nav-logo-white.png" %}" alt="vlasom"></a>
+                        <a class="logo" href="{% url "website:home" %}"><img class="logo-light" src="{% static "images/nav-logo-white.png" %}" alt="VLASOM"></a>
                     </div>
                     <button type="button" class="side-header-toggle-in-menu">
                         <i class="ei ei-close text-white"></i>
@@ -98,7 +98,7 @@
                         <div class="container-fluid">
                             <div class="menu-header">
                                 <button type="button" class="side-header-toggle">
-                                    <img src="{% static "images/menu-white.png" %}" alt="" width="35" height="35">
+                                    <img src="{% static "images/menu-white.png" %}" alt="menu" width="35" height="35">
                                     <span class="sr-only"></span>
                                 </button>
                                 <div class="nav-logo mrg-left-100">
@@ -109,7 +109,7 @@
                                 <li class="nav-item">
                                     <a>
                                         <form action="{% url "website:search" %}" method="get">
-                                            <button class="btn-clear" type="submit"><img src="{% static "images/nav-search.png" %}" width="45" height="35" alt=""></button>
+                                            <button class="btn-clear" type="submit"><img src="{% static "images/nav-search.png" %}" width="45" height="35" alt="search"></button>
                                             <input class="nav-search" type="text" name="q" value="{{ q }}" autocomplete="off">
                                         </form>
                                     </a>
@@ -118,17 +118,17 @@
                             <ul class="nav navbar-nav right-menu mrg-right-100 mobile-none">
                                 {% if request.user.is_authenticated %}
                                 <li class="nav-item">
-                                    <a href="{% url "profile" %}"><img src="{% static "images/nav-nickname.png" %}" width="35" height="35" alt=""><span class="font-weight-bold text-white font-size-20 mrg-left-10 mrg-right-30" style="line-height: 35px;">{{ request.user.nickname }}</span></a>
+                                    <a href="{% url "profile" %}"><img src="{% static "images/nav-nickname.png" %}" width="35" height="35" alt="profile"><span class="font-weight-bold text-white font-size-20 mrg-left-10 mrg-right-30" style="line-height: 35px;">{{ request.user.nickname }}</span></a>
                                 </li>
                                 {% endif %}
                                 <li class="nav-item">
-                                    <a href="{% url "website:home" %}"><img src="{% static "images/home.png" %}" width="35" height="35" alt=""></a>
+                                    <a href="{% url "website:home" %}"><img src="{% static "images/home.png" %}" width="35" height="35" alt="home"></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{% url "contents:contents_create" %}"><img src="{% static "images/more.png" %}" width="35" height="35" alt=""></a>
+                                    <a href="{% url "contents:contents_create" %}"><img src="{% static "images/more.png" %}" width="35" height="35" alt="add contents"></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{% url "preference:interest_list" %}"><img src="{% static "images/like-list.png" %}" width="35" height="35" alt=""></a>
+                                    <a href="{% url "preference:interest_list" %}"><img src="{% static "images/like-list.png" %}" width="35" height="35" alt="like list"></a>
                                 </li>
                             </ul>
                         </div>
@@ -145,16 +145,16 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-xs-3">
-                        <a href="{% url "website:home" %}"><img src="{% static "images/home-red.png" %}" width="35" height="35" alt=""></a>
+                        <a href="{% url "website:home" %}"><img src="{% static "images/home-red.png" %}" width="35" height="35" alt="home"></a>
                     </div>
                     <div class="col-xs-3">
-                        <a href="{% url "preference:interest_list" %}"><img src="{% static "images/like-list-red.png" %}" width="35" height="35" alt=""></a>
+                        <a href="{% url "preference:interest_list" %}"><img src="{% static "images/like-list-red.png" %}" width="35" height="35" alt="like list"></a>
                     </div>
                     <div class="col-xs-3">
-                        <a href="{% url "contents:contents_create" %}"><img src="{% static "images/more-red.png" %}" width="35" height="35" alt=""></a>
+                        <a href="{% url "contents:contents_create" %}"><img src="{% static "images/more-red.png" %}" width="35" height="35" alt="add contents"></a>
                     </div>
                     <div class="col-xs-3">
-                        <a href="{% url "profile" %}"><img src="{% static "images/profile-red.png" %}" width="35" height="35" alt=""></a>
+                        <a href="{% url "profile" %}"><img src="{% static "images/profile-red.png" %}" width="35" height="35" alt="profile"></a>
                     </div>
                 </div>
             </div>
