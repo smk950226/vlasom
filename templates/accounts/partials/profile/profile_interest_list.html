@@ -43,7 +43,6 @@
                 </div>
                 {% endfor %}
             </div>
-        </div>
         <div class="row">
             <div class="col-xs-12"> 
                 <h4 class="mobile-none">카테고리</h4>
@@ -53,7 +52,7 @@
             <a class="btn btn-md btn-round btn-theme font-weight-bold mrg-top-30" href="{% url "contents:contents_list" interest.category.id %}">{{ interest.category.name }}</a>
             {% empty %}
             <div class="text-center">
-                <h3>카테고리가 없습니다.</h3>
+                <h2>카테고리가 없습니다.</h2>
             </div>
             {% endfor %}
         </div>

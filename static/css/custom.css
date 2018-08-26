@@ -115,6 +115,20 @@ hr {
     display: none !important;
   }
 }
+@media only screen and (max-width: 767px) {
+  .section-1-adj {
+    margin-top: 70px;
+  }
+  .section-2-adj {
+    margin-top: 50px;
+  }
+  .section-3-adj {
+    margin-top: 30px;
+  }
+  .section-4-adj {
+    margin-top: 10px;
+  }
+}
 .nav-search {
   background: #c72949;
   border-top: 2px solid #cd807e;
@@ -186,6 +200,17 @@ hr {
 }
 .input-box-border-all div {
   height: 100%;
+}
+.input-box2 {
+  border-top: 1px solid #c72949;
+  border-right: 1px solid #c72949;
+  border-bottom: 1px solid #c72949;
+  border-left: none;
+  height: 46px;
+  line-height: 56px;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 3px;
 }
 #id_gender_1, #id_gender_2 {
   display: none;

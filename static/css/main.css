@@ -60,17 +60,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
-@font-face { font-family: 'DX3G1B-KSCpc-EUC-H'; src: url("../fonts/DX3G1B-KSCpc-EUC-H.ttf"); src: local("DX3G1B-KSCpc-EUC-H"), url("../fonts/DX3G1B-KSCpc-EUC-H.ttf") format("truetype"); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'THEvanillabean'; src: url("../fonts/THEvanillabeanM.otf"); src: local("THEvanillabeanM"), local("THEvanillabean"), url("../fonts/THEvanillabeanM.otf") format("opentype"); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'THEvanillabean'; src: url("../fonts/THEvanillabeanM.otf"); src: local("THEvanillabeanM"), local("THEvanillabean"), url("../fonts/THEvanillabeanM.otf") format("opentype"); font-weight: 400; font-style: normal; }
-@font-face { font-family: 'THEvanillabean'; src: url("../fonts/THEvanillabeanM.otf"); src: local("THEvanillabeanM"), local("THEvanillabean"), url("../fonts/THEvanillabeanM.otf") format("opentype"); font-weight: 300; font-style: normal; }
-@font-face { font-family: 'THEvanillabean'; src: url("../fonts/THEvanillabeanR.otf"); src: local("THEvanillabeanR"), local("THEvanillabean"), url("../fonts/THEvanillabeanR.otf") format("opentype"); font-weight: lighter; font-style: normal; }
-@font-face { font-family: 'THEvanillabean'; src: url("../fonts/THEvanillabeanR.otf"); src: local("THEvanillabeanR"), local("THEvanillabean"), url("../fonts/THEvanillabeanR.otf") format("opentype"); font-weight: 200; font-style: normal; }
-@font-face { font-family: 'THEvanillabean'; src: url("../fonts/THEvanillabeanR.otf"); src: local("THEvanillabeanR"), local("THEvanillabean"), url("../fonts/THEvanillabeanR.otf") format("opentype"); font-weight: 100; font-style: normal; }
-@font-face { font-family: 'THEvanillabean'; src: url("../fonts/THEvanillabeanB.otf"); src: local("THEvanillabeanB"), local("THEvanillabean"), url("../fonts/THEvanillabeanB.otf") format("opentype"); font-weight: bold; font-style: normal; }
-@font-face { font-family: 'THEvanillabean'; src: url("../fonts/THEvanillabeanB.otf"); src: local("THEvanillabeanB"), local("THEvanillabean"), url("../fonts/THEvanillabeanB.otf") format("opentype"); font-weight: 600; font-style: normal; }
-@font-face { font-family: 'THEvanillabean'; src: url("../fonts/THEvanillabeanB.otf"); src: local("THEvanillabeanB"), local("THEvanillabean"), url("../fonts/THEvanillabeanB.otf") format("opentype"); font-weight: 500; font-style: normal; }
-
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 
 /*! 02.0 - RESET */
 html {
@@ -84,7 +74,7 @@ body {
 }
 
 body {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 15px;
     overflow-x: hidden;
     padding: 0 !important;
@@ -95,7 +85,7 @@ body {
 }
 
 p {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     color: #999;
     font-weight: normal;
     line-height: 1.8;
@@ -109,7 +99,7 @@ span {
 
 a {
     color: #333743;
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
 }
 
 a:focus,
@@ -133,7 +123,7 @@ pre {
 }
 
 .font-primary {
-    font-family: 'THEvanillabean', sans-serif !important;
+    font-family: 'Hanna', sans-serif !important;
 }
 
 .font-secondary {
@@ -147,7 +137,7 @@ h4,
 h5,
 h6 {
     color: #333743;
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     letter-spacing: 0.5px;
 }
 
@@ -157,7 +147,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
 }
 
 .text-link {
@@ -4528,7 +4518,7 @@ section {
 
 .header .header-full-screen .fs-nav .fs-nav-item a .fs-nav-title {
     color: #fff;
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 32px;
     display: block;
     transition: all 0.3s ease;
@@ -6290,7 +6280,7 @@ section {
 .product-banner .product-name {
     color: #333743;
     letter-spacing: 0.5px;
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 21px;
 }
 
@@ -6321,7 +6311,7 @@ section {
 .shop-product .product-name {
     color: #333743;
     letter-spacing: 0.5px;
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 21px;
 }
 
@@ -6571,7 +6561,7 @@ section {
 ----------------------------*/
 
 .btn {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     text-align: center;
     border-radius: 0px;
     margin-bottom: 10px;
@@ -8180,7 +8170,7 @@ input.form-control {
     color: #333743;
     letter-spacing: 0.5px;
     box-shadow: none;
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-weight: bold;
 }
 
@@ -8272,7 +8262,7 @@ select.form-control {
     letter-spacing: 0.5px;
     padding: 0px 12px;
     box-shadow: none;
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
 }
 
 textarea.form-control {
@@ -8725,7 +8715,7 @@ h5.heading-1.second-line:after {
 }
 
 .features-block-1 .features-tittle {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-weight: bold;
     letter-spacing: 0.5px;
     font-size: 18px;
@@ -8752,7 +8742,7 @@ h5.heading-1.second-line:after {
 }
 
 .features-block-2 .features-info .features-tittle {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-weight: bold;
     letter-spacing: 0.5px;
     font-size: 18px;
@@ -8789,7 +8779,7 @@ h5.heading-1.second-line:after {
 }
 
 .features-block-3 .features-info .features-tittle {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-weight: bold;
     letter-spacing: 0.5px;
     font-size: 18px;
@@ -8865,7 +8855,7 @@ h5.heading-1.second-line:after {
 }
 
 .features-block-5 .features-info .features-tittle {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-weight: bold;
     letter-spacing: 0.5px;
     font-size: 20px;
@@ -8893,7 +8883,7 @@ h5.heading-1.second-line:after {
 
 .features-block-6 .features-info .features-tittle {
     position: relative;
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-weight: bold;
     letter-spacing: 0.5px;
     font-size: 20px;
@@ -9441,7 +9431,7 @@ h5.heading-1.second-line:after {
 }
 
 .team-1 .team-member .member-info .name {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 26px;
     margin-top: 30px;
 }
@@ -9465,7 +9455,7 @@ h5.heading-1.second-line:after {
 }
 
 .team-2 .team-member .member-info .name {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 26px;
     margin-top: 30px;
 }
@@ -9817,7 +9807,7 @@ h5.heading-1.second-line:after {
 }
 
 .tab-style-1 li a {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 17px;
     color: #333743;
     border: 0px;
@@ -9869,7 +9859,7 @@ h5.heading-1.second-line:after {
 }
 
 .tab-style-2 li a {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 17px;
     background-color: #fff;
     color: #333743;
@@ -9951,7 +9941,7 @@ h5.heading-1.second-line:after {
 }
 
 .tab-style-3 li a {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 17px;
     color: #ececec;
     padding: 20px 15px;
@@ -10035,7 +10025,7 @@ h5.heading-1.second-line:after {
 }
 
 .tab-style-4 li a {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 17px;
     text-align: center;
     padding: 20px 15px;
@@ -10563,14 +10553,14 @@ h5.heading-1.second-line:after {
 }
 
 .widget .widget-tittle {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     color: #333743;
     font-size: 24px;
     margin-bottom: 25px;
 }
 
 .widget .widget-tittle-alt {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     color: #333743;
     font-weight: bold;
     font-size: 17px;
@@ -11119,13 +11109,13 @@ h5.heading-1.second-line:after {
 -----------------------------*/
 
 .blog-slider .tab-head {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     font-size: 21px;
     color: #fff;
 }
 
 .blog-slider .tab-sub {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     color: #ececec;
 }
 
@@ -11467,7 +11457,7 @@ h5.heading-1.second-line:after {
 }
 
 .blog-card .blog-item .blog-wrapper .blog-content .blog-tittle a {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     letter-spacing: 0.5px;
     transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
@@ -11650,7 +11640,7 @@ h5.heading-1.second-line:after {
 }
 
 .blog-list .blog-item .blog-content .blog-tittle a {
-    font-family: 'THEvanillabean', sans-serif;
+    font-family: 'Hanna', sans-serif;
     letter-spacing: 0.5px;
     transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
