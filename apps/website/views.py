@@ -6,6 +6,8 @@ from apps.common.views import SearchView
 from apps.contents.models import Contents, Category
 from apps.preference.models import Interest
 
+from .models import Terms
+
 
 class HomeView(LoginRequiredMixin, SearchView):
     template_name = 'website/home.html'
@@ -55,3 +57,21 @@ class SearchResult(SearchView):
         context['category_menu'] = Category.objects.all()
         return context
     
+
+class TermView(TemplateView):
+    template_name = 'website/terms.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.path == '/terms/access/':
+            category = 1
+        elif self.request.path == '/terms/information/':
+            category = 2
+
+        context['description'] = Terms.objects.get(category = category).description
+        if category == 1:
+            context['category'] = '이용약관'
+        elif category == 2:
+            context['category'] = '개인정보처리방침'
+
+        return context
