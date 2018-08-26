@@ -47,7 +47,7 @@ class LandingView(TemplateView):
         return context
 
 
-class SearchResult(SearchView):
+class SearchResult(LoginRequiredMixin, SearchView):
     model = Contents
     template_name = 'website/home.html'
     paginate_by = 30
@@ -75,3 +75,7 @@ class TermView(TemplateView):
             context['category'] = '개인정보처리방침'
 
         return context
+
+
+class SearchTagView(LoginRequiredMixin, TemplateView):
+    template_name = 'website/search.html'

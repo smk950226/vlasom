@@ -144,24 +144,27 @@
     
     {% block footer %}
     <div id="footer-line" class="theme-color-bg" style="height: 20px;"></div>
-        <footer id="mobile-footer-nav" class="mobile-only border-top pdd-vertical-10 bg-white animated show" style="position: fixed; bottom: 0; left: 0; width: 100%;">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-xs-3">
-                        <a href="{% url "website:home" %}"><img src="{% static "images/home-red.png" %}" width="35" height="35" alt="home"></a>
-                    </div>
-                    <div class="col-xs-3">
-                        <a href="{% url "preference:interest_list" %}"><img src="{% static "images/like-list-red.png" %}" width="35" height="35" alt="like list"></a>
-                    </div>
-                    <div class="col-xs-3">
-                        <a href="{% url "contents:contents_create" %}"><img src="{% static "images/more-red.png" %}" width="35" height="35" alt="add contents"></a>
-                    </div>
-                    <div class="col-xs-3">
-                        <a href="{% url "profile" %}"><img src="{% static "images/profile-red.png" %}" width="35" height="35" alt="profile"></a>
-                    </div>
+    <footer id="mobile-footer-nav" class="mobile-only border-top pdd-vertical-10 bg-white animated show" style="position: fixed; bottom: 0; left: 0; width: 100%;">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-xs-2 col-xs-offset-1 no-pdd-horizon">
+                    <a href="{% url "website:home" %}"><img src="{% static "images/home-red.png" %}" width="35" height="35" alt="home"></a>
+                </div>
+                <div class="col-xs-2 no-pdd-horizon">
+                    <a href="{% url "website:search_view" %}"><img src="{% static "images/search.png" %}" width="35" height="35" alt="search"></a>
+                </div>
+                <div class="col-xs-2 no-pdd-horizon">
+                    <a href="{% url "contents:contents_create" %}"><img src="{% static "images/more-red.png" %}" width="35" height="35" alt="add contents"></a>
+                </div>
+                <div class="col-xs-2 no-pdd-horizon">
+                    <a href="{% url "preference:interest_list" %}"><img src="{% static "images/like-list-red.png" %}" width="35" height="35" alt="like list"></a>
+                </div>
+                <div class="col-xs-2 no-pdd-horizon">
+                    <a href="{% url "profile" %}"><img src="{% static "images/profile-red.png" %}" width="35" height="35" alt="profile"></a>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
     </div><!-- wrapper -->
     {% endblock %}
     

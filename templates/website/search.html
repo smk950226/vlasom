@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="section-1">
+    <div class="container">
+        <div class="row" style="margin-top: 150px;">
+            <div class="col-xs-12 text-center">
+                <h3>태그를 검색해 보세요</h3>
+                <form action="{% url "website:search" %}" method="get">
+                    <button class="btn-clear" type="submit"><img src="{% static "images/nav-search.png" %}" width="45" height="35" alt="search"></button>
+                    <input class="search" type="text" name="q" value="{{ q }}" autocomplete="off">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

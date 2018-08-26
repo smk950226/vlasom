@@ -140,6 +140,17 @@ hr {
   min-width: 200px;
   padding-left: 20px;
 }
+.search {
+  background: #fff;
+  border-top: 2px solid #cd807e;
+  border-bottom: 2px solid #cd807e;
+  border-right: 2px solid #cd807e;
+  border-left: none;
+  color: #333743;
+  height: 32px;
+  min-width: 200px;
+  padding-left: 20px;
+}
 .btn-clear {
   background: none;
   border: none;
